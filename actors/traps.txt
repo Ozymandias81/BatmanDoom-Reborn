@@ -1,0 +1,278 @@
+/////////
+//TRAPS//
+/////////
+ACTOR ExplosionWallBlast
+{
+SpawnID 91
++NOGRAVITY
+States
+	{
+	Spawn:
+	MISL B 3 bright
+	MISL C 3 bright A_Explode(128)
+	MISL D 3 bright
+	APBX AB 3 bright
+	Stop
+	}
+}
+
+ACTOR ExplosionWall replaces BossEye 89 //only used on level 22 (used special functions)
+{
+//$Category Reborn Traps
+Tag "Wall Explosion (map22)"
+SpawnID 92
+obituary "%o died in the explosion."
+health 10000
+radius 9
+height 56
+mass 1000
+speed 15
+painchance 255
+MONSTER
++SHOOTABLE
++NOCLIP
++NOGRAVITY
+states
+	{
+	Spawn:
+	POL5 A 10 A_Look
+	loop
+	See:
+	POL5 A 1
+	Pain:
+	POL5 A 5 A_PlaySound("weapons/rocklx", 0, 1.0, 0, ATTN_NONE)
+	POL5 A 1 Teleport(0, 22, 0)
+	POL5 A 1 A_Recoil (-7)
+	POL5 A 1 A_UnSetShootable
+	Chase:
+	POL5 AAAAAAAAAAAAAA 0 A_SpawnItemEx("ExplosionWallBlast", 128, random(-512,512), random(0,512), 0, 0, 0, 0, 0, 0)
+	POL5 A 1 A_PlaySound("weapons/rocklx", 0, 1.0, 0, ATTN_NONE)
+	POL5 AAAAAAAAAAAAAA 0 A_SpawnItemEx("ExplosionWallBlast", 128, random(-512,512), random(0,512), 0, 0, 0, 0, 0, 0)
+	POL5 A 0 A_Stop
+	POL5 A 1 A_Recoil (-8)
+	POL5 AAAAAAAAAAAAAA 0 A_SpawnItemEx("ExplosionWallBlast", 128, random(-512,512), random(0,512), 0, 0, 0, 0, 0, 0)
+	POL5 A 0 A_Stop
+	POL5 A 1 A_Recoil (-7)
+	POL5 AAAAAAAAAAAAAA 0 A_SpawnItemEx("ExplosionWallBlast", 128, random(-512,512), random(0,512), 0, 0, 0, 0, 0, 0)
+	POL5 A 0 A_Stop
+	POL5 A 1 A_Recoil (-8)
+	POL5 AAAAAAAAAAAAAA 0 A_SpawnItemEx("ExplosionWallBlast", 128, random(-512,512), random(0,512), 0, 0, 0, 0, 0, 0)
+	POL5 A 0 A_Stop
+	POL5 A 1 A_Recoil (-7)
+	goto Chase
+	}
+}
+
+ACTOR HateBullet
+{
+Game Doom
+Radius 13
+Height 8
+Speed 100
+Damage 1
+Projectile
++BLOODLESSIMPACT
+RenderStyle Add
+Alpha 0.0
+states
+	{
+	Spawn:
+	TLP2 AAAA 1
+	stop
+	Death:
+	FIRE F 1
+	stop
+	}
+}
+
+ACTOR OneShotCauseHateTarget replaces HangBNoBrain 74
+{
+//$Category Reborn Traps
+Tag "OneShotCauseHateTarget"
+SpawnID 93
+Health 1000
+Mass 1000
+Radius 2
+Height 2
+Speed 0
++SHOOTABLE
+States
+	{
+	Spawn:
+	POL5 A 5 A_Look
+	Loop
+	See:
+	BOSS EF 7 A_FaceTarget
+	BOSS GGGGGG 1 A_CustomMissile("HateBullet",32,0,0,CMF_AIMDIRECTION)
+	TNT1 AAAAAA 3 A_Chase
+	Goto See+12
+	}
+}
+
+ACTOR FloorFireTrap replaces Megasphere 83
+{
+//$Category Reborn Traps
+Tag "Floor Fire Trap"
+SpawnID 94
+Game Doom
+SeeSound "wolfss/sight"
+States
+	{
+	Spawn:
+	POL5 A 10 A_Look
+	Loop
+	See:
+	MEGA ABCD 3 Bright A_CustomMeleeAttack(random(1,8))
+	PLSE ABC 3 Bright A_CustomMeleeAttack(random(1,8))
+	POL5 A 10 Bright A_Jump(64,1)
+	POL5 A 10 Bright A_Jump(64,1)
+	POL5 A 10 Bright A_Jump(64,1)
+	POL5 A 10 Bright A_Jump(64,1)
+	POL5 A 10 Bright
+	Goto Spawn
+	}
+}
+
+ACTOR FireShootTrap replaces GreenTorch 45
+{
+//$Category Reborn Traps
+Tag "Fire Shooting Trap"
+SpawnID 95
+Game Doom
+Health 7000000
+Radius 24
+Height 64
+Mass 1000000
+PainChance 255
++SHOOTABLE
++SOLID
++NOBLOOD
+States
+	{
+	Spawn:
+	POL5 A 10 A_Look
+	Loop
+	See:
+	TLMP ABC 4 Bright A_CustomMeleeAttack(random(1,8))
+	TLMP A 0 Bright A_Jump(128, "Melee")
+	BFE1 ABC 4 Bright A_CustomMeleeAttack(random(1,8))
+	BFE1 A 0 Bright A_Jump(128, "Missile")
+	Loop
+	Melee:
+	BFE1 AB 4 Bright A_CustomMeleeAttack(random(1,8))
+	BFE1 C 4 Bright A_CustomMissile("ArachnotronPlasma",32,0,0,CMF_AIMDIRECTION)
+	Goto See
+	Missile:
+	TLMP AB 4 Bright A_CustomMeleeAttack(random(1,8))
+	TLMP C 4 Bright A_CustomMissile("ArachnotronPlasma",32,0,0,CMF_AIMDIRECTION)
+	Goto See+4
+	}
+}
+
+ACTOR LandMine replaces RedTorch 46
+{
+//$Category Reborn Traps
+Tag "Land Mine"
+SpawnID 96
+Game Doom
+Health 1
+Radius 6
+Height 6
+Mass 1000000
++SHOOTABLE
++NOBLOOD
++OLDRADIUSDMG
+DeathSound "weapons/rocklx"
+States
+	{
+	Spawn:
+	POL4 A 10 A_Look
+	Loop
+	See:
+	POL4 A 2 A_Chase
+	Loop
+	Melee:
+	Death:
+	POSS M 5 Bright A_Scream
+	POSS N 2 Bright A_Explode
+	POSS OPQRSTU 5 Bright
+	Stop
+	}
+}
+
+ACTOR Explosion replaces Cacodemon 3005 //used to kill stuff immediatly on seeing player
+{
+//$Category Reborn Specials
+Tag "PreKiller"
+SpawnID 97
+Game Doom
+Radius 16
+Height 16
++INVISIBLE
++OLDRADIUSDMG
+States
+	{
+	Spawn:
+	POL5 A 10 A_Look
+	Loop
+	See:
+	FIRE B 2 A_Explode(128)
+	stop
+	}
+}
+
+ACTOR ScareCrowPopup replaces Gibs 24
+{
+//$Category Reborn Specials
+Tag "Scarecrow PopUp"
+SpawnID 98
+Game Doom
+Height 63
+Radius 20
+seesound "skeleton/sight"
+States
+	{
+	Spawn:
+	POL5 A 5 A_Look
+	Loop
+	See:
+	TRPS A 0 Bright A_CustomMissile("PoisonCloud",16,0,0,2,0)
+	TRPS AABBCCDDEEFFGGCCDDEEFFGGCCDDEFFGGCCDDEEFFGGCCDDEEFFGGCCDDEEFFEDC 0 Bright A_SpawnItemEx ("PoisonFartCloud",random(-64,64),random(-64,64),random(-48,48),0,0,0.1,0,128)
+	TRPS ABCDEFGCDEFGCDEFGCDEFGCDEFGCDEFG 0 Bright A_SpawnItemEx ("TrickOrTreatSmoke",random(-64,64),random(-64,64),random(-48,48),momx,0,random(0.5,1),0,SXF_TRANSFERTRANSLATION,160)
+	BKEY B 3 Bright
+	RKEY B 3 Bright
+	YKEY B 3 Bright
+	SMGT C 3 Bright
+	SMGT D 3 Bright
+	SCRC A 3 Bright A_SkelMissile
+	SMGT D 3 Bright
+	SMGT C 3 Bright
+	YKEY B 3 Bright
+	RKEY B 3 Bright
+	BKEY B 3 Bright
+	BKEY B 3 Bright A_FadeOut(0.07)
+	Stop
+	}
+}
+
+ACTOR FloorFire replaces TallRedColumn 32
+{
+//$Category Reborn Traps
+Tag "Floor Fire"
+SpawnID 99
+Game Doom
+SeeSound "brain/pain"
+DeathSound "brain/pain"
+States
+	{
+	Spawn:
+	POL5 A 10 A_Look
+	Loop
+	See:
+	TLMP ABC 4 Bright
+	Burn:
+	BFE1 ABC 4 Bright A_CustomMeleeAttack(random(1,12))
+	TNT1 A 0 Bright A_LookEx(0,0,256,0,256,"Burn")
+	Goto Burn
+	}
+}

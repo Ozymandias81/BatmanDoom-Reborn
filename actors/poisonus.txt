@@ -1,0 +1,82 @@
+//posionus actors from Gore
+//Poison Fog effects actors
+actor PoisonFartCloud
+{
+Game Doom
+Radius 2
+Height 2
+RenderStyle Translucent
+Alpha 0.3
++NOINTERACTION
++WINDTHRUST
+PoisonDamage 1
+States
+	{
+	Spawn:
+	FUGS ABCDE 3
+	Fade:
+	FUGS ABCDE 3 A_FadeOut (0.05)
+	FUGS ABCDE 3 A_FadeIn (0.05)
+	FUGS ABCDE 3 A_FadeOut (0.05)
+	FUGS ABCDE 3 A_FadeIn (0.05)
+	FUGS ABCDE 3 A_FadeOut (0.05)
+	FUGS ABCDE 3 A_FadeIn (0.05)
+	FUGS ABCDE 3 A_FadeOut (0.05)
+	FUGS ABCDE 3 A_FadeIn (0.05)
+	FUGS ABCDE 3 A_FadeOut (0.05)
+	FUGS ABCDE 3 A_FadeIn (0.05)
+	FUGS ABCDE 3 A_FadeOut (0.05)
+	loop
+	}
+}
+
+actor PoisonSoulPoison
+{
+Radius 24
+Height 6
+Speed 0
+Damage 1
+DamageType PoisonCloud
++STRIFEDAMAGE
++RIPPER
++NOGRAVITY
++MISSILE
+RENDERSTYLE Translucent
+ALPHA 0.67
+	States
+	{
+	Spawn:
+	TRPS ABCDEFGDEFGDEFGDEFGDEFGDCBA 4
+	Stop
+	Death:
+	TRPS DCBA 4
+	Stop
+	}
+}
+
+ACTOR TrickOrTreatSmoke
+{
+Game Doom
++FORCEXYBILLBOARD
++MOVEWITHSECTOR
++WINDTHRUST
++DONTSPLASH
++NOBLOCKMAP
++NOGRAVITY
++MISSILE
+Radius 2
+Height 2
+RenderStyle Shaded
+StencilColor "30 EF 30"
+Gravity 0.3
+VSpeed 2.5
+Alpha 0.5
+Scale 0.3
+States
+	{
+	Spawn:
+	SMOK A 0
+	SMOK A 10 A_FadeOut (0.04)
+	Wait
+	}
+}

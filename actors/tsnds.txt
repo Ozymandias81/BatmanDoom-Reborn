@@ -1,0 +1,142 @@
+//////////
+//SOUNDS//
+//////////
+ACTOR WaterJumpSplash replaces InvulnerabilitySphere 2022
+{
+//$Category Reborn Sounds
+Tag "Water Jump Splash"
+SpawnID 81
+SeeSound "fatso/sight"
++AMBUSH
+States
+	{
+	Spawn:
+	POL5 A 10 A_Look
+	Loop
+	See:
+	PINV ABC 6
+	PINS AB 6
+	Stop
+	}
+}
+
+ACTOR SubwaySound replaces BlueTorch 44
+{
+//$Category Reborn Sounds
+Tag "Subway Sounds"
+SpawnID 82
+Game Doom
++SHOOTABLE
++SOLID
++NOBLOOD
+Radius 1
+Height 28
+DeathSound "spider/death"
+Health 1
+States
+	{
+	Spawn:
+	POL5 A 10 A_Look
+	Loop
+	See:
+	POL5 A 55 A_BrainAwake
+	Loop
+	Death:
+	POL5 A 300 A_Scream
+	Stop
+	}
+}
+
+ACTOR PoliceSiren replaces Meat2 50
+{
+//$Category Reborn Sounds
+Tag "Police Siren"
+SpawnID 83
+Game Doom
++INVISIBLE
+SeeSound "baron/death"
+States
+	{
+	Spawn:
+	POL5 A 10 A_Look
+	Loop
+	See:
+	TROO ABCD 4 A_Chase//fixme why
+	Loop
+	}
+}
+
+ACTOR FallSound replaces NonsolidMeat5 62
+{
+//$Category Reborn Sounds
+Tag "Fall Sound"
+SpawnID 84
+Game Doom
++INVISIBLE
+SeeSound "player/male/xdeath1"
+States
+	{
+	Spawn:
+	POL5 A 10 A_Look
+	Loop
+	See:
+	TROO ABCD 4 A_Chase//fixme why
+	Loop
+	}
+}
+
+ACTOR TwoFaceSound replaces GibbedMarine 10
+{
+//$Category Reborn Sounds
+Tag "Two-Face Sound"
+SpawnID 85
+Game Doom
++INVISIBLE
+SeeSound "grunt/active"
+States
+	{
+	Spawn:
+	POL5 A 10 A_Look
+	Loop
+	See:
+	TROO ABCD 4 A_Chase//fixme why
+	Loop
+	}
+}
+
+ACTOR WeedWaterSound replaces HangTLookingDown 75
+{
+//$Category Reborn Sounds
+Tag "Weed Water Sound"
+SpawnID 86
+Game Doom
+SeeSound "fatso/pain"
+ActiveSound "fatso/pain"
+States
+	{
+	Spawn:
+	SMRT A 3 A_Look
+	Loop
+	See:
+	SMRT A 4
+	Loop
+	}
+}
+
+ACTOR CrowdSound replaces HangTSkull 76
+{
+//$Category Reborn Sounds
+Tag "Crowd Sound"
+SpawnID 87
+Game Doom
++INVISIBLE
+States
+	{
+	Spawn:
+	POL5 A 3 A_Look
+	Loop
+	See:
+	FIRE A 33 A_PlaySound("vile/firestrt")
+	Loop
+	}
+}

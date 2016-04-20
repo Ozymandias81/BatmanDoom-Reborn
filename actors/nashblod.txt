@@ -1,0 +1,118 @@
+// Modify the internal Blood actor to spawn flying blood
+actor NashGore_Blood : Blood replaces Blood
+{
+game Doom
+states
+	{
+	Spawn:
+	BLUD C 8
+	TNT1 A 0 bright A_SpawnItemEx("OIS_Spawner",0,0,random(24,32),0,0,0,random(0,360))
+	BLUD B 8 A_SpawnDebris("NashGore_FlyingBlood",1)
+	BLUD A 8
+	Stop
+	}
+}
+
+// Blood sprite that flies outwards and leaves trails behind
+actor NashGore_FlyingBlood
+{
+game Doom
+scale 0.75
+health 1
+radius 8
+height 1
+mass 128
++CORPSE
++NOTELEPORT
++NOBLOCKMAP
+states
+	{
+	Spawn:
+	TNT1 A 0
+	FBLD A 1 A_SpawnItem("NashGore_FlyingBloodTrail",0,0,0,1)
+	FBLD A 1
+	FBLD A 1 A_SpawnItem("NashGore_FlyingBloodTrail",0,0,0,1)
+	FBLD A 1
+	FBLD B 1 A_SpawnItem("NashGore_FlyingBloodTrail",0,0,0,1)
+	FBLD B 1
+	FBLD B 1 A_SpawnItem("NashGore_FlyingBloodTrail",0,0,0,1)
+	FBLD B 1
+	FBLD C 1 A_SpawnItem("NashGore_FlyingBloodTrail",0,0,0,1)
+	FBLD C 1
+	FBLD C 1 A_SpawnItem("NashGore_FlyingBloodTrail",0,0,0,1)
+	FBLD C 1
+	FBLD D 1 A_SpawnItem("NashGore_FlyingBloodTrail",0,0,0,1)
+	FBLD D 1
+	FBLD D 1 A_SpawnItem("NashGore_FlyingBloodTrail",0,0,0,1)
+	FBLD D 1
+	loop
+	Crash:
+	TNT1 A 1 A_SpawnItem("NashGore_BloodSpot",0,0,0,1)
+	stop
+	}
+}
+
+actor NashGore_BloodSpot
+{
+game Doom
+radius 12
+height 2
+mass 128
++NOTELEPORT
+-NOBLOCKMAP
+states
+	{
+	Spawn:
+	TNT1 A 0
+	TNT1 A 0 A_JumpIf(waterlevel > 0, "Underwater") //..so it will lag no more...
+	TNT1 A 0 A_PlaySound("bloodsplat")
+	TNT1 A 0 A_Jump(64,4)
+	TNT1 A 0 A_Jump(128,4)
+	TNT1 A 0 A_Jump(192,4)
+	TNT1 A 0 A_Jump(255,4)
+	// make the blood spots stay on the ground. 1500 is the default duration.
+	BSPT A 2500 //1500
+	stop
+	BSPT B 2500 //1500
+	stop
+	BSPT C 2500 //1500
+	stop
+	BSPT D 2500 //1500
+	stop
+	Underwater:	//..so it will lag no more...
+	TNT1 A 0 A_PlaySound("bloodsplat")
+	TNT1 A 0 A_Jump(64,4)
+	TNT1 A 0 A_Jump(128,4)
+	TNT1 A 0 A_Jump(192,4)
+	TNT1 A 0 A_Jump(255,4)
+	// now the bloodspots will remain underwater only for a short time, then vanishes
+	BSPT A 250
+	stop
+	BSPT B 250
+	stop
+	BSPT C 250
+	stop
+	BSPT D 250
+	stop
+	}
+}
+
+// Blood trails spawned by FlyingBlood
+actor NashGore_FlyingBloodTrail
+{
+game Doom
+scale 0.70
+mass 1
++LOWGRAVITY
++NOTELEPORT
++NOBLOCKMAP
+states
+	{
+	Spawn:
+	BTRL A 4
+	BTRL B 4
+	BTRL C 4
+	BTRL D 4
+	stop
+	}
+}

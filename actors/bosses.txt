@@ -1,0 +1,928 @@
+//////////
+//BOSSES//
+//////////
+ACTOR NinjaBoss : Ninja1 replaces FloatingSkull 42
+{
+//$Category Reborn Bosses
+Tag "Ninja Boss"
+SpawnID 41
+obituary "%o was sliced by a ninja."
+health 225
+speed 30
+Damage 6 //more damage when jumping!
+Translation "104:111=152:159","5:8=9:12"
+scale 0.88
++BOSS
+states
+	{
+	Death:
+	BSPI J 20 A_Scream
+	BSPI K 7 A_NoBlocking
+	BSPI LMN 7
+	BSPI O 20
+	BSPI O 20 A_BrainDie
+	loop
+	Burn: //new
+	PLAY H 1 Bright
+	PLAY I 0 A_Fall
+    PLAY I 0 A_SpawnItem("BurnBurnBurn2",1)
+	TNT1 A 60 A_BrainDie
+	Stop
+	Crush:
+	CRS2 A -1 A_BrainDie
+	Stop
+	}
+}
+
+ACTOR TinyExplosion
+{
+Game Doom
+Radius 16
+Height 16
++INVISIBLE
++OLDRADIUSDMG
+States
+	{
+	Spawn:
+	TNT1 A 0
+	TNT1 A 1 A_Explode(20)
+	stop
+	}
+}
+//that wasn't correctly inherited with gzdoom.pk3 dehsupp
+ACTOR CrocRock replaces CacodemonBall
+{
+SpawnID 64
+Game Doom
+SpawnID 126
+Radius 6
+Height 8
+Speed 46
+VSpeed 1
+FastSpeed 56
+Damage 5
+DeathSound "skeleton/melee"
+Projectile
+-NOGRAVITY
++BOUNCEONACTORS
++DOOMBOUNCE
+States
+	{
+	Spawn:
+	SSWV U 10
+	loop
+	Death://Hit Player
+	SSWV U 0
+	SSWV U 0 A_SpawnItemEx("StoneFloor")
+	SSWV U 0 A_SpawnItemEx("TinyExplosion")
+	SSWV U 1
+	stop
+	}
+}
+
+ACTOR KillerCroc replaces PainElemental 71
+{
+//$Category Reborn Bosses
+Tag "Killer Croc"
+SpawnID 42
+spawnid 115
+health 1050
+radius 20
+height 88
+mass 400
+speed 15
+painchance 128
+seesound "knight/sight"
+painsound "pain/pain"
+deathsound "pain/death"
+Monster
++BOSS
++FLOORCLIP
++AMBUSH //inactive till player LOS
+scale 1.25
+BloodColor "00 be 00"
+states
+	{
+	Spawn:
+	VILE A 10 A_Look
+	loop
+	See:
+	VILE A 0 ACS_Execute (701, 0, 1, 0, 0)
+	VILE AABBCCDDEEFF 2 A_VileChase
+	GOTO See+1
+	Melee:
+	SKUL C 7
+	SKUL C 7 A_SkelFist
+	SKUL D 0
+	goto See
+	Pain:
+	PAIN G 6
+	PAIN G 6 A_Pain
+	goto See
+	Death:
+	CPOS H 30 A_Scream
+	CPOS I 5
+	CPOS J 5 A_KeenDie
+	CPOS KLM 5
+	CPOS N -1
+	stop
+	Burn: //new
+	PLAY H 1 Bright
+	PLAY I 0 A_Fall
+    PLAY I 0 A_SpawnItem("BurnBurnBurn3",1)
+	TNT1 A 60 A_KeenDie
+	Stop
+	Crush:
+	CRS3 A -1 A_KeenDie
+	Stop
+	Heal:
+	VILE "[" 6
+	VILE "\" 6 A_FaceTarget
+	VILE "]" 8 A_CustomMissile("CrocRock", 60, 0, 0, 1, 0)
+	Goto See
+	}
+}
+
+ACTOR KillerCrocWalking : KillerCroc 255 //used only on map03
+{
+Height 63
+states
+	{
+	See:
+	VILE AABBCCDDEEFF 2 A_VileChase
+	LOOP
+	}
+}
+
+ACTOR TallyMan replaces SpiderMastermind 7
+{
+//$Category Reborn Bosses
+Tag "Tally Man"
+SpawnID 43
+obituary "%o was filled full of lead by TallyMan."
+health 1200
+radius 24
+height 63
+mass 1000
+speed 15
+painchance 30
+seesound "spider/sight"
+attacksound "spider/attack"
+painsound "knight/pain"
+deathsound "vile/death"
+Monster
++BOSS
++FLOORCLIP
++NORADIUSDMG
++DONTMORPH
++MISSILEMORE
++AMBUSH //inactive till player LOS
+Scale 0.88
+states
+	{
+	Spawn:
+	POSS A 10 A_Look
+	loop
+	See:
+	POSS A 0 ACS_Execute (701, 0, 2, 0, 0)
+	POSS AABBCCDD 3 A_Chase
+	GOTO See+1
+	Missile:
+	SPID G 15 bright A_FaceTarget
+	SPID HH 4 bright A_CustomBulletAttack(0, 0, 1, 4, "BulletPuff", 0)
+	goto See
+	Pain:
+	POSS G 3
+	POSS G 3 A_Pain
+	goto See
+	Death:
+	TROO I 8
+	TROO J 8 A_Scream
+	TROO KL 6
+	TROO M 20
+	TROO M -1 A_BrainDie
+	stop
+	Burn: //new
+	PLAY H 1 Bright
+	PLAY I 0 A_Fall
+    PLAY I 0 A_SpawnItem("BurnBurnBurn3",1)
+	TNT1 A 60 A_BrainDie
+	Stop
+	Crush:
+	CRS2 A -1 A_BrainDie
+	Stop
+	}
+}
+
+/*actor CopterBoom //at the moment this actor is not used
+{
+Radius 11
+Height 8
+Speed 8
+Damage 0
+Projectile
+renderstyle Add
++MISSILE
++NOINTERACTION
+States
+	{
+	Spawn:
+	COPT A 8 Bright
+	COPT B 6 Bright
+	COPT C 4 Bright A_FadeOut (0.05)
+	stop
+	}
+}*/
+
+ACTOR PenguinCopter replaces TechPillar //84
+{
+//$Category Reborn Bosses
+Tag "Penguin (Helicopter)"
+SpawnID 44
+obituary "%o was shot by Penguin from an helicopter."
+health 1500
+radius 72
+height 83
+mass 600
+speed 8
+painchance 15
+DeathSound "weapons/rocklx"
+Monster
++BOSS
++FLOORCLIP
++NOGRAVITY
++FLOAT
++FLOATBOB
++NOBLOOD
++AMBUSH //inactive till player LOS
+states
+	{
+	Spawn:
+	TNT1 A 0 A_Playsoundex("vile/firecrkl", CHAN_AUTO, 1, 0)
+	SSWV A 10 A_Look
+	loop
+	See:
+	TNT1 A 0 A_Playsoundex("vile/firecrkl", CHAN_AUTO, 1, 0)
+	SSWV A 0 ACS_Execute (701, 0, 3, 0, 0)
+	SSWV AABB 2 A_Chase
+	GOTO See+1
+	Pain:
+	TNT1 A 0 A_Playsoundex("vile/firecrkl", CHAN_AUTO, 1, 0)
+	SSWV A 1 A_Pain
+	goto See
+	Missile:
+	TNT1 A 0 A_Playsoundex("vile/firecrkl", CHAN_AUTO, 1, 0)
+	SSWV A 2 bright A_FaceTarget
+	CPOS F 2 bright light(BDPENGC1)A_SPosAttack
+	SSWV A 4 bright light(BDPENGC2)A_SPosAttack
+	CPOS F 2 bright light(BDPENGC1)A_SpidRefire
+	goto Missile+1
+	Death:
+	TNT1 A 0 A_ChangeFlag(FLOATBOB, 0)
+	SPID J 0 A_SetFloorClip
+	SPID J 5 A_Scream
+	SPID K 5 A_NoBlocking
+	TNT1 A 0 A_Playsoundex("vile/firecrkl", CHAN_AUTO, 0, 0)
+	SPID LMNOPQR 5
+	SPID S 60
+	SPID S -1 A_BrainDie
+	stop
+	}
+}
+
+ACTOR PenguinCopterSound : PenguinCopter 257
+{
+states
+	{
+	See:
+	SSWV A 2 A_PlaySound("vile/firecrkl")
+	SSWV ABB 2 A_Chase
+	}
+}
+
+ACTOR PenguinBoss2 replaces HangTLookingUp 77
+{
+//$Category Reborn Bosses
+Tag "Penguin"
+SpawnID 45
+obituary "%o was shot by The Penguin."
+health 1000
+radius 24
+height 183
+mass 1000000
+speed 0
+painchance 200
+PainSound "fatso/shotx"
+DeathSound "brain/spit"
+Monster
++BOSS
++FLOORCLIP
++AMBUSH //inactive till player LOS
+states
+	{
+	Spawn:
+	BAL7 C 5 A_Look
+	loop
+	See:
+	BAL7 A 0 ACS_Execute (701, 0, 3, 0, 0)
+	BAL7 C 5 A_Chase
+	GOTO See+1
+	Pain:
+	BAL7 D 5 A_Pain
+	BAL7 CECD 5
+	Goto See
+	Missile:
+	SSWV H 5
+	BBRN B 5 Bright A_SPosAttack
+	SSWV H 5
+	Goto See
+	Death:
+	BAL7 E 5 A_Scream
+	BBRN A 5
+	TBLU A 6
+	TBLU B 6
+	TBLU C 6 A_KeenDie
+	TBLU D -1
+	stop
+	/*Burn: //new - for these must add personalized sprites
+	PLAY H 1 Bright
+	PLAY I 0 A_Fall
+    PLAY I 0 A_SpawnItem("BurnBurnBurn1",1)
+	TNT1 A 60 A_KeenDie
+	Stop
+	Crush:
+	CRS2 A -1 A_KeenDie
+	Stop*/
+	}
+}
+
+ACTOR ScarecrowShotSmoke replaces RevenantTracerSmoke
+{
++NOBLOCKMAP
++NOGRAVITY
++NOTELEPORT
+RenderStyle Translucent
+Alpha 0.3
+DamageType "poison"
+states
+	{
+	Spawn:
+	FIRE CBC 4 A_Explode(3,16)
+	CEYE ABC 4 A_Explode(3,16)
+	stop
+	}
+}
+
+ACTOR ScarecrowShotSmoke2 replaces RevenantTracerSmoke
+{
++NOBLOCKMAP
++NOGRAVITY
++NOTELEPORT
+RenderStyle Translucent
+Alpha 0.3
+states
+	{
+	Spawn:
+	FIRE CBC 4
+	FIRE CBC 4
+	CEYE ABC 4
+	stop
+	}
+}
+
+ACTOR ScarecrowShot2
+{
+Game Doom
+Radius 11
+Height 8
+Speed 10
+Damage 5
+Projectile
++RANDOMIZE
+SeeSound "wolfss/sight"
+DeathSound "skeleton/attack"
+RenderStyle Translucent
+Alpha 0.8
+DamageType "poison"
+States
+	{
+	Spawn:
+	FATB ABAB 2 bright
+	FATB A 1 bright Light(ScareShot1) A_CStaffMissileSlither
+	FATB A 0 bright Light(ScareShot2) A_CStaffMissileSlither
+	FATB A 0 bright Light(ScareShot2) A_SpawnItemEx("ScarecrowShotSmoke2", random(-24,24), random(-24,24), random(-24,24))
+	FATB A 1 bright Light(ScareShot3) A_CStaffMissileSlither
+	FATB A 0 bright Light(ScareShot2) A_CStaffMissileSlither
+	FATB A 0 bright Light(ScareShot3) A_SpawnItemEx("ScarecrowShotSmoke", random(-24,24), random(-24,24), random(-24,24))
+	FATB B 1 bright Light(ScareShot3) A_CStaffMissileSlither
+	FATB B 0 bright Light(ScareShot4) A_CStaffMissileSlither
+	FATB A 0 bright Light(ScareShot4) A_SpawnItemEx("ScarecrowShotSmoke2", random(-24,24), random(-24,24), random(-24,24))
+	FATB B 1 bright Light(ScareShot5) A_CStaffMissileSlither
+	FATB B 0 bright Light(ScareShot4) A_CStaffMissileSlither
+	FATB B 0 bright Light(ScareShot5) A_SpawnItemEx("ScarecrowShotSmoke", random(-24,24), random(-24,24), random(-24,24))
+	goto Spawn+4
+	Death:
+	FBXP A 8 bright
+	FBXP B 6 bright
+	FBXP C 4 bright
+	stop
+	}
+}
+
+ACTOR Scarecrow replaces Revenant 66
+{
+//$Category Reborn Bosses
+Tag "Scarecrow"
+SpawnID 46
+obituary "%o couldn't evade a Scarecrow's poisonball."
+hitobituary "%o was scared to death of Scarecrow."
+health 1300
+radius 24
+height 63
+mass 500
+speed 10
+painchance 100
+seesound "skeleton/sight"
+painsound "knight/pain"
+deathsound "skeleton/death"
+Monster
++BOSS
++FLOORCLIP
++LONGMELEERANGE
++MISSILEMORE
+DamageFactor "poison", 0.0
+DamageFactor "poisoncloud", 0.0
+Scale 0.88
+BloodColor "00 be 00"
+states
+	{
+	Spawn:
+	BOSS A 10 A_Look
+	loop
+	See:
+	BOSS A 0 ACS_Execute (701, 0, 4, 0, 0)
+	BOSS AABBCCDD 2 A_Chase
+	GOTO See+1
+	Melee:
+	SKEL G 0 A_FaceTarget
+	SKEL G 6 A_SkelWhoosh
+	SKEL H 6 A_FaceTarget
+	SKEL I 6 A_SkelFist
+	goto See
+	Missile:
+	SKEL J 0 A_Jump(128,"Missile2")
+	SKEL J 10 A_FaceTarget
+	SKEL K 10 Light(ScareShot3) A_CustomMissile("ScarecrowShot2", 40)
+	SKEL K 10 A_FaceTarget
+	goto See
+	Missile2:
+	SKEL J 10 A_FaceTarget
+	SKEL K 0 Light(ScareShot3) A_CustomMissile("ScarecrowShot2", 40,-5,5)
+	SKEL K 10 Light(ScareShot3) A_CustomMissile("ScarecrowShot2", 40,5,-5)
+	SKEL K 10 A_FaceTarget
+	goto See
+	Pain:
+	SKEL L 5
+	SKEL L 5 A_Pain
+	goto See
+	Death:
+	SKEL LM 7
+	SKEL N 7 A_Scream
+	SKEL Q -1 A_KeenDie
+	loop
+	Burn: //new
+	PLAY H 1 Bright
+	PLAY I 0 A_Fall
+    PLAY I 0 A_SpawnItem("BurnBurnBurn2",1)
+	TNT1 A 60 A_KeenDie
+	Stop
+	Crush:
+	CRS2 A -1 A_KeenDie
+	Stop
+	}
+}
+
+ACTOR TwoFaceRocket replaces BaronBall
+{
+SpawnID 66
+Game Doom
+Radius 6
+Height 16
+Speed 15
+FastSpeed 20
+Damage 5
+SeeSound "baron/attack"
+DeathSound "weapons/rocklx"
+Projectile
++BLOODLESSIMPACT
++RANDOMIZE
+states
+	{
+	Spawn:
+	BAL7 A 4 bright Light(BDFMAN1)
+	loop
+	Death:
+	MISL B 3 bright Light(BDFMAN4) A_Explode(128)
+	MISL CD 3 bright Light(BDFMAN3)
+	APBX AB 3 bright Light(BDFMAN2)
+	stop
+	}
+}
+
+ACTOR TwoFace replaces Cyberdemon 16
+{
+//$Category Reborn Bosses
+Tag "Two Face"
+SpawnID 47
+obituary "%o was splattered by a Two Face's rocket"
+health 1200
+radius 24
+height 63
+mass 1000
+speed 7
+painchance 128
+seesound "cyber/sight"
+painsound "cyber/pain"
+deathsound "keen/death"
+Monster
++BOSS
++FLOORCLIP
++NORADIUSDMG
++DONTMORPH
++MISSILEMORE
++AMBUSH //inactive till player LOS
+Scale 0.88
+states
+	{
+	Spawn:
+	CYBR A 10 A_Look
+	loop
+	See:
+	CYBR A 0 ACS_Execute (701, 0, 5, 0, 0)
+	CYBR AABBCCDD 3 A_Chase
+	GOTO See+1
+	Melee:
+	BOS2 G 15 A_SkelFist
+	CYBR A 10 A_FaceTarget
+	Missile:
+	CYBR E 0 A_FaceTarget
+	CYBR F 8 BRIGHT Light(BDFOES2) A_CustomMissile("BaronBall", 70, 12)
+	CYBR E 6 A_FaceTarget
+	goto See
+	Pain:
+	CYBR G 10 A_Pain
+	goto See
+	Death:
+	CYBR H 10
+	CYBR I 10 A_Scream
+	CYBR JKL 10
+	CYBR M 10 A_NoBlocking
+	CYBR NO 10
+	CYBR P 30
+	CYBR P -1 A_KeenDie
+	Burn: //new
+	PLAY H 1 Bright
+	PLAY I 0 A_Fall
+    PLAY I 0 A_SpawnItem("BurnBurnBurn1",1)
+	TNT1 A 60 A_KeenDie
+	Stop
+	Crush:
+	CRS2 A -1 A_KeenDie
+	Stop
+	}
+}
+
+ACTOR jokerTrickDart1 replaces FatShot
+{
+SpawnID 67
+Game Doom
+Radius 6
+Height 8
+Speed 20
+FastSpeed 20
+Damage 3
+SeeSound "weapons/rocklf"
+DeathSound "weapons/plasmax"
+Projectile
+states
+	{
+	Spawn:
+	MANF A -1
+	loop
+	Death:
+	PLAY UVW 8 BRIGHT
+	stop
+	}
+}
+
+ACTOR jokerTrickDart2 : jokerTrickDart1 {Translation "176:191=112:127","40:47=9:12"}
+ACTOR jokerTrickDart3 : jokerTrickDart1 {Translation "176:191=192:207","40:47=204:207"}
+
+ACTOR Joker replaces ZombieMan //64
+{
+//$Category Reborn Bosses
+Tag "Joker A"
+SpawnID 48
+obituary "%o was shot by The Joker."
+health 1600
+radius 24
+height 63
+mass 1000
+speed 8
+painchance 20
+seesound "pain/active"
+attacksound "weapons/pistol"
+painsound "vile/pain"
+deathsound "vile/death"
+Monster
++BOSS
++FLOORCLIP
++AMBUSH //inactive till player LOS
+Scale 0.88
+states
+	{
+	Spawn:
+	SPID A 10 A_Look
+	loop
+	See:
+	SPID A 0 ACS_Execute (701, 0, 6, 0, 0)
+	SPID ABCDEF 3 A_Chase
+	GOTO See+1
+	Missile:
+	VILE G 0
+	VILE G 0 A_JumpIfHealthLower (801, "Missile2")
+	Missile1:
+	VILE GHIJK 6 A_FaceTarget
+	Shoot:
+	VILE L 6 Bright Light(BDFOES2) A_VileAttack
+	VILE K 6 A_LookEx(0, 0, 0, 0, 0, "Shoot2")
+	goto Away
+	Shoot2:
+	VILE KKKKKKK 5  A_FaceTarget
+	VILE L 6 Bright Light(BDFOES2) A_VileAttack
+	VILE K 6 A_LookEx(0, 0, 0, 0, 0, "Shoot3")
+	Shoot3:
+	VILE KKKKKKK 5  A_FaceTarget
+	VILE L 6 Bright Light(BDFOES2) A_VileAttack
+	VILE K 6
+	Away:
+	VILE JIH 6 A_FaceTarget
+	goto See
+	Missile2:
+	FATT G 20 A_FaceTarget
+	FATT G 0 A_Jump(86, "Dart3")
+	FATT G 0 A_Jump(128, "Dart2")
+	Dart1:
+	FATT G 4 A_CustomMissile(JokerTrickDart1, 44, 0, 10)
+	FATT G 4 A_CustomMissile(JokerTrickDart2, 44, 0, 5)
+	FATT H 4 A_CustomMissile(JokerTrickDart2, 44, 0, 0)
+	FATT H 4 A_CustomMissile(JokerTrickDart3, 44, 0, -5)
+	FATT H 4 A_CustomMissile(JokerTrickDart1, 44, 0, -10)
+	goto See
+	Dart2:
+	FATT G 4 A_CustomMissile(JokerTrickDart3, 44, 0, -15)
+	FATT G 4 A_CustomMissile(JokerTrickDart1, 44, 0, -7)
+	FATT H 4 A_CustomMissile(JokerTrickDart3, 44, 0, 0)
+	FATT H 4 A_CustomMissile(JokerTrickDart2, 44, 0, 8)
+	FATT H 4 A_CustomMissile(JokerTrickDart2, 44, 0, 15)
+	goto See
+	Dart3:
+	FATT G 4 A_CustomMissile(JokerTrickDart2, 44, 0, 20)
+	FATT G 4 A_CustomMissile(JokerTrickDart3, 44, 0, 3)
+	FATT H 4 A_CustomMissile(JokerTrickDart1, 44, 0, -3)
+	FATT H 9 A_CustomMissile(JokerTrickDart3, 44, 0, -20)
+	FATT H 4 A_CustomMissile(JokerTrickDart1, 44, 0, 0)
+	goto See
+	Pain:
+	VILE Q 5 A_Pain
+	goto See
+	Death:
+	KEEN AB 5
+	KEEN C 5 A_Scream
+	KEEN DE 5
+	KEEN F -1 A_KeenDie
+	stop
+	Burn: //new
+	PLAY H 1 Bright
+	PLAY I 0 A_Fall
+    PLAY I 0 A_SpawnItem("BurnBurnBurn1",1)
+	TNT1 A 60 A_KeenDie
+	Stop
+	Crush:
+	CRS2 A -1 A_KeenDie
+	Stop
+	}
+}
+
+ACTOR JokerObserving : Joker 256
+{
+//$Category Reborn Bosses
+Tag "Joker (Observing)"
+obituary "%o was shot by The Joker."
+health 800
+radius 24
+height 63
+mass 1000
+speed 8
+painchance 20
+seesound "pain/active"
+attacksound "weapons/pistol"
+painsound "vile/pain"
+deathsound "vile/death"
+Monster
++FLOORCLIP
+Scale 0.88
+states
+	{
+	Spawn:
+	SPID A 10 A_Look
+	loop
+	See:
+	SPID ABCDEF 3 A_Chase
+	loop
+	Missile:
+	VILE GHIJK 6 A_FaceTarget
+	VILE L 6 Bright A_VileAttack
+	VILE KJIH 6 A_FaceTarget
+	goto See
+	Pain:
+	VILE Q 5 A_Pain
+	goto See
+	Death:
+	KEEN AB 5
+	KEEN C 5 A_Scream
+	KEEN DE 5
+	KEEN F -1 A_KeenDie
+	stop
+	Burn: //new
+	PLAY H 1 Bright
+	PLAY I 0 A_Fall
+    PLAY I 0 A_SpawnItem("BurnBurnBurn1",1)
+	TNT1 A 60 A_KeenDie
+	Stop
+	Crush:
+	CRS2 A -1 A_KeenDie
+	Stop
+	}
+}
+
+ACTOR Joker2 replaces Clip 2007
+{
+//$Category Reborn Bosses
+Tag "Joker B"
+SpawnID 49
+obituary "%o was tricked by The Joker."
+health 800
+radius 24
+height 63
+mass 1000
+speed 8
+painchance 20
+seesound "pain/active"
+painsound "vile/pain"
+deathsound "vile/death"
+Monster
++BOSS
++FLOORCLIP
++AMBUSH //inactive till player LOS
+Scale 0.88
+states
+	{
+	Spawn:
+	SPID A 10 A_Look
+	loop
+	See:
+	SPID A 0 ACS_Execute (701, 0, 8, 0, 0)
+	SPID ABCDEF 3 A_Chase
+	GOTO See+1
+	Missile:
+	FATT G 20 A_FaceTarget
+	FATT G 0 A_Jump(86, "Dart3")
+	FATT G 0 A_Jump(128, "Dart2")
+	Dart1:
+	FATT G 4 A_CustomMissile(JokerTrickDart1, 44, 0, 10)
+	FATT G 4 A_CustomMissile(JokerTrickDart2, 44, 0, 5)
+	FATT H 4 A_CustomMissile(JokerTrickDart2, 44, 0, 0)
+	FATT H 4 A_CustomMissile(JokerTrickDart3, 44, 0, -5)
+	FATT H 4 A_CustomMissile(JokerTrickDart1, 44, 0, -10)
+	goto See
+	Dart2:
+	FATT G 4 A_CustomMissile(JokerTrickDart3, 44, 0, -15)
+	FATT G 4 A_CustomMissile(JokerTrickDart1, 44, 0, -7)
+	FATT H 4 A_CustomMissile(JokerTrickDart3, 44, 0, 0)
+	FATT H 4 A_CustomMissile(JokerTrickDart2, 44, 0, 8)
+	FATT H 4 A_CustomMissile(JokerTrickDart2, 44, 0, 15)
+	goto See
+	Dart3:
+	FATT G 4 A_CustomMissile(JokerTrickDart2, 44, 0, 20)
+	FATT G 4 A_CustomMissile(JokerTrickDart3, 44, 0, 3)
+	FATT H 4 A_CustomMissile(JokerTrickDart1, 44, 0, -3)
+	FATT H 9 A_CustomMissile(JokerTrickDart3, 44, 0, -20)
+	FATT H 4 A_CustomMissile(JokerTrickDart1, 44, 0, 0)
+	goto See
+	Pain:
+	VILE Q 5
+	VILE Q 5 A_Pain
+	goto See
+	Death:
+	KEEN AB 5
+	KEEN C 5 A_Scream
+	KEEN DE 5
+	KEEN F -1 A_KeenDie
+	stop
+	Burn: //new
+	PLAY H 1 Bright
+	PLAY I 0 A_Fall
+    PLAY I 0 A_SpawnItem("BurnBurnBurn1",1)
+	TNT1 A 60 A_KeenDie
+	Stop
+	Crush:
+	CRS2 A -1 A_KeenDie
+	Stop
+	}
+}
+
+//Health was 140; Final glove more powerful for DM/other
+ACTOR Bane replaces BaronOfHell 3003
+{
+//$Category Reborn Bosses
+Tag "Bane"
+SpawnID 50
+obituary "%o was beat down by Bane."
+health 1400
+radius 24
+height 64
+mass 500
+speed 15
+Damage 5
+painchance 150
+attacksound "skull/melee"
+painsound "knight/pain"
+deathsound "brain/cube"
+Monster
++BOSS
++FLOORCLIP
++AMBUSH //inactive till player LOS
+scale 1.25
+states
+	{
+	Spawn:
+	SKEL A 10 A_Look
+	loop
+	See:
+	CPOS R 0 ACS_Execute (701, 0, 7, 0, 0)
+	CPOS R 8
+	CPOS S 8 A_PlaySound("bane/see")
+	CPOS T 23
+	CPOS S 7
+	CPOS R 7
+	SKEL ABCDEF 4 A_Chase
+	goto See+6
+	Pain:
+	SPID I 2
+	SPID I 2 A_Pain
+	goto See+6
+	Melee:
+	HEAD B 5 A_FaceTarget
+	HEAD C 5 A_FaceTarget
+	TROO G 6 A_SkelFist
+	HEAD D 6 A_FaceTarget
+	goto See+6
+	Missile:
+	HEAD B 10 A_FaceTarget
+	TROO E 4 A_SkullAttack
+	TROO F 25
+	loop
+	Death:
+	BOSS I 8
+	BOSS J 8 A_Scream
+	BOSS KLMN 8
+	BOSS O 50
+	BOSS O 50 A_BrainDie
+	loop
+	Burn: //new - this is only seen if you cheat previously, can't combat with flamer
+	PLAY H 1 Bright
+	PLAY I 0 A_Fall
+    PLAY I 0 A_SpawnItem("BurnBurnBurn3",1)
+	TNT1 A 60 A_BrainDie
+	Stop
+	Crush:
+	CRS3 A -1 A_BrainDie
+	Stop
+	}
+}
+
+Actor BaneEnd : Bane //with normal Bane endseq will loop his death state
+{
+States
+	{
+	Death:
+	BOSS I 8
+	BOSS J 8 A_Scream
+	BOSS KLMN 8
+	BOSS O 50
+	BOSS O 50 A_BrainDie
+	Stop
+	}
+}
+//TODO: make bane grow with venom power

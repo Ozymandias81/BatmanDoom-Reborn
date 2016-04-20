@@ -1,0 +1,42 @@
+//////////
+//ALLIES//
+//////////
+ACTOR MayorHostage replaces Candelabra 35
+{
+//$Category Reborn Friends
+Tag "Major Kroll (Hostage)"
+SpawnID 1
+health 200
+radius 24
+height 56
+mass 1000000
+speed 0
+painchance 200
+SeeSound "cyber/death"
+PainSound "knight/pain"
+DeathSound "weapons/rocklx"
++SOLID
++SHOOTABLE
++FLOORCLIP
+states
+	{
+	Spawn:
+	HEAD F 10 A_Look
+	loop
+	See:
+	HEAD F 50
+	HEAD E 12
+	HEAD F 12 A_PlaySound("vile/start")
+	Goto See+1
+	Pain:
+	MANF B 7 A_Pain
+	Goto See+1
+	Death:
+	VILE R 5 Bright
+	VILE S 5 Bright A_Scream
+	VILE TUVWX 5 Bright
+	VILE YZ 5
+	VILE Z -1 A_BrainDie
+	stop
+	}
+}

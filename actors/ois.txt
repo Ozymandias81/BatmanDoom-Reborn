@@ -1,0 +1,83 @@
+//1966 onomatopoeias effects!
+ACTOR OIS_Spawner
+{
+Game Doom
+Radius 1
+Height 1
+Scale 0.3
+Projectile
+States
+	{
+	Spawn:
+	TNT1 A 0 A_Jump(256,"OIS1", "OIS2", "OIS3")
+	OIS1:
+	OIS1 FEDCBA 1 A_BishopMissileWeave
+	OIS1 AAAA 1 A_FadeOut(0.50)
+	Stop
+	OIS2:
+	OIS2 FEDCBA 1 A_BishopMissileWeave
+	OIS2 AAAA 1 A_FadeOut(0.50)
+	Stop
+	OIS3:
+	OIS3 EDCBA 1 A_BishopMissileWeave
+	OIS3 AAAA 1 A_FadeOut(0.50)
+	Stop
+	}
+}
+
+ACTOR 1966Puff : BulletPuff replaces BulletPuff //punch puffs
+{
+Game Doom
+SpawnID 131
++NOBLOCKMAP
++NOGRAVITY
++ALLOWPARTICLES
++RANDOMIZE
+RenderStyle Translucent
+Alpha 0.5
+VSpeed 1
+Mass 5
+States
+	{
+	Spawn:
+	TNT1 A 0 NoDelay A_JumpIf(CallACS("Biffs")==0,5)
+	PUFF A 4 Bright
+	PUFF B 4
+	Melee:
+	TNT1 A 0 bright A_SpawnItemEx("OIS_Spawner",0,0,random(24,32),0,0,0,random(0,360))
+	PUFF CD 4
+	Stop
+	}
+}
+
+ACTOR OIS_Boom
+{
+Game Doom
+Radius 1
+Height 1
+Scale 0.3
+Projectile
+States
+	{
+	Spawn:
+	OIS4 FEDCBA 2 A_BishopMissileWeave
+	OIS4 AAAA 2 A_FadeOut(0.50)
+	Stop
+	}
+}
+
+Actor BoomPuff : 1966Puff
+{
+States
+	{
+	Spawn:
+	TNT1 A 0 NoDelay A_JumpIf(CallACS("Biffs")==0,5)
+	PUFF A 4 Bright
+	PUFF B 4
+	Melee:
+	Death:
+	TNT1 A 0 bright A_SpawnItemEx("OIS_Boom",0,0,random(8,16),0,0,0,random(0,360))
+	PUFF CD 4
+	Stop
+	}
+}

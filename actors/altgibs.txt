@@ -1,0 +1,84 @@
+//New gibs
+ACTOR BurnBurnBurn1
+{
+Radius 16
+Height 56
+Speed 20
+-SOLID
++FLOORCLIP
++RANDOMIZE
++DONTSPLASH
++LOOKALLAROUND
+-SHOOTABLE
+-COUNTKILL
+Reactiontime 3
+states
+	{
+	Spawn:
+	XFLM A 4 Bright A_Look
+	goto See
+	See:
+	XFLM B 4 Bright A_Scream
+	XFLM C 4 Bright A_Wander
+	XFLM D 4 Bright A_Wander
+	XFLM E 4 Bright A_Scream
+	XFLM F 4 Bright A_Wander
+	XFLM A 4 Bright A_Wander
+	XFLM B 4 Bright A_Scream
+	XFLM C 4 Bright A_Wander
+	XFLM D 4 Bright A_Wander
+	XFLM E 4 Bright A_Scream
+	XFLM F 4 Bright A_Wander
+	XFLM A 4 Bright A_Wander
+	XFLM B 4 Bright A_Scream
+	XFLM C 4 Bright A_Wander
+	XFLM D 4 Bright A_Wander
+	XFLM E 4 Bright A_Scream
+	XFLM F 4 Bright A_Wander
+	XFLM A 4 Bright A_Wander
+	XFLM B 4 Bright A_Scream
+	XFLM C 4 Bright A_Wander
+	XFLM D 4 Bright A_Wander
+	XFLM E 4 Bright A_Scream
+	XFLM F 4 Bright A_Wander
+	XFLM A 4 Bright A_Wander
+	XFLM B 4 Bright A_Scream
+	XFLM C 4 Bright A_Wander
+	XFLM D 4 Bright A_Wander
+	Goto Death
+	Death:
+	XFLM E 4 Bright A_Scream
+	XFLM F 4 Bright //A_NoBlocking
+	XFLM GHIJK 6 Bright
+	XFLM LMNOLMNOLMNOLMNOLMNOLMNOLMNOLMNOLMNOLMNOLMNOLMNOLMNOLMNOLMNOLMNO 4 Bright
+	DeathEnd:
+	CRS4 A -1
+	Loop
+	}
+}
+
+Actor BurnBurnBurn2 : BurnBurnBurn1
+{
+Radius 24
+Height 64
+Scale 1.15
+States
+	{
+	DeathEnd:
+	CRS5 A -1
+	Loop
+	}
+}
+
+Actor BurnBurnBurn3 : BurnBurnBurn1
+{
+Radius 32
+Height 72
+Scale 1.30
+States
+	{
+	DeathEnd:
+	CRS6 A -1
+	Loop
+	}
+}
