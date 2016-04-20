@@ -1,0 +1,562 @@
+// MAPINFO for Doom 2 only, no BFG Edition replacement for NERVE
+gameinfo
+{
+borderflat = "ALLBLACK"
+playerclasses = "BatmanPlayer"
+}
+
+map MAP01 lookup "Map01 - C0L1 Gotham Station Hit"
+{
+	titlepatch = "CWILV00"
+	next = "MAP02"
+	secretnext = "MAP02"
+	sky1 = "SKY1", 0
+	cluster = 5
+	sucktime = 1
+	music = "D_RUNNIN"
+	laxmonsteractivation
+}
+
+map MAP02 lookup "Map02 - C1L0 Killer Croc"
+{
+	titlepatch = "CWILV01"
+	next = "MAP03"
+	secretnext = "MAP03"
+	sky1 = "SKY1", 0
+	cluster = 5
+	sucktime = 1
+	music = "D_STALKS"
+	laxmonsteractivation
+}
+
+map MAP03 lookup "Map03 - C1L1 Follow Croc's Trail Through The Sewer"
+{
+	titlepatch = "CWILV02"
+	next = "MAP04"
+	secretnext = "MAP04"
+	sky1 = "SKY1", 0
+	cluster = 5
+	sucktime = 1
+	music = "D_COUNTD"
+	laxmonsteractivation
+}
+
+map MAP04 lookup "Map04 - C1L2 Capture Killer Croc"
+{
+	titlepatch = "CWILV03"
+	next = "MAP05"
+	secretnext = "MAP05"
+	sky1 = "SKY1", 0
+	cluster = 5
+	sucktime = 1
+	music = "D_BETWEE"
+	laxmonsteractivation
+}
+
+map MAP05 lookup "Map05 - C2L0 Tally Man"
+{
+	titlepatch = "CWILV04"
+	next = "MAP06"
+	secretnext = "MAP06"
+	sky1 = "SKY1", 0
+	cluster = 5
+	sucktime = 1
+	music = "D_DOOM"
+	laxmonsteractivation
+}
+
+map MAP06 lookup "Map06 - C2L1 Stop Gang Fights In ChinaTown"
+{
+	titlepatch = "CWILV05"
+	next = "MAP07"
+	secretnext = "MAP07"
+	sky1 = "SKY1", 0
+	cluster = 5
+	sucktime = 1
+	music = "D_THE_DA"
+	laxmonsteractivation
+}
+
+map MAP07 lookup "Map07 - C2L2 Reach Tally Man's Hideout"
+{
+	titlepatch = "CWILV06"
+	next = "MAP08"
+	secretnext = "MAP08"
+	sky1 = "SKY1", 0
+	cluster = 6
+	sucktime = 1
+	map07special
+	music = "D_SHAWN"
+	laxmonsteractivation
+}
+
+map MAP08 lookup "Map08 - C2L3 Find And Stop Tally Man"
+{
+	titlepatch = "CWILV07"
+	next = "MAP09"
+	secretnext = "MAP09"
+	sky1 = "SKY1", 0
+	cluster = 6
+	sucktime = 1
+	music = "D_DDTBLU"
+	laxmonsteractivation
+}
+
+map MAP09 lookup "Map09 - C3L0 Penguin"
+{
+	titlepatch = "CWILV08"
+	next = "MAP10"
+	secretnext = "MAP10"
+	sky1 = "SKY1", 0
+	cluster = 6
+	sucktime = 1
+	music = "D_IN_CIT"
+	laxmonsteractivation
+}
+
+map MAP10 lookup "Map10 - C3L1 Stop Penguin's Illegal Casino Activity"
+{
+	titlepatch = "CWILV09"
+	next = "MAP11"
+	secretnext = "MAP11"
+	sky1 = "SKY1", 0
+	cluster = 6
+	sucktime = 1
+	music = "D_DEAD"
+	laxmonsteractivation
+}
+
+map MAP11 lookup "Map11 - C3L2 Save Hostages In Gotham Hospital"
+{
+	titlepatch = "CWILV10"
+	next = "MAP12"
+	secretnext = "MAP12"
+	sky1 = "SKY1", 0
+	cluster = 6
+	sucktime = 1
+	music = "D_STLKS2"
+	laxmonsteractivation
+}
+
+map MAP12 lookup "Map12 - C3L3 Sieze Oswald Cobblepot"
+{
+	titlepatch = "CWILV11"
+	next = "MAP13"
+	secretnext = "MAP13"
+	sky1 = "SKY2", 0
+	cluster = 7
+	sucktime = 1
+	music = "D_THEDA2"
+	laxmonsteractivation
+}
+
+map MAP13 lookup "Map13 - C4L0 Scarecrow"
+{
+	titlepatch = "CWILV12"
+	next = "MAP14"
+	secretnext = "MAP14"
+	sky1 = "SKY2", 0
+	cluster = 7
+	sucktime = 1
+	music = "D_DOOM2"
+	laxmonsteractivation
+}
+
+map MAP14 lookup "Map14 - C4L1 Investigate Explosives In Gate Street Tunnel"
+{
+	titlepatch = "CWILV13"
+	next = "MAP15"
+	secretnext = "MAP15"
+	sky1 = "SKY2", 0
+	cluster = 7
+	sucktime = 1
+	music = "D_DDTBL2"
+	laxmonsteractivation
+}
+
+map MAP15 lookup "Map15 - C4L2 Rescure Mayor Kroll"
+{
+	titlepatch = "CWILV14"
+	next = "MAP16"
+	secretnext = "MAP31"
+	sky1 = "SKY2", 0
+	cluster = 7
+	sucktime = 1
+	music = "D_RUNNI2"
+	laxmonsteractivation
+}
+
+map MAP16 lookup "Map16 - C4L4 Capture Scarecrow"
+{
+	titlepatch = "CWILV15"
+	next = "MAP17"
+	secretnext = "MAP17"
+	sky1 = "SKY2", 0
+	cluster = 7
+	sucktime = 1
+	music = "D_DEAD2"
+	laxmonsteractivation
+}
+
+map MAP17 lookup "Map17 - C5L0 Two Face"
+{
+	titlepatch = "CWILV16"
+	next = "MAP18"
+	secretnext = "MAP18"
+	sky1 = "SKY2", 0
+	cluster = 7
+	sucktime = 1
+	music = "D_STLKS3"
+	laxmonsteractivation
+}
+
+map MAP18 lookup "Map18 - C5L1 Stop Two Face In Blackgate Breakout"
+{
+	titlepatch = "CWILV17"
+	next = "MAP19"
+	secretnext = "MAP19"
+	sky1 = "SKY2", 0
+	cluster = 7
+	sucktime = 1
+	music = "D_ROMERO"
+}
+
+map MAP19 lookup "Map19 - C5L2 Find Two Face In Battergate: 'The War Zone'"
+{
+	titlepatch = "CWILV18"
+	next = "MAP20"
+	secretnext = "MAP20"
+	sky1 = "SKY2", 0
+	cluster = 7
+	sucktime = 1
+	music = "D_SHAWN2"
+	laxmonsteractivation
+}
+
+map MAP20 lookup "Map20 - C5L3 Sieze Two Face In Gotham Riot"
+{
+	titlepatch = "CWILV19"
+	next = "MAP21"
+	secretnext = "MAP21"
+	sky1 = "SKY2", 0
+	cluster = 7
+	sucktime = 1
+	music = "D_MESSAG"
+}
+
+map MAP21 lookup "Map21 - C6L0 Joker"
+{
+	titlepatch = "CWILV20"
+	next = "MAP22"
+	secretnext = "MAP22"
+	sky1 = "SKY3", 0
+	cluster = 8
+	sucktime = 1
+	music = "D_COUNT2"
+	laxmonsteractivation
+}
+
+map MAP22 lookup "Map22 - C6L1 Destroy Axis Chemical Industry"
+{
+	titlepatch = "CWILV21"
+	next = "MAP23"
+	secretnext = "MAP23"
+	sky1 = "SKY3", 0
+	cluster = 8
+	sucktime = 1
+	music = "D_DDTBL3"
+	laxmonsteractivation
+}
+
+map MAP23 lookup "Map23 - C6L2 Follow Joker's Tracks To North Gotham Mansion"
+{
+	titlepatch = "CWILV22"
+	next = "MAP24"
+	secretnext = "MAP24"
+	sky1 = "SKY3", 0
+	cluster = 8
+	sucktime = 1
+	music = "D_AMPIE"
+}
+
+map MAP24 lookup "Map24 - C6L3 Reach The Mansion's Theater"
+{
+	titlepatch = "CWILV23"
+	next = "MAP25"
+	secretnext = "MAP25"
+	sky1 = "SKY3", 0
+	cluster = 8
+	sucktime = 1
+	music = "D_THEDA3"
+	laxmonsteractivation
+}
+
+map MAP25 lookup "Map25 - C6L4 Joker Escapes! Confront Him In Gotham Cathedral"
+{
+	titlepatch = "CWILV24"
+	next = "MAP26"
+	secretnext = "MAP26"
+	sky1 = "SKY3", 0
+	cluster = 8
+	sucktime = 1
+	music = "D_ADRIAN"
+	laxmonsteractivation
+}
+
+map MAP26 lookup "Map26 - C7L0 Bane"
+{
+	titlepatch = "CWILV25"
+	next = "MAP27"
+	secretnext = "MAP27"
+	sky1 = "SKY3", 0
+	cluster = 8
+	sucktime = 1
+	music = "D_MESSG2"
+	laxmonsteractivation
+}
+
+map MAP27 lookup "Map27 - C7L1 Stop The 43rd Armoury Hit"
+{
+	titlepatch = "CWILV26"
+	next = "MAP28"
+	secretnext = "MAP28"
+	sky1 = "SKY3", 0
+	cluster = 8
+	sucktime = 1
+	music = "D_ROMER2"
+	laxmonsteractivation
+}
+
+map MAP28 lookup "Map28 - C7L1 Stop The Arkham Asylum Breakout"
+{
+	titlepatch = "CWILV27"
+	next = "MAP29"
+	secretnext = "MAP29"
+	sky1 = "SKY3", 0
+	cluster = 8
+	sucktime = 1
+	music = "D_TENSE"
+	laxmonsteractivation
+}
+
+map MAP29 lookup "Map29 - C7L2 Asylum Part 2"
+{
+	titlepatch = "CWILV28"
+	next = "MAP30"
+	secretnext = "MAP30"
+	sky1 = "SKY3", 0
+	cluster = 8
+	sucktime = 1
+	music = "D_SHAWN3"
+	laxmonsteractivation
+}
+
+map MAP30 lookup "Map30 - C7L3 ???"
+{
+	titlepatch = "CWILV29"
+	next = "EndGameC"
+	secretnext = "EndGameC"
+	sky1 = "SKY3", 0
+	cluster = 8
+	sucktime = 1
+	music = "D_OPENIN"
+	laxmonsteractivation
+}
+
+map MAP31 lookup "Map31 - C4L3 Scarecrow Escapes. Find Him"
+{
+	titlepatch = "CWILV30"
+	next = "MAP16"
+	secretnext = "MAP32"
+	sky1 = "SKY3", 0
+	cluster = 9
+	sucktime = 1
+	music = "D_EVIL"
+	laxmonsteractivation
+}
+
+map MAP32 lookup "Map32 - No Comment..."
+{
+	titlepatch = "CWILV31"
+	next = "MAP16"
+	secretnext = "MAP16"
+	sky1 = "SKY3", 0
+	par = 80
+	cluster = 10
+	sucktime = 1
+	music = "D_ULTIMA"
+	laxmonsteractivation
+}
+
+cluster 5
+{
+	flat = "GOTHAM1"
+	music = "D_READ_M"
+	exittext = lookup, "ENDPART1"
+}
+
+cluster 6
+{
+	flat = "GOTHAM1"
+	music = "D_READ_M"
+	exittext = lookup, "ENDPART2"
+}
+
+cluster 7
+{
+	flat = "GOTHAM1"
+	music = "D_READ_M"
+	exittext = lookup, "ENDPART3"
+}
+
+cluster 8
+{
+	flat = "GOTHAM1"
+	music = "D_READ_M"
+	exittext = lookup, "ENDPART4"
+}
+
+cluster 9
+{
+	flat = "GOTHAM1"
+	music = "D_READ_M"
+	entertext = lookup, "ENDPART5"
+}
+
+cluster 10
+{
+	flat = "SECRET32"
+	music = "D_READ_M"
+	entertext = lookup, "ENDPART6"
+}
+
+Intermission Inter_Cast
+{
+	Image
+	{
+		// This is only here to initialize the background and the music
+		Background = "$bgcastcall"
+		Time = -1
+		Music = "$MUSIC_EVIL"
+	}
+	Link = Doom2Cast
+}
+
+Intermission Doom2Cast
+{
+	Cast
+	{
+		CastClass = "BadBird1"
+		CastName = "Hawk"
+		AttackSound = "Missile", 1, ""
+	}
+	Cast
+	{
+		CastClass = "Terrorist1"
+		CastName = "Terrorist"
+		AttackSound = "Missile", 1, ""
+	}
+	Cast
+	{
+		CastClass = "ShotgunThief1"
+		CastName = "Shotgun Thief"
+		AttackSound = "Missile", 1, ""
+	}
+	Cast
+	{
+		CastClass = "Cheung1"
+		CastName = "Chinese Cheung"
+		AttackSound = "Missile", 1, ""
+	}
+	Cast
+	{
+		CastClass = "Strake1"
+		CastName = "Strake"
+		AttackSound = "Missile", 1, ""
+	}
+	Cast
+	{
+		CastClass = "NinjaEnd"
+		CastName = "Razors Ninja"
+		AttackSound = "Missile", 1, ""
+	}
+	Cast
+	{
+		CastClass = "FlameMan1"
+		CastName = "Flamer Man"
+		AttackSound = "Missile", 1, ""
+	}
+	Cast
+	{
+		CastClass = "Sniper"
+		CastName = "Sniper"
+		AttackSound = "Missile", 1, ""
+	}
+	Cast
+	{
+		CastClass = "Clown1"
+		CastName = "Clown"
+		AttackSound = "Missile", 1, ""
+	}
+	Cast
+	{
+		CastClass = "Zeke1"
+		CastName = "Molotov Zeke"
+		AttackSound = "Missile", 1, ""
+	}
+	Cast
+	{
+		CastClass = "RocketMan"
+		CastName = "Rocketeer Man"
+		AttackSound = "Missile", 1, ""
+	}
+	Cast
+	{
+		CastClass = "KillerCroc"
+		CastName = "Killer Croc"
+		AttackSound = "Missile", 1, ""
+	}
+	Cast
+	{
+		CastClass = "TallyMan"
+		CastName = "Tally Man"
+		AttackSound = "Missile", 1, ""
+	}
+	Cast
+	{
+		CastClass = "PenguinBoss2"
+		CastName = "Penguin"
+		AttackSound = "Missile", 1, ""
+	}
+	Cast
+	{
+		CastClass = "Scarecrow"
+		CastName = "Scarecrow"
+		AttackSound = "Missile", 1, ""
+	}
+	Cast
+	{
+		CastClass = "TwoFace"
+		CastName = "Two-Face"
+		AttackSound = "Missile", 1, ""
+	}
+	Cast
+	{
+		CastClass = "Joker"
+		CastName = "The Joker"
+		AttackSound = "Missile", 1, ""
+	}
+	Cast
+	{
+		CastClass = "BaneEnd"
+		CastName = "Bane"
+		AttackSound = "Missile", 1, ""
+	}
+	Cast
+	{
+		CastClass = "BatmanPlayer"
+		CastName = "Batman"
+		AttackSound = "Missile", 1, "bataunts"
+	}
+	Link = Doom2Cast	// restart cast call
+}

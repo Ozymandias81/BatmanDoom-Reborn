@@ -1,0 +1,53 @@
+//Stuff
+DSBELT	DSBELT
+DSKEYUP	DSKEYUP
+
+//Prey lowhealth
+hbeat	HBEAT
+
+//FuckedUpCar stuff by Sergeant_Mark_IV
+weapons/explode1	        dspipex1
+weapons/explode2	        dspipex2
+weapons/explode3	        dspipex3
+weapons/explode4	        dspipex4
+$random weapons/explode  { weapons/explode1 weapons/explode2 weapons/explode3 weapons/explode4 }
+
+//Foes taunts
+//terrorists
+$random terr/sight 	{ terr/sight1 terr/sight2 terr/sight3 terr/sight4 }
+terr/sight1			dsposit1
+terr/sight2			dsposit2
+terr/sight3			dsposit3
+terr/sight4			WHERU
+
+//bane
+$random bane/see	{ bane/see1 bane/see2 bane/see3 }
+bane/see1			dsbgdth1
+bane/see2			dsbgdth2
+bane/see3			INCHARGE
+
+//Taunts
+$random bataunts { IMBATMAN }
+IMBATMAN IMBATMAN
+
+$limit bataunts 0
+//NashGore Effects
+bloodsplat1 dsblud01
+bloodsplat2 dsblud02
+bloodsplat3 dsblud03
+$random bloodsplat { bloodsplat1 bloodsplat2 bloodsplat3 }
+$limit bloodsplat 1
+
+//Weather
+ambient/Rain		AMBRAIN
+$limit ambient/Rain 1
+$volume ambient/Rain 0.3
+
+//underwater effects from Gore - used also by ACS
+underwt1	underwt1
+underwt2	underwt2
+underwt3	underwt3
+underwt4	underwt4
+$random underwtr { underwt1 underwt2 underwt3 underwt4 }
+
+$ambient 29 underwtr point 1.0 random 20.0 60.0 1.0

@@ -1,0 +1,453 @@
+//Decals from Gore Project by Ozymandias81//
+decal NewScorch
+{
+	pic FMSLSCRH
+	fullbright
+	animator GoAway
+	x-scale 0.2
+	y-scale 0.2
+}
+
+//NASHGORES - from hgarden.wad//
+//***** Animators ***********************************************************/
+fader FastGoAway
+{
+	DecayStart	0.2
+	DecayTime	0.5
+}
+
+fader GoAway
+{
+	DecayStart	0.5
+	DecayTime	1.0
+}
+
+fader GoAway2
+{
+	DecayStart	1.0
+	DecayTime	3.0
+}
+
+colorchanger ToBlack
+{
+	FadeStart	0.5
+	FadeTime	1.0
+}
+
+stretcher BloodStretcher
+{
+	StretchTime	10
+	GoalY		2.0
+}
+
+slider BloodSlider
+{
+	SlideTime	10
+	DistY		-132
+}
+
+combiner BloodSmearer
+{
+	BloodStretcher
+	BloodSlider
+}
+
+//***** Blood decals *****//
+decal BloodSplat01
+{
+pic BSPLAT01
+shade "60 00 00"
+x-scale 0.5
+y-scale 0.5
+randomflipx
+randomflipy
+}
+
+decal BloodSplat02
+{
+pic BSPLAT02
+shade "60 00 00"
+x-scale 0.5
+y-scale 0.5
+randomflipx
+randomflipy
+}
+
+decal BloodSplat03
+{
+pic BSPLAT03
+shade "60 00 00"
+x-scale 0.5
+y-scale 0.5
+randomflipx
+randomflipy
+}
+
+decal BloodSplat04
+{
+pic BSPLAT04
+shade "60 00 00"
+x-scale 0.5
+y-scale 0.5
+randomflipx
+randomflipy
+}
+
+decal BloodSplat05
+{
+pic BSPLAT05
+shade "60 00 00"
+x-scale 0.5
+y-scale 0.5
+randomflipx
+randomflipy
+}
+
+decal BloodSplat06
+{
+pic BSPLAT06
+shade "60 00 00"
+x-scale 0.5
+y-scale 0.5
+randomflipx
+randomflipy
+}
+
+decal BloodSplat07
+{
+pic BSPLAT07
+shade "60 00 00"
+x-scale 0.5
+y-scale 0.5
+randomflipx
+randomflipy
+}
+
+decal BloodSplat08
+{
+pic BSPLAT08
+shade "60 00 00"
+x-scale 0.5
+y-scale 0.5
+randomflipx
+randomflipy
+}
+
+decal BloodSplat09
+{
+pic BSPLAT09
+shade "60 00 00"
+x-scale 0.5
+y-scale 0.5
+randomflipx
+randomflipy
+}
+
+decal BloodSplat10
+{
+pic BSPLAT10
+shade "60 00 00"
+x-scale 0.5
+y-scale 0.5
+randomflipx
+randomflipy
+}
+
+decal BloodSplat11
+{
+pic BSPLAT11
+shade "60 00 00"
+x-scale 0.5
+y-scale 0.5
+randomflipx
+randomflipy
+}
+
+decal BloodSplat12
+{
+pic BSPLAT12
+shade "60 00 00"
+x-scale 0.5
+y-scale 0.5
+randomflipx
+randomflipy
+}
+
+decal BloodSplat13
+{
+pic BSPLAT13
+shade "60 00 00"
+x-scale 0.5
+y-scale 0.5
+randomflipx
+randomflipy
+}
+
+decal BloodSplat14
+{
+pic BSPLAT14
+shade "60 00 00"
+x-scale 0.5
+y-scale 0.5
+randomflipx
+randomflipy
+}
+
+decalgroup BloodSplat
+{
+BloodSplat01 6
+BloodSplat02 6
+BloodSplat03 6
+BloodSplat04 6
+BloodSplat05 6
+BloodSplat06 6
+BloodSplat07 6
+BloodSplat08 6
+BloodSplat09 6
+BloodSplat10 6
+BloodSplat11 6
+BloodSplat12 6
+BloodSplat13 6
+BloodSplat14 6
+}
+
+decal BloodSmear1
+{
+pic BSMEAR1
+x-scale 0.625
+y-scale 0.625
+shade "60 00 00"
+randomflipx
+randomflipy
+animator BloodSmearer
+}
+
+decal BloodSmear2
+{
+pic BSMEAR1
+x-scale 0.625
+y-scale 0.625
+shade "60 00 00"
+randomflipx
+randomflipy
+animator BloodSmearer
+}
+
+decalgroup BloodSmear
+{
+BloodSmear1		6
+BloodSmear2		6
+}
+//ENJAY & T667 Enhancements - from hgarden.wad//
+//***** Bullet Chips *****/
+decal BulletChip1
+{
+	pic CHIP1
+	translucent 0.85
+	shade "00 00 00"
+	x-scale 0.8
+	y-scale 0.8
+	randomflipx
+	randomflipy
+}
+
+decal BulletChip2
+{
+	pic CHIP2
+	translucent 0.85
+	shade "00 00 00"
+	x-scale 0.8
+	y-scale 0.8
+	randomflipx
+	randomflipy
+}
+
+decal BulletChip3
+{
+	pic CHIP3
+	translucent 0.85
+	shade "00 00 00"
+	x-scale 0.8
+	y-scale 0.8
+	randomflipx
+	randomflipy
+}
+
+decal BulletChip4
+{
+	pic CHIP4
+	translucent 0.85
+	shade "00 00 00"
+	x-scale 0.8
+	y-scale 0.8
+	randomflipx
+	randomflipy
+}
+
+decal BulletChip5
+{
+	pic CHIP5
+	translucent 0.85
+	shade "00 00 00"
+	x-scale 0.8
+	y-scale 0.8
+	randomflipx
+	randomflipy
+}
+
+decalgroup BulletChip
+{
+	BulletChip1	1
+	BulletChip2	1
+	BulletChip3	1
+	BulletChip4	1
+	BulletChip5	1
+}
+
+decal Bullet1
+{
+pic CHIP1
+shade "FF C8 00"
+fullbright
+x-scale 0.4
+y-scale 0.4
+lowerdecal BulletChip
+animator GoAway
+}
+
+decal Bullet2
+{
+pic CHIP2
+shade "FF C8 00"
+fullbright
+x-scale 0.4
+y-scale 0.4
+lowerdecal BulletChip
+animator GoAway
+}
+
+decal Bullet3
+{
+pic CHIP3
+shade "FF C8 00"
+fullbright
+x-scale 0.4
+y-scale 0.4
+lowerdecal BulletChip
+animator GoAway
+}
+
+decal Bullet4
+{
+pic CHIP4
+shade "FF C8 00"
+fullbright
+x-scale 0.4
+y-scale 0.4
+lowerdecal BulletChip
+animator GoAway
+}
+
+decal Bullet5
+{
+pic CHIP5
+shade "FF C8 00"
+fullbright
+x-scale 0.4
+y-scale 0.4
+lowerdecal BulletChip
+animator GoAway
+}
+
+decalgroup Bullet
+{
+	Bullet1	1
+	Bullet2	1
+	Bullet3	1
+	Bullet4	1
+	Bullet5	1
+}
+//***** Generators **********************************************************//
+generator BatmanBlastGun		Bullet
+generator BatmanChainGun		Bullet
+generator BatmanAzraelGlove		Bullet
+generator BatFlame				NewScorch
+generator SmokeBomb				NewScorch
+generator BatmanPlayer			BloodSplat
+generator BadBird1				BloodSplat
+generator BadBird2				BloodSplat
+generator BadBird3				BloodSplat
+generator BadBird4				BloodSplat
+generator BadBird5				BloodSplat
+generator Terrorist1			BloodSplat
+generator Terrorist2			BloodSplat
+generator Terrorist3			BloodSplat
+generator Terrorist4			BloodSplat
+generator Terrorist5			BloodSplat
+generator Terrorist6			BloodSplat
+generator Terrorist7			BloodSplat
+generator Terrorist8			BloodSplat
+generator TerroristKey			BloodSplat
+generator ShotgunThief1			BloodSplat
+generator ShotgunThief2			BloodSplat
+generator ShotgunThief3			BloodSplat
+generator ShotgunThief4			BloodSplat
+generator GangWarShotgunThief1	BloodSplat
+generator GangWarShotgunThief2	BloodSplat
+generator GangWarShotgunThief3	BloodSplat
+generator GangWarShotgunThief4	BloodSplat
+generator Cheung1				BloodSplat
+generator Cheung2				BloodSplat
+generator GangWarCheung1		BloodSplat
+generator GangWarCheung2		BloodSplat
+generator Strake1				BloodSplat
+generator Strake2				BloodSplat
+generator Strake3				BloodSplat
+generator Strake4				BloodSplat
+generator Strake5				BloodSplat
+generator Strake6				BloodSplat
+generator Strake7				BloodSplat
+generator Strake8				BloodSplat
+generator Ninja1				BloodSplat
+generator Ninja2				BloodSplat
+generator Ninja3				BloodSplat
+generator Ninja4				BloodSplat
+generator NinjaBoss				BloodSplat
+generator FlameMan1				BloodSplat
+generator FlameMan2				BloodSplat
+generator FlameMan3				BloodSplat
+generator FlameMan4				BloodSplat
+generator FlameMan5				BloodSplat
+generator FlameMan6				BloodSplat
+generator FlameMan7				BloodSplat
+generator FlameMan8				BloodSplat
+generator Sniper				BloodSplat
+generator Clown1				BloodSplat
+generator Clown2				BloodSplat
+generator Clown3				BloodSplat
+generator Clown4				BloodSplat
+generator SuperClown			BloodSplat
+generator Zeke1					BloodSplat
+generator Zeke2					BloodSplat
+generator Zeke3					BloodSplat
+generator Zeke4					BloodSplat
+generator Zeke5					BloodSplat
+generator Zeke6					BloodSplat
+generator Zeke7					BloodSplat
+generator Zeke8					BloodSplat
+generator RocketMan				BloodSplat
+generator KillerCroc			BloodSplat
+generator TwoFace				BloodSplat
+generator Joker					BloodSplat
+generator Joker2				BloodSplat
+generator JokerObserving		BloodSplat
+generator TallyMan				BloodSplat
+generator PenguinBoss2			BloodSplat
+generator ScareCrow				BloodSplat
+generator Bane					BloodSplat
+generator ZekeMolotov			NewScorch
+generator TwoFaceRocket			NewScorch
+generator CrocRock				NewScorch
+generator JokerTrickDart1		Bullet
+generator JokerTrickDart2		Bullet
+generator JokerTrickDart3		Bullet

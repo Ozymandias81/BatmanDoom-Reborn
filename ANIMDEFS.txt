@@ -1,0 +1,17 @@
+//new warpings
+warp2 texture SFALL1
+warp2 texture SFALL2
+warp2 texture SFALL3
+warp2 texture SFALL4
+warp2 flat SLIME01
+warp2 flat SLIME02
+warp2 flat SLIME03
+warp2 flat SLIME04
+warp2 flat SLIME05
+warp2 flat SLIME06
+warp2 flat SLIME07
+warp2 flat SLIME08
+warp2 flat FWATER1
+warp2 flat FWATER2
+warp2 flat FWATER3
+warp2 flat FWATER4
