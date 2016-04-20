@@ -1,0 +1,91 @@
+#include "zcommon.acs"
+//0 to 7
+str EmptyHealth[1] = {"EMPTY1"};
+str CrocHealth[14] = {"CROC0","CROC1","CROC2","CROC3","CROC4","CROC5","CROC6","CROC7","CROC8","CROC9","CROC10","CROC11","CROC12","CROC13"};
+str TallyHealth[14] = {"TALLY0","TALLY1","TALLY2","TALLY3","TALLY4","TALLY5","TALLY6","TALLY7","TALLY8","TALLY9","TALLY10","TALLY11","TALLY12","TALLY13"};
+str PenguinHealth[14] = {"PENG0","PENG1","PENG2","PENG3","PENG4","PENG5","PENG6","PENG7","PENG8","PENG9","PENG10","PENG11","PENG12","PENG13"};
+str ScarecrowHealth[14] = {"SCAR0","SCAR1","SCAR2","SCAR3","SCAR4","SCAR5","SCAR6","SCAR7","SCAR8","SCAR9","SCAR10","SCAR11","SCAR12","SCAR13"};
+str TwoFaceHealth[14] = {"2FAC0","2FAC1","2FAC2","2FAC3","2FAC4","2FAC5","2FAC6","2FAC7","2FAC8","2FAC9","2FAC10","2FAC11","2FAC12","2FAC13"};
+str JokeHealth[14] = {"JOKE0","JOKE1","JOKE2","JOKE3","JOKE4","JOKE5","JOKE6","JOKE7","JOKE8","JOKE9","JOKE10","JOKE11","JOKE12","JOKE13"};
+str BaneHealth[14] = {"BANE0","BANE1","BANE2","BANE3","BANE4","BANE5","BANE6","BANE7","BANE8","BANE9","BANE10","BANE11","BANE12","BANE13"};
+
+int BossActive = FALSE;
+int BossType = 0;
+
+//Boss Heath
+script 701 (int Type)
+{
+Thing_ChangeTID(0, 701);
+BossActive = TRUE;
+BossType = Type;
+}
+
+script 700 ENTER
+{
+SetHudSize(320, 200, 1);
+while (TRUE)
+	{
+	int currentHP = 1;
+	int maxHP = 1;
+	int healthStep = 13;
+	int emptyStep = 1;
+	int jokerSpecial = 0;
+	if (BossActive)
+		{
+		while (currentHP != 0)
+			{
+			currentHP = GetActorProperty (701, APROP_Health);
+			maxHP = GetActorProperty (701, APROP_SpawnHealth);
+			healthStep = (13 * (maxHP - currentHP)) / maxHP;
+			if (jokerSpecial)
+				{
+				if (BossType == 7)
+					{
+					currentHP = currentHP / 2 + maxHP / 2;
+					healthStep = (13 * (maxHP - currentHP)) / maxHP;
+					}
+					else if (BossType == 5)
+					{
+					currentHP = currentHP / 2;
+					healthStep = (13 * (maxHP - currentHP)) / maxHP;
+					}
+				}
+				if (currentHP <= 0) currentHP = 0;
+				str Font = "";
+				if (BossType == 0)
+					Font = EmptyHealth[emptyStep];
+				else if (BossType == 1)
+					Font = CrocHealth[healthStep];
+				else if (BossType == 2)
+					Font = TallyHealth[healthStep];
+				else if (BossType == 3)
+					Font = PenguinHealth[healthStep];
+				else if (BossType == 4)
+					Font = ScarecrowHealth[healthStep];
+				else if (BossType == 5)
+					Font = TwoFaceHealth[healthStep];
+				else if (BossType == 6)
+					Font = JokeHealth[healthStep];
+				else if (BossType == 7)
+					Font = BaneHealth[healthStep];
+				else if (BossType == 8)
+					{
+					Font = JokeHealth[healthStep];
+					jokerSpecial = TRUE;
+					}
+					else
+					Font = EmptyHealth[emptyStep];
+					SetFont(Font);
+					HudMessage (s:"A"; HUDMSG_FADEOUT, 701, CR_UNTRANSLATED, 160.0, 13.0, 0.5);
+					Delay(7);
+				}
+			HudMessage (s:"A"; HUDMSG_FADEOUT, 701, CR_UNTRANSLATED, 160.0, 13.0, 5.0);
+			jokerSpecial = FALSE;
+			BossActive = FALSE;
+		}
+		else
+			{
+			Delay(5);
+			}
+	}
+}

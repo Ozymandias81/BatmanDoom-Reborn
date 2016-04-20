@@ -1,0 +1,26 @@
+ACE Team for their original & unique BATMAN DOOM
+Evil Space Tomato for his Batman Doom Patch v0.4 for ZDoom/SkullTag
+DC Comics for their logo, Batman & all of his characters
+Rocksteady Studios & Warner Bros Interactive for "Batman: Arkham City" jpegs (see BDOzyAdd*.pk3)
+20th Century Fox for 1966's "Batman: Television Series"
+iD Software for their logo, Doom II & Quake III underwater sounds
+Monolith Software for burning sprites & player sounds from Blood
+Gremlin Interactive for food sprites from Normality
+Rogue Entertainment & Velocity for the pickup sound from Strife
+Human Head Studios for heartbeat sound
+Tormentor667 for HUD weapons/pickups/player sprites editing + revealing me what to fix
+Sergeant Mark IV for destroyable stuff from ArmageDoom (cars, trashcans, garbages, trees)
+Xaser for the smoke sprite from CryoBow weapon
+Captain Toenail for the morbid-smokey cloud sprites from Rot Wraith
+Nash for his NashGore system and its sprites/sounds
+Mav3rick for his preciously inspired playtesting
+Ed The Bat for CVARINFO and general useful code aid
+MovieSoundsClip.net for various voice acts (see below)
+
+Onomatopoeia sprites & decorate by Ozymandias81
+
+1966 TV Movie Sounds at http://www.bat-mania.co.uk/multi/sounds/&#41
+"I'm Batman" http://www.moviesoundclips.net/download.php?id=1926&ft=ogg
+"Kill The Batman!" http://www.moviesoundclips.net/download.php?id=2618&ft=ogg
+"Where are you!??" http://www.moviesoundclips.net/download.php?id=1945&ft=ogg
+"Do you feel in charge?" http://www.moviesoundclips.net/download.php?id=4074&ft=ogg

@@ -1,0 +1,53 @@
+#library "bataunts"
+#include "zcommon.acs"
+
+global int 1: CANSPEAK;
+
+//heartbeat scripts
+script 901 ENTER
+{
+if (GetActorProperty(0, APROP_HEALTH) <51 && GetActorProperty(0, APROP_HEALTH) >25)
+	{
+	localambientsound("hbeat", 120);
+	delay(const:8);
+	localambientsound("hbeat", 127);
+	}
+delay(const:35);
+restart;
+}
+
+script 902 ENTER
+{
+if (GetActorProperty(0, APROP_HEALTH) <26 && GetActorProperty(0, APROP_HEALTH) >0)
+	{
+	localambientsound("hbeat", 137);
+	delay(const:8);
+	localambientsound("hbeat", 130);
+	}
+delay(const:15);
+restart;
+}
+
+//special taunts scripts
+script 903 (VOID)
+{
+CANSPEAK = CheckInventory ("SpeakToken");
+if (CANSPEAK==1)
+	{
+	localambientsound("bataunts", 127);
+	terminate;
+	}
+}
+
+//underwater sounds
+script 904 ENTER
+{
+if (GetActorProperty(0, APROP_WATERLEVEL)<3){}
+else
+	{
+	delay(const:3);
+	localambientsound("underwtr", random(90,127));
+	}
+delay(35*8); //only 1 sound is 8sec long, 2 4sec & 1 2,5sec
+restart;
+}

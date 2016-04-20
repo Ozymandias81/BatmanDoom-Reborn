@@ -1,0 +1,18 @@
+//advanced sfx toggle acs
+#library "bstsfx"
+#include "zcommon.acs"
+
+script "Biffs" (void)
+{SetResultValue(GetCVar("Biffs"));}
+
+script "Bleeds" (void)
+{SetResultValue(GetCVar("Bleeds"));}
+
+script "Cinders" (void)
+{SetResultValue(GetCVar("Cinders"));}
+
+script "Weather" (void)
+{SetResultValue(GetCVar("Weather"));}
+
+script "Falls" (void)
+{SetResultValue(GetCVar("Falls"));}
