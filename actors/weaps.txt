@@ -312,8 +312,8 @@ Tag "Smoke Bomb"
 SpawnID 166
 Game Doom
 Weapon.SelectionOrder 2500
-Weapon.AmmoUse 1
-Weapon.AmmoGive 8
+Weapon.AmmoUse 10
+Weapon.AmmoGive 2
 Weapon.AmmoType "RocketAmmo"
 +WEAPON.NOAUTOFIRE
 +WEAPON.NOAUTOAIM
