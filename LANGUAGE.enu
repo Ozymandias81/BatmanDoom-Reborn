@@ -1,15 +1,83 @@
 [enu default]
-//console messages//
+//CONSOLE MESSAGES//
 STARTUP1 =
 	"\n"
 	"*=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=*\n"
-	"|BATMAN DOOM REBORN for GZDoom v04 r290415|\n"
+	"|      BATMAN DOOM REBORN for GZDoom      |\n"
 	"|      An ACE Team & Ozymandias81 TC      |\n"
 	"|    Many Thankx to Evil Space Tomato!    |\n"
 	"*=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=^=*\n"
 	"\n";
-//clusters//
-//up thru level 6//
+
+//Ammo & Pickups
+AZRLARMR = "Picked up Azrael's armor!";
+BARMOR = "Picked up Batman armor!";
+BATABOX = "Picked a box of Batarangs.";
+BATBELT = "Picked up a bat belt full of ammo!";
+BATBSERK = "You feel the power of bats growing inside your fists!";
+BLSTBOX = "Picked up a box of BlastGun shells.";
+BLSTSHEL = "Picked up BlastGun shells.";
+BSPHERE = "Picked up a Batman Sphere.";
+FOOD = "Picked up some tasty food.";
+GASCAN = "Picked up a gas canister.";
+GASPACK = "Picked up a gas canister pack.";
+PROTSUIT = "Prototype Nomex Suit!";
+
+//WEAPONS
+BATFIST = "%o was punched by %k.";
+BLASTGUN = "You got the Blastgun!";
+BLASTOB = "%o was blasted by %k's Blastgun.";
+BRANGOB1 = "%o was bataranged.";
+BRANGOB2 = "%o was bataranged by %k.";
+BRANGS = "Picked up Batarangs.";
+GLOVES = "Got Azrael's gloves!";
+GLOVESOB = "%o was blasted by %k's Gloves.";
+TAZER = "You got the Tazer!";
+TAZEROB = "%o was tazed by %k.";
+SHURIKEN = "You got the Shuriken glove!";
+SHURIOB = "%o was slashed by %k's Shuriken.";
+SMOKEOB = "%o was gassed by %k's Smoke Bomb."
+SMOKEBMB = "You got some Smoke Bombs!";
+BFLAMER = "Got the Flamethrower!";
+ENDGLOVE = "%o was beaten like Bane.";
+PREPARE = "PREPARE YOURSELF TO FIGHT BANE BARELY WITH YOUR FISTS!";
+
+//KEYS
+BLUEK = "Picked up a blue key.";
+REDK = "Picked up a red key.";
+YELK = "Picked up a yellow key.";
+
+//Obituaries
+BANE = "%o was beat down by Bane.";
+BIRDS = "%o was bitten by a Bird.";
+CHEMBARL = "%o went boom.";
+CHEUNG1 = "%o was killed by Cheung.";
+CHEUNG1 = "%o was killed by Gang-War Cheung.";
+CLOWNS = "%o was tricked by a Clown.";
+EXPWALL = "%o died in the explosion.";
+EYEBALL = "%o died ... somehow.";
+EYERANG = "%o was Eye-ranged.";
+FLAMEMAN = "%o was burned by a FlameMan.";
+JOKER = "%o was shot by The Joker.";
+JOKER2 = "%o was tricked by The Joker.";
+NINJA = "%o was sliced by a Ninja.";
+PENGCOPT = "%o was shot by Penguin from an helicopter.";
+PENGROBO = "%o was killed by a robot penguin.";
+PENGUIN = "%o was shot by The Penguin.";
+ROCKMAN = "%o was shot by a RocketMan.";
+SCAREHIT = "%o was scared to death of Scarecrow.";
+SCAREOB = "%o couldn't evade a Scarecrow's poisonball.";
+SHOTGANG = "%o was shot by a Gang-War Shotgunner.";
+SHOTHIEF = "%o was shot by a Shotgunner.";
+SNIPER = "%o was shot in the head by a Sniper.";
+STRAKE = "%o was stabbed by Strake.";
+TALLY = "%o was filled full of lead by TallyMan.";
+TERRORS = "%o was shot by a Terrorist.";
+TWOFACE = "%o was splattered by a Two Face's rocket.";
+ZEKES = "%o was flamed by Zeke.";
+
+//CLUSTERS//
+//UP THRU LEVEL 6//
 ENDPART1 =
 "YOU ARE THE CHOSEN, CHOSEN FOR A\n"
 "SOLITARY CRUSADE, CALLED TO BATTLE THE\n"
@@ -23,7 +91,8 @@ ENDPART1 =
 "SEWERS. YOU MUST ELIMINATE ALL! HELL\n"
 "WON'T BE BIG ENOUGH TO CONTAIN THEM!\n"
 "THE CRUSADE BEGINS!!!\n";
-//up thru level 11//
+
+//UP THRU LEVEL 11//
 ENDPART2 =
 "GOTHAM DROWNS IN A WAVE OF CRIME. EVERY\n"
 "TIME YOU COUNTERATTACK, YOUR OFFENSIVE\n"
@@ -42,7 +111,8 @@ ENDPART2 =
 "OPPORTUNITIES. THE CRUSADE CONTINUES\n"
 "AND NEVER SEEMS TO END. YOU MUST RETURN\n"
 "PEACE TO GOTHAM CITY!\n";
-//up thru level 20//
+
+//UP THRU LEVEL 20//
 ENDPART3 =
 "TWO FACE IS FINISHED, YOUR BATTLE FOR\n"
 "GOTHAM IS COMING TO AN END. YOU FEEL\n"
@@ -54,7 +124,8 @@ ENDPART3 =
 "YOU CAN ONLY CURSE THE BAT THAT CASTS\n"
 "A SHADOW ON YOUR HEART. ONE MAN\n"
 "AGAINST HELL. LET THEM COME.\n";
-//up thru level 30//
+
+//UP THRU LEVEL 30//
 ENDPART4 =
 "AS YOU DELIVER THE FINAL BLOW TO YOUR\n"
 "ENEMY, YOUR BODY USES THE LAST PART\n"
@@ -71,7 +142,8 @@ ENDPART4 =
 "THE CLOUDS OF THE CITY, AND BATMAN\n"
 "WILL RISE FROM THE DARKNESS ONCE\n"
 "AGAIN...\n";
-//level 31
+
+//LEVEL 31
 ENDPART5 =
 "YOU HAVE SAVED MAJOR KROLL FROM DEATH!\n"
 "\n"
@@ -79,9 +151,9 @@ ENDPART5 =
 "YOU PICK UP A POLICE RADIO CALL. THE\n"
 "SCARECROW HAS ESCAPED! YOUR MISSION\n"
 "SEEMS ENDLESS...\n";
-//level 32 - supersecret//
+
+//LEVEL 32 - SUPERSECRET//
 ENDPART6 =
 "WHEN YOU STEP ON THE BIZARRE LOOKING\n"
 "FLOOR YOU'RE SUCKED RIGHT INTO IT!\n"
 "WHERE THE HELL ARE YOU?\n";
-//end of english language//

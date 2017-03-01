@@ -2,50 +2,50 @@
 //Itburns!
 flickerlight ITBURNS1
 {
-    color 0.7 0.7 0.0
-    size 32
-    secondarySize 64
-    chance 0.2
+	color 0.7 0.7 0.0
+	size 32
+	secondarySize 64
+	chance 0.2
 }
 
 flickerlight ITBURNS2
 {
-    color 0.6 0.6 0.0
-    size 24
-    secondarySize 32
-    chance 0.3
+	color 0.6 0.6 0.0
+	size 24
+	secondarySize 32
+	chance 0.3
 }
 
 flickerlight ITBURNS3
 {
-    color 0.9 0.9 0.0
-    size 40
-    secondarySize 72
-    chance 0.2
+	color 0.9 0.9 0.0
+	size 40
+	secondarySize 72
+	chance 0.2
 }
 
 flickerlight ITBURNS4
 {
-    color 0.8 0.8 0.0
-    size 32
-    secondarySize 40
-    chance 0.3
+	color 0.8 0.8 0.0
+	size 32
+	secondarySize 40
+	chance 0.3
 }
 
 flickerlight ITBURNS5
 {
-    color 1.0 1.0 0.0
-    size 48
-    secondarySize 80
-    chance 0.2
+	color 1.0 1.0 0.0
+	size 48
+	secondarySize 80
+	chance 0.2
 }
 
 flickerlight ITBURNS6
 {
-    color 0.9 0.9 0.0
-    size 40
-    secondarySize 48
-    chance 0.3
+	color 0.9 0.9 0.0
+	size 40
+	secondarySize 48
+	chance 0.3
 }
 
 object BurnBurnBurn1
@@ -119,12 +119,12 @@ Pulselight BNA
 
 object BatmanGreenArmor
 {
-    frame ARM1A { light BNA }
+	frame ARM1A { light BNA }
 }
 
 object BatmanBlueArmor //azrael's one
 {
-    frame ARM2A { light BNA }
+	frame ARM2A { light BNA }
 }
 
 Pulselight PNS
@@ -137,21 +137,21 @@ Pulselight PNS
 
 object BatmanRadSuit //ProtoNomexSuit
 {
-    frame SUITA { light PNS }
+	frame SUITA { light PNS }
 }
 
 pulselight BHAB
 {
-    color 0.0 0.0 0.6
-    size 16
-    secondarySize 18
-    interval 2.0
+	color 0.0 0.0 0.6
+	size 16
+	secondarySize 18
+	interval 2.0
 	Offset 0 16 0
 }
 
 object BatmanHealthBonus
 {
-    frame BON1 { light BHAB }
+	frame BON1 { light BHAB }
 }
 
 object BatmanArmorBonus
@@ -170,9 +170,9 @@ Pulselight BSS
 
 object BatmanSoulSphere
 {
-    frame SOULA { light BSS }
-    frame SOULB { light BSS }
-    frame SOULC { light BSS }
+	frame SOULA { light BSS }
+	frame SOULB { light BSS }
+	frame SOULC { light BSS }
 }
 
 Pulselight BMAP
@@ -185,9 +185,9 @@ Pulselight BMAP
 
 object BatmanMap
 {
-    frame PMAPA { light BMAP }
-    frame PMAPB { light BMAP }
-    frame PMAPC { light BMAP }
+	frame PMAPA { light BMAP }
+	frame PMAPB { light BMAP }
+	frame PMAPC { light BMAP }
 }
 
 Pulselight BIR
@@ -201,7 +201,7 @@ Pulselight BIR
 
 object BatmanInfraRed
 {
-    frame PVISA { light BIR }
+	frame PVISA { light BIR }
 }
 
 Pulselight RB
@@ -214,7 +214,7 @@ Pulselight RB
 
 object RandomBonus
 {
-    frame PVISA { light RB }
+	frame PVISA { light RB }
 	frame ARM2B { light RB }
 	frame BON1B { light RB }
 	frame SOULD { light RB }
@@ -228,10 +228,10 @@ object RandomBonus
 
 pulselight BDRKEY
 {
-    color 0.6 0.0 0.0
-    size 16
-    secondarySize 18
-    interval 2.0
+	color 0.6 0.0 0.0
+	size 16
+	secondarySize 18
+	interval 2.0
 	Offset 0 16 0
 }
 
@@ -242,10 +242,10 @@ object RedKey
 
 pulselight BDYKEY
 {
-    color 0.6 0.6 0.0
-    size 16
-    secondarySize 18
-    interval 2.0
+	color 0.6 0.6 0.0
+	size 16
+	secondarySize 18
+	interval 2.0
 	Offset 0 16 0
 }
 
@@ -265,41 +265,41 @@ object BlueKey
 /////////////
 flickerlight FCAN1
 {
-    color 1.0 0.7 0.0
-    size 64
-    secondarySize 72
-    chance 0.3
+	color 1.0 0.7 0.0
+	size 64
+	secondarySize 72
+	chance 0.3
 }
 
 flickerlight FCAN2
 {
-    color 0.5 0.1 0.0
-    size 80
-    secondarySize 88
-    chance 0.3
+	color 0.5 0.1 0.0
+	size 80
+	secondarySize 88
+	chance 0.3
 }
 
 flickerlight FCAN3
 {
-    color 0.3 0.0 0.0
-    size 96
-    secondarySize 104
-    chance 0.3
+	color 0.3 0.0 0.0
+	size 96
+	secondarySize 104
+	chance 0.3
 }
 
 object ChemicalBarrel
 {
-    frame SPOSM { light FCAN1 }
-    frame SPOSN { light FCAN1 }
-    frame SPOSO { light FCAN1 }
-    frame SPOSP { light FCAN1 }
+	frame SPOSM { light FCAN1 }
+	frame SPOSN { light FCAN1 }
+	frame SPOSO { light FCAN1 }
+	frame SPOSP { light FCAN1 }
 	frame SPOSQ { light FCAN1 }
 	frame SPOSR { light FCAN1 }
 	frame SPOSS { light FCAN2 }
-    frame GOR1A { light FCAN2 }
+	frame GOR1A { light FCAN2 }
 	frame GOR1B { light FCAN2 }
 	frame GOR1C { light FCAN2 }
-    frame SSWVN { light FCAN2 }
+	frame SSWVN { light FCAN2 }
 	frame SSWVO { light FCAN3 }
 	frame SSWVP { light FCAN3 }
 	frame SSWVQ { light FCAN3 }
@@ -307,26 +307,26 @@ object ChemicalBarrel
 
 pulselight BXBRL
 {
-    color 0.0 0.6 0.0
-    size 8
-    secondarySize 16
-    interval 2.0
+	color 0.0 0.6 0.0
+	size 8
+	secondarySize 16
+	interval 2.0
 }
 
 object AxisBarrel
 {
-    frame BAR1B { light BXBRL }
-    frame SPOSM { light FCAN1 }
-    frame SPOSN { light FCAN1 }
-    frame SPOSO { light FCAN1 }
-    frame SPOSP { light FCAN1 }
+	frame BAR1B { light BXBRL }
+	frame SPOSM { light FCAN1 }
+	frame SPOSN { light FCAN1 }
+	frame SPOSO { light FCAN1 }
+	frame SPOSP { light FCAN1 }
 	frame SPOSQ { light FCAN1 }
 	frame SPOSR { light FCAN1 }
 	frame SPOSS { light FCAN2 }
-    frame GOR1A { light FCAN2 }
+	frame GOR1A { light FCAN2 }
 	frame GOR1B { light FCAN2 }
 	frame GOR1C { light FCAN2 }
-    frame SSWVN { light FCAN2 }
+	frame SSWVN { light FCAN2 }
 	frame SSWVO { light FCAN3 }
 	frame SSWVP { light FCAN3 }
 	frame SSWVQ { light FCAN3 }
@@ -334,37 +334,37 @@ object AxisBarrel
 
 pointlight BDTFLT
 {
-    color 0.6 0.6 0.6
-    size 64
+	color 0.6 0.6 0.6
+	size 64
 }
 
 object TrafficLight
 {
-    frame HDB6A { light BDTFLT }
+	frame HDB6A { light BDTFLT }
 }
 
 Pulselight BRS
 {
-Color 0.5 0.5 0.0
-Size 16
-SecondarySize 24
-Interval 1.5
+	Color 0.5 0.5 0.0
+	Size 16
+	SecondarySize 24
+	Interval 1.5
 }
 
 object RobinSuit
 {
-    frame POB1A { light BRS }
+	frame POB1A { light BRS }
 }
 
 pointlight BDSTLT
 {
-    color 0.8 0.8 0.0
-    size 96
+	color 0.8 0.8 0.0
+	size 96
 }
 
 object StreetLight
 {
-    frame COL2A { light BDSTLT }
+	frame COL2A { light BDSTLT }
 }
 //////////////////////////////////////////////////////////////////
 
@@ -431,12 +431,12 @@ object FloorFire
 ///////////
 object BatmanBlastGun
 {
-    frame SHOTA { light BNA }
+	frame SHOTA { light BNA }
 }
 
 object BatmanChainGun
 {
-    frame MGUNA { light BNA }
+	frame MGUNA { light BNA }
 }
 
 Pulselight BDAG
@@ -450,7 +450,7 @@ Pulselight BDAG
 
 object BatmanAzraelGlove
 {
-    frame SGN2A { light BDAG }
+	frame SGN2A { light BDAG }
 }
 
 Pulselight BDSB
@@ -464,26 +464,26 @@ Pulselight BDSB
 
 flickerlight BDSB_X1
 {
-    color 1.0 1.0 1.0
-    size 64
-    secondarySize 72
-    chance 0.3
+	color 1.0 1.0 1.0
+	size 64
+	secondarySize 72
+	chance 0.3
 }
 
 flickerlight BDSB_X2
 {
-    color 0.7 0.7 0.7
-    size 80
-    secondarySize 88
-    chance 0.3
+	color 0.7 0.7 0.7
+	size 80
+	secondarySize 88
+	chance 0.3
 }
 
 flickerlight BDSB_X3
 {
-    color 0.3 0.3 0.3
-    size 96
-    secondarySize 104
-    chance 0.3
+	color 0.3 0.3 0.3
+	size 96
+	secondarySize 104
+	chance 0.3
 }
 
 object SmokeBomb
@@ -501,7 +501,7 @@ object SmokeBomb
 
 object BatmanSmokeBomb
 {
-    frame BFS1A { light BDSB }
+	frame BFS1A { light BDSB }
 }
 
 Flickerlight2 BDFLAME1
@@ -580,7 +580,7 @@ Object BatFlame
 
 object BatmanFlamer
 {
-    frame PLASA { light BNA }
+	frame PLASA { light BNA }
 }
 //////////////////////////////////////////////////////////////////
 
@@ -601,7 +601,7 @@ PointLight BDCEIL
 
 object CeilingLamp
 {
-    frame GOR3A { light BDCEIL }
+	frame GOR3A { light BDCEIL }
 }
 
 PointLight BDCHAN
@@ -657,34 +657,34 @@ object ExplosiveShell
 //FlameMen Defs, uses Decorate
 flickerlight BDFMAN1
 {
-    color 0.7 0.7 0.0
-    size 32
-    secondarySize 40
-    chance 0.3
+	color 0.7 0.7 0.0
+	size 32
+	secondarySize 40
+	chance 0.3
 }
 
 flickerlight BDFMAN2
 {
-    color 0.8 0.8 0.0
-    size 40
-    secondarySize 48
-    chance 0.4
+	color 0.8 0.8 0.0
+	size 40
+	secondarySize 48
+	chance 0.4
 }
 
 flickerlight BDFMAN3
 {
-    color 0.9 0.9 0.0
-    size 48
-    secondarySize 56
-    chance 0.5
+	color 0.9 0.9 0.0
+	size 48
+	secondarySize 56
+	chance 0.5
 }
 
 flickerlight BDFMAN4
 {
-    color 1.0 1.0 0.0
-    size 56
-    secondarySize 64
-    chance 0.6
+	color 1.0 1.0 0.0
+	size 56
+	secondarySize 64
+	chance 0.6
 }
 //these defs are needed for pistol/ssg/chng armed foes
 PointLight BDFOES1
@@ -714,14 +714,14 @@ object PenguinRobot
 //penguincopters
 PointLight BDPENGC1
 {
-	color 1.0 1.0 0.0
+	color 0.7 0.7 0.0
 	size 56
 	offset 16 40 0
 }
 
 PointLight BDPENGC2
 {
-	color 1.3 1.3 0.0
+	color 1.0 1.0 0.0
 	size 64
 	offset 16 40 0
 }
@@ -729,31 +729,31 @@ PointLight BDPENGC2
 //scarecrows
 Pointlight ScareShot1
 {
-Color 0.0 1.0 0.0
-Size 25
+	Color 0.0 1.0 0.0
+	Size 25
 }
 
 Pointlight ScareShot2
 {
-Color 0.0 1.0 0.0
-Size 30
+	Color 0.0 1.0 0.0
+	Size 30
 }
 
 Pointlight ScareShot3
 {
-Color 0.0 0.7 0.0
-Size 25
+	Color 0.0 0.7 0.0
+	Size 25
 }
 
 Pointlight ScareShot4
 {
-Color 0.0 0.4 0.0
-Size 20
+	Color 0.0 0.4 0.0
+	Size 20
 }
 
 Pointlight ScareShot5
 {
-Color 0.0 0.2 0.0
-Size 15
+	Color 0.0 0.2 0.0
+	Size 15
 }
 //PENGUINBOSS2, TALLYMAN, BANE

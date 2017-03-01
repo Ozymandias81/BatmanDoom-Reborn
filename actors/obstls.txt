@@ -1,486 +1,486 @@
 /////////////
-//OBSTICALS//
+//OBSTACLES//
 /////////////
-ACTOR Bell replaces RedSkull 38
+ACTOR Bell replaces RedSkull
 {
-//$Category Reborn Obstacles
-Tag "Bell"
-SpawnID 101
-+SOLID
-+SPAWNCEILING
-+NOGRAVITY
-States
-	{
-	Spawn:
-	YSKU A -1
-	Loop
-	}
+	//$Category Reborn Obstacles
+	Tag "Bell"
+	+NOGRAVITY
+	+SOLID
+	+SPAWNCEILING
+	SpawnID 101
+	States
+		{
+		Spawn:
+			YSKU A -1
+			Loop
+		}
 }
 
-ACTOR ScarecrowOnPole replaces BlurSphere 2024
+ACTOR ScarecrowOnPole replaces BlurSphere
 {
-//$Category Reborn Obstacles
-Tag "Scarecrow On Pole"
-SpawnID 103
-Health 1
-MAss 1000000
-+SHOOTABLE
-States
-	{
-	Spawn:
-	BSKU A -1
-	Loop
-	Death:
-	BSKU B -1
-	Loop
-	}
+	//$Category Reborn Obstacles
+	Tag "Scarecrow On A Pole"
+	SpawnID 103
+	Health 1
+	Mass 1000000
+	+SHOOTABLE
+	States
+		{
+		Spawn:
+			BSKU A -1
+			Loop
+		Death:
+			BSKU B -1
+			Loop
+		}
 }
 
-ACTOR ChemicalBarrel replaces ExplosiveBarrel 2035
+ACTOR ChemicalBarrel replaces ExplosiveBarrel
 {
-//$Category Reborn Obstacles
-Tag "Chemical Barrel"
-SpawnID 104
-Game Doom
-SpawnID 125
-Health 20
-Radius 10
-Height 34
-+SOLID
-+SHOOTABLE
-+NOBLOOD
-+ACTIVATEMCROSS
-+DONTGIB
-+NOICEDEATH
-+OLDRADIUSDMG
-DeathSound "world/barrelx"
-Obituary "$OB_BARREL" // "%o went boom."
-States
-	{
-	Spawn:
-	BAR1 A 10
-	Loop
-	Death:
-	SPOS M 3 BRIGHT
-	SPOS N 3 BRIGHT A_Scream
-	SPOS O 3 BRIGHT A_Explode(128)
-	SPOS PQRS 3 BRIGHT
-	GOR1 ABC 4 BRIGHT
-	SSWV NOPQ 4 BRIGHT
-	stop
-	}
+	//$Category Reborn Obstacles
+	Tag "Chemical Barrel"
+	SpawnID 104
+	Game Doom
+	SpawnID 125
+	Health 20
+	Radius 10
+	Height 34
+	+ACTIVATEMCROSS
+	+DONTGIB
+	+NOBLOOD
+	+NOICEDEATH
+	+OLDRADIUSDMG
+	+SHOOTABLE
+	+SOLID
+	DeathSound "world/barrelx"
+	Obituary "$CHEMBARL"
+	States
+		{
+		Spawn:
+			BAR1 A 10
+			Loop
+		Death:
+			SPOS M 3 BRIGHT
+			"####" N 3 BRIGHT A_Scream
+			"####" O 3 BRIGHT A_Explode(128)
+			"####" PQRS 3 BRIGHT
+			GOR1 ABC 4 BRIGHT
+			SSWV NOPQ 4 BRIGHT
+			Stop
+		}
 }
 
-ACTOR AxisBarrel : ChemicalBarrel replaces ShortBlueTorch 55
+ACTOR AxisBarrel : ChemicalBarrel replaces ShortBlueTorch
 {
-//$Category Reborn Obstacles
-Tag "Axis Barrel"
-SpawnID 105
-States
-	{
-	Spawn:
-	BAR1 B 10
-	Loop
-	}
+	//$Category Reborn Obstacles
+	Tag "Axis Barrel"
+	SpawnID 105
+	States
+		{
+		Spawn:
+			BAR1 B 10
+			Loop
+		}
 }
 
-ACTOR DoorSmash replaces EvilEye 41
+ACTOR DoorSmash replaces EvilEye
 {
-//$Category Reborn Specials
-Tag "Smashable Door (dummy)"
-SpawnID 106
-Game Doom
-SeeSound "vile/sight"
-States
-	{
-	Spawn:
-	POL5 A 10 A_Look
-	Loop
-	See:
-	SSWV IJKLM 5
-	Stop
-	}
+	//$Category Reborn Specials
+	Tag "Smashable Door (dummy)"
+	SpawnID 106
+	Game Doom
+	SeeSound "vile/sight"
+	States
+		{
+		Spawn:
+			POL5 A 10 A_Look
+			Loop
+		See:
+			SSWV IJKLM 5
+			Stop
+		}
 }
 
-ACTOR OfficePlant replaces ChaingunGuy 65
+ACTOR OfficePlant replaces ChaingunGuy
 {
-//$Category Reborn Obstacles
-Tag "Office Plant"
-SpawnID 107
-+SOLID
-radius 9
-height 56
-states
-	{
-	Spawn:
-	HDB4 A -1
-	loop
-	}
+	//$Category Reborn Obstacles
+	Tag "Office Plant"
+	SpawnID 107
+	Radius 9
+	Height 56
+	+SOLID
+	States
+		{
+		Spawn:
+			HDB4 A -1
+			Loop
+		}
 }
 
-ACTOR StoneFloor replaces Stalagtite 47 //stones for killer croc to throw (must be killed first)
+ACTOR StoneFloor replaces Stalagtite //stones for killer croc to throw (must be killed first)
 {
-//$Category Reborn Specials
-Tag "Killer Croc Stone"
-SpawnID 108
-Health 1
-+SHOOTABLE
-+NOBLOOD
-Radius 16
-Height 56
-Mass 1000000
-Speed 0
-States
-	{
-	Spawn:
-	POL5 A 10 A_Look
-	Loop
-	See:
-	POL5 A 10 A_Chase
-	Loop
-	Death:
-	HEAD G 8
-	HEAD H 8 A_Scream
-	HEAD IJ 8
-	HEAD K 8 A_NoBlocking
-	HEAD L -1
-	stop
-	Raise:
-	POL5 A 0 A_Scream
-	POL5 A 0 A_NoBlocking
-	POL5 A 1
-	stop
-	}
+	//$Category Reborn Specials
+	Tag "Killer Croc Stone"
+	Health 1
+	Radius 16
+	Height 56
+	Mass 1000000
+	Speed 0
+	+NOBLOOD
+	+SHOOTABLE
+	SpawnID 108
+	States
+		{
+		Spawn:
+			POL5 A 10 A_Look
+			Loop
+		See:
+			POL5 A 10 A_Chase
+			Loop
+		Death:
+			HEAD G 8
+			"####" H 8 A_Scream
+			"####" IJ 8
+			"####" K 8 A_NoBlocking
+			"####" L -1
+			Stop
+		Raise:
+			POL5 A 0 A_Scream
+			"####" A 0 A_NoBlocking
+			"####" A 1
+			Stop
+		}
 }
 
-ACTOR Tree replaces WolfensteinSS 48
+ACTOR Tree replaces WolfensteinSS
 {
-//$Category Reborn Obstacles
-Tag "Tree"
-SpawnID 109
-+SOLID
-radius 20
-height 56
-states
-	{
-	Spawn:
-	ELEC A -1
-	loop
-	}
+	//$Category Reborn Obstacles
+	Tag "Tree"
+	SpawnID 109
+	Radius 20
+	Height 56
+	+SOLID
+	states
+		{
+		Spawn:
+			ELEC A -1
+			Loop
+		}
 }
 
-ACTOR Toilet replaces CommanderKeen 72
+ACTOR Toilet replaces CommanderKeen
 {
-//$Category Reborn Obstacles
-Tag "Toilet"
-SpawnID 110
-+SOLID
-radius 16
-height 56
-states
-	{
-	Spawn:
-	CBRA A -1
-	loop
-	}
+	//$Category Reborn Obstacles
+	Tag "Toilet"
+	SpawnID 110
+	Radius 16
+	Height 56
+	+SOLID
+	States
+		{
+		Spawn:
+			CBRA A -1
+			Loop
+		}
 }
 
-ACTOR GargoyleStatue replaces BossBrain 88
+ACTOR GargoyleStatue replaces BossBrain
 {
-//$Category Reborn Obstacles
-Tag "Gargoyle Statue"
-SpawnID 111
-+SOLID
-radius 30
-height 56
-states
-	{
-	Spawn:
-	YSKU B -1
-	loop
-	}
+	//$Category Reborn Obstacles
+	Tag "Gargoyle Statue"
+	SpawnID 111
+	Radius 30
+	Height 56
+	+SOLID
+	States
+		{
+		Spawn:
+		YSKU B -1
+		Loop
+		}
 }
 
-ACTOR BlockingCone replaces ShortGreenTorch 56
+ACTOR BlockingCone replaces ShortGreenTorch
 {
-//$Category Reborn Specials
-Tag "Blocking Cone (living)"
-SpawnID 112
-Game Doom
-Radius 16
-Height 25
-Speed 8
-+SOLID
--CANPASS
-States
-	{
-	Spawn:
-	SMGT A 1 A_Look
-	Loop
-	See:
-	SMGT A 5 A_Chase
-	Loop
-	}
+	//$Category Reborn Specials
+	Tag "Blocking Cone (living)"
+	SpawnID 112
+	Game Doom
+	Radius 16
+	Height 25
+	Speed 8
+	-CANPASS
+	+SOLID
+	States
+		{
+		Spawn:
+			SMGT A 1 A_Look
+			Loop
+		See:
+			SMGT A 5 A_Chase
+			Loop
+		}
 }
 
-ACTOR LionStatue replaces Meat5 53
+ACTOR LionStatue replaces Meat5
 {
-//$Category Reborn Obstacles
-Tag "Lion Statue"
-SpawnID 114
-+SOLID
-Radius 30
-Height 56
-States
-	{
-	Spawn:
-	GOR5 A -1
-	loop
-	}
+	//$Category Reborn Obstacles
+	Tag "Lion Statue"
+	SpawnID 114
+	Radius 30
+	Height 56
+	+SOLID
+	States
+		{
+		Spawn:
+			GOR5 A -1
+			Loop
+		}
 }
 
-ACTOR GreenCar replaces DeadMarine 15
+ACTOR GreenCar replaces DeadMarine
 {
-//$Category Reborn Obstacles
-Tag "Green Car"
-SpawnID 116
-+SOLID
-Radius 48
-Height 64
-States
-	{
-	Spawn:
-	SKUL A -1
-	loop
-	}
+	//$Category Reborn Obstacles
+	Tag "Green Car"
+	SpawnID 116
+	Radius 48
+	Height 64
+	+SOLID
+	States
+		{
+		Spawn:
+			SKUL A -1
+			Loop
+		}
 }
 
-ACTOR GrayCar : GreenCar replaces DeadCacodemon 22
+ACTOR GrayCar : GreenCar replaces DeadCacodemon
 {
-//$Category Reborn Obstacles
-Tag "Gray Car"
-SpawnID 117
-Translation 0
+	//$Category Reborn Obstacles
+	Tag "Gray Car"
+	SpawnID 117
+	Translation 0
 }
 
-ACTOR RedCar : GreenCar replaces HeadCandles 29
+ACTOR RedCar : GreenCar replaces HeadCandles
 {
-//$Category Reborn Obstacles
-Tag "Red Car"
-SpawnID 118
-Translation 2
+	//$Category Reborn Obstacles
+	Tag "Red Car"
+	SpawnID 118
+	Translation 2
 }
 
-ACTOR Chair replaces DeadZombieMan 18
+ACTOR Chair replaces DeadZombieMan
 {
-//$Category Reborn Obstacles
-Tag "Chair"
-SpawnID 119
-Health 15
-Radius 16
-Height 56
-DeathSound "vile/sight"
-Mass 100
-+SOLID
-+SHOOTABLE
-+NOBLOOD
-States
-	{
-	Spawn:
-	BAL7 B -1
-	loop
-	Death:
-	SKUL F 6
-	SKUL G 6 A_Scream
-	SKUL I 6 A_NoBlocking
-	SKUL I -1
-	loop
-	}
+	//$Category Reborn Obstacles
+	Tag "Chair"
+	Health 15
+	Radius 16
+	Height 56
+	DeathSound "vile/sight"
+	Mass 100
+	+NOBLOOD
+	+SHOOTABLE
+	+SOLID
+	SpawnID 119
+	States
+		{
+		Spawn:
+			BAL7 B -1
+			Loop
+		Death:
+			SKUL F 6
+			"####" G 6 A_Scream
+			"####" I 6 A_NoBlocking
+			"####" I -1
+			Loop
+		}
 }
 
-ACTOR Table replaces DeadShotgunGuy 19
+ACTOR Table replaces DeadShotgunGuy
 {
-//$Category Reborn Obstacles
-Tag "Table"
-SpawnID 123
-Radius 30
-Height 56
-+SOLID
-States
-	{
-	Spawn:
-	COLU A -1 Bright
-	loop
-	}
+	//$Category Reborn Obstacles
+	Tag "Table"
+	Radius 30
+	Height 56
+	+SOLID
+	SpawnID 123
+	States
+		{
+		Spawn:
+			COLU A -1 Bright
+			Loop
+		}
 }
 
-ACTOR TrashCan replaces LiveStick 26
+ACTOR TrashCan replaces LiveStick
 {
-//$Category Reborn Obstacles
-Tag "Trashcan"
-SpawnID 124
-Radius 16
-Height 56
-+SOLID
-States
-	{
-	Spawn:
-	POL6 A -1
-	loop
-	}
+	//$Category Reborn Obstacles
+	Tag "Trashcan"
+	Radius 16
+	Height 56
+	+SOLID
+	SpawnID 124
+	States
+		{
+		Spawn:
+			POL6 A -1
+			Loop
+		}
 }
 
-ACTOR ManStatue replaces HangNoGuts 73
+ACTOR ManStatue replaces HangNoGuts
 {
-//$Category Reborn Obstacles
-Tag "Man Statue"
-SpawnID 126
-Radius 16
-Height 88
-+SOLID
-States
-	{
-	Spawn:
-	POL6 B -1
-	loop
-	}
+	//$Category Reborn Obstacles
+	Tag "Man Statue"
+	Radius 16
+	Height 88
+	+SOLID
+	SpawnID 126
+	States
+		{
+		Spawn:
+			POL6 B -1
+			Loop
+		}
 }
 
-ACTOR TrafficLight replaces HangTNoBrain 78
+ACTOR TrafficLight replaces HangTNoBrain
 {
-//$Category Reborn Obstacles
-Tag "Traffic Light"
-SpawnID 127
-Radius 15
-Height 100
-+SOLID
-States
-	{
-	Spawn:
-	HDB6 A -1
-	loop
-	}
+	//$Category Reborn Obstacles
+	Tag "Traffic Light"
+	Radius 15
+	Height 100
+	+SOLID
+	SpawnID 127
+	States
+		{
+		Spawn:
+			HDB6 A -1
+			Loop
+		}
 }
 
-ACTOR RobinSuit replaces ColonGibs 79
+ACTOR RobinSuit replaces ColonGibs
 {
-//$Category Reborn Obstacles
-Tag "Robin Suit"
-SpawnID 128
-Radius 19
-Height 19
-Mass 250
-+SOLID
-+SHOOTABLE
-+NOBLOOD
-States
-	{
-	Spawn:
-	POB1 A -1
-	loop
-	Death:
-	APLS B -1
-	loop
-	}
+	//$Category Reborn Obstacles
+	Tag "Robin Suit"
+	Radius 19
+	Height 19
+	Mass 250
+	+NOBLOOD
+	+SHOOTABLE
+	+SOLID
+	SpawnID 128
+	States
+		{
+		Spawn:
+			POB1 A -1
+			Loop
+		Death:
+			APLS B -1
+			Loop
+		}
 }
 
-ACTOR BookOnPillar replaces SmallBloodPool 80
+ACTOR BookOnPillar replaces SmallBloodPool
 {
-//$Category Reborn Obstacles
-Tag "Book On Pillar"
-SpawnID 129
-Radius 19
-Height 19
-Mass 250
-Health 50
-+SOLID
-+SHOOTABLE
-+NOBLOOD
-States
-	{
-	Spawn:
-	POB2 A -1
-	loop
-	Death:
-	SHT2 H -1
-	loop
-	}
+	//$Category Reborn Obstacles
+	Tag "Book On Pillar"
+	Radius 19
+	Height 19
+	Mass 250
+	Health 50
+	+NOBLOOD
+	+SHOOTABLE
+	+SOLID
+	SpawnID 129
+	States
+		{
+		Spawn:
+			POB2 A -1
+			Loop
+		Death:
+			SHT2 H -1
+			Loop
+		}
 }
 
-ACTOR PenguinDoll replaces BrainStem 81
+ACTOR PenguinDoll replaces BrainStem
 {
-//$Category Reborn Obstacles
-Tag "Penguin Doll"
-SpawnID 130
-Radius 20
-Height 16
-+SOLID
-States
-	{
-	Spawn:
-	BRS1 A -1
-	loop
-	}
+	//$Category Reborn Obstacles
+	Tag "Penguin Doll"
+	Radius 20
+	Height 16
+	+SOLID
+	SpawnID 130
+	States
+		{
+		Spawn:
+			BRS1 A -1
+			Loop
+		}
 }
 
-ACTOR WeirdClockTree replaces BloodyTwitch 63
+ACTOR WeirdClockTree replaces BloodyTwitch
 {
-//$Category Reborn Obstacles
-Tag "Dalì Clock"
-SpawnID 131
-+SOLID
-Radius 30
-Height 56
-States
-	{
-	Spawn:
-	Keen H -1
-	Loop
-	}
+	//$Category Reborn Obstacles
+	Tag "Dalì Clock"
+	Radius 30
+	Height 56
+	+SOLID
+	SpawnID 131
+	States
+		{
+		Spawn:
+			KEEN H -1
+			Loop
+		}
 }
 
-ACTOR MacComputer replaces HeadOnAStick 27
+ACTOR MacComputer replaces HeadOnAStick
 {
-//$Category Reborn Obstacles
-Tag "Mac Computer"
-SpawnID 133
-+SOLID
-States
-	{
-	Spawn:
-	BSPI P -1
-	Loop
-	}
+	//$Category Reborn Obstacles
+	Tag "Mac Computer"
+	+SOLID
+	SpawnID 133
+	States
+		{
+		Spawn:
+			BSPI P -1
+			Loop
+		}
 }
 
-ACTOR StreetLight replaces ShortGreenColumn 31
+ACTOR StreetLight replaces ShortGreenColumn
 {
-//$Category Reborn Obstacles
-Tag "Street Light"
-Game Doom
-Radius 4
-Height 80
-+SOLID
-States
-	{
-	Spawn:
-	COL2 A -1
-	Stop
-	}
+	//$Category Reborn Obstacles
+	Tag "Street Light"
+	Game Doom
+	Radius 4
+	Height 80
+	+SOLID
+	States
+		{
+		Spawn:
+			COL2 A -1
+			Stop
+		}
 }
 
-ACTOR Batmobile replaces HeadsOnAStick 28
+ACTOR Batmobile replaces HeadsOnAStick
 {
-//$Category Reborn Obstacles
-Tag "Batmobile"
-Game Doom
-Radius 16
-Height 64
-+SOLID
-States
-	{
-	Spawn:
-	POL2 A -1
-	Stop
-	}
+	//$Category Reborn Obstacles
+	Tag "Batmobile"
+	Game Doom
+	Radius 16
+	Height 64
+	+SOLID
+	States
+		{
+		Spawn:
+			POL2 A -1
+			Stop
+		}
 }

@@ -3,61 +3,61 @@
 ///////////
 ACTOR BatDoomEnemy
 {
-Monster
-+DROPPED
-+FLOORCLIP
+	Monster
+	+DROPPED
+	+FLOORCLIP
 }
 
-ACTOR BadBirdSpawn : RandomSpawner replaces Candlestick 34
+ACTOR BadBirdSpawn : RandomSpawner replaces Candlestick
 {
-//$Category Reborn Foes
-Tag "Bad Bird Spawner"
-SpawnID 11
-DropItem BadBird1
-DropItem BadBird2
-DropItem BadBird3
-DropItem BadBird4
-DropItem BadBird5
+	//$Category Reborn Foes
+	Tag "Bad Bird Spawner"
+	SpawnID 11
+	DropItem BadBird1
+	DropItem BadBird2
+	DropItem BadBird3
+	DropItem BadBird4
+	DropItem BadBird5
 }
 
 ACTOR BadBird1 : BatDoomEnemy
 {
-obituary "%o was bitten by a bird."
-health 10
-radius 16
-height 16
-mass 500
-speed 20
-painchance 0
-damage 3
-SeeSound "pain/sight"
-AttackSound "skull/melee"
-DeathSound "wolfss/death"
-+NOGRAVITY
-+FLOAT
--FLOORCLIP
-Species "BadBird"
-states
-	{
-	Spawn:
-	PAIN A 10 A_Look
-	loop
-	See:
-	PAIN AABBCC 3 A_Chase
-	SSWV C 6 A_Chase
-	loop
-	Missile:
-	BOS2 F 10 A_FaceTarget
-	BOS2 F 40 A_SkullAttack
-	BOS2 FF 4
-	goto Missile+2
-	Death:
-	PAIN H 4 A_Scream
-	PAIN IJK 4
-	PAIN L 4 A_NoBlocking
-	PAIN M -1
-	stop
-	}
+	Damage 3
+	Health 10
+	Height 16
+	Mass 500
+	PainChance 0
+	Radius 16
+	Speed 20
+	-FLOORCLIP
+	+FLOAT
+	+NOGRAVITY
+	Species "BadBird"
+	SeeSound "pain/sight"
+	AttackSound "skull/melee"
+	DeathSound "wolfss/death"
+	Obituary "$BIRDS"
+	States
+		{
+		Spawn:
+			PAIN A 10 A_Look
+			Loop
+		See:
+			PAIN AABBCC 3 A_Chase
+			SSWV C 6 A_Chase
+			Loop
+		Missile:
+			BOS2 F 10 A_FaceTarget
+			BOS2 F 40 A_SkullAttack
+			BOS2 FF 4
+			Goto Missile+2
+		Death:
+			PAIN H 4 A_Scream
+			PAIN IJK 4
+			PAIN L 4 A_NoBlocking
+			PAIN M -1
+			Stop
+		}
 }
 
 ACTOR BadBird2 : BadBird1 {Scale 1.1 Translation "48:79=128:151"}
@@ -65,444 +65,447 @@ ACTOR BadBird3 : BadBird1 {Scale 1.1 Translation "48:79=48:74"}
 ACTOR BadBird4 : BadBird1 {Scale 0.9 Translation "48:79=128:151"}
 ACTOR BadBird5 : BadBird1 {Scale 0.9 Translation "48:79=48:74"}
 
-ACTOR TerroristSpawn1 : RandomSpawner replaces HellKnight //3004
+ACTOR TerroristSpawn1 : RandomSpawner replaces HellKnight
 {
-//$Category Reborn Foes
-Tag "Terrorists Spawner A"
-SpawnID 12
-DropItem Terrorist1
-DropItem Terrorist2
-DropItem Terrorist3
-DropItem Terrorist4
-DropItem Terrorist5
-DropItem Terrorist6
-DropItem Terrorist7
-DropItem Terrorist8
+	//$Category Reborn Foes
+	Tag "Terrorists Spawner A"
+	SpawnID 12
+	DropItem Terrorist1
+	DropItem Terrorist2
+	DropItem Terrorist3
+	DropItem Terrorist4
+	DropItem Terrorist5
+	DropItem Terrorist6
+	DropItem Terrorist7
+	DropItem Terrorist8
 }
 
-ACTOR TerroristSpawn2 : RandomSpawner replaces TechLamp2 86
+ACTOR TerroristSpawn2 : RandomSpawner replaces TechLamp2
 {
-//$Category Reborn Foes
-Tag "Terrorists Spawner B"
-SpawnID 14
-DropItem Terrorist1
-DropItem Terrorist2
-DropItem Terrorist3
-DropItem Terrorist4
-DropItem Terrorist5
-DropItem Terrorist6
-DropItem Terrorist7
-DropItem Terrorist8
+	//$Category Reborn Foes
+	Tag "Terrorists Spawner B"
+	SpawnID 14
+	DropItem Terrorist1
+	DropItem Terrorist2
+	DropItem Terrorist3
+	DropItem Terrorist4
+	DropItem Terrorist5
+	DropItem Terrorist6
+	DropItem Terrorist7
+	DropItem Terrorist8
 }
 
-ACTOR TerroristSpawnKey : RandomSpawner replaces ShotgunGuy //36
+ACTOR TerroristSpawnKey : RandomSpawner replaces ShotgunGuy
 {
-//$Category Reborn Foes
-Tag "Terrorists Spawner (with keys)"
-SpawnID 13
-DropItem TerroristKey
+	//$Category Reborn Foes
+	Tag "Terrorists Spawner (with keys)"
+	SpawnID 13
+	DropItem TerroristKey
 }
 
-ACTOR TerroristSpawn3 : RandomSpawner replaces TallGreenColumn 30
+ACTOR TerroristSpawn3 : RandomSpawner replaces TallGreenColumn
 {
-//$Category Reborn Foes
-Tag "Terrorists Spawner C"
-SpawnID 15
-DropItem Terrorist1
-DropItem Terrorist2
-DropItem Terrorist3
-DropItem Terrorist4
-DropItem Terrorist5
-DropItem Terrorist6
-DropItem Terrorist7
-DropItem Terrorist8
+	//$Category Reborn Foes
+	Tag "Terrorists Spawner C"
+	SpawnID 15
+	DropItem Terrorist1
+	DropItem Terrorist2
+	DropItem Terrorist3
+	DropItem Terrorist4
+	DropItem Terrorist5
+	DropItem Terrorist6
+	DropItem Terrorist7
+	DropItem Terrorist8
 }
 
 
 ACTOR Terrorist1 : BatDoomEnemy
 {
-SpawnID 12
-obituary "%o was shot by a Terrorist."
-health 40
-radius 24
-height 63
-mass 100
-speed 8
-painchance 200
-seesound "terr/sight"
-attacksound "weapons/pistol"
-painsound "knight/pain"
-deathsound "grunt/death"
-scale 0.78
-states
-	{
-	Spawn:
-	TROO A 10 A_Look
-	loop
-	See:
-	TROO AABBCCDD 4 A_Chase
-	goto See
-	Pain:
-	TROO H 3
-	TROO H 3 A_Pain
-	goto See
-	Missile:
-	POSS E 8 A_FaceTarget
-	POSS F 8 bright Light(BDFOES1) A_PosAttack
-	goto See
-	Death:
-	POSS H 5
-	POSS I 5 A_Scream
-	POSS J 5 A_NoBlocking
-	POSS K 5
-	POSS L -1
-	Stop
-	Burn: //new
-	POSS H 1 Bright
-	POSS I 0 A_Fall
-    POSS I 0 A_SpawnItem("BurnBurnBurn1",1)
-	TNT1 A -1
-	Stop
-	Crush:
-	CRS1 A -1
-	Stop
-	}
+	Health 40
+	Height 63
+	Mass 100
+	PainChance 200
+	Radius 24
+	Speed 8
+	Scale 0.78
+	SpawnID 12
+	AttackSound "weapons/pistol"
+	DeathSound "grunt/death"
+	PainSound "knight/pain"
+	SeeSound "terr/sight"
+	Obituary "$TERRORS"
+	States
+		{
+		Spawn:
+			TROO A 10 A_Look
+			Loop
+		See:
+			TROO AABBCCDD 4 A_Chase
+			Goto See
+		Pain:
+			TROO H 3
+			TROO H 3 A_Pain
+			Goto See
+		Missile:
+			POSS E 8 A_FaceTarget
+			POSS F 8 BRIGHT Light(BDFOES1) A_PosAttack
+			Goto See
+		Death:
+			POSS H 5
+			POSS I 5 A_Scream
+			POSS J 5 A_NoBlocking
+			POSS K 5
+			POSS L -1
+			Stop
+		Burn: //new
+			POSS H 1 BRIGHT
+			POSS I 0 A_Fall
+			POSS I 0 A_SpawnItem("BurnBurnBurn1",1)
+			TNT1 A -1
+			Stop
+		Crush:
+			CRS1 A -1
+			Stop
+		}
 }
 
-ACTOR Terrorist2 : Terrorist1 {health 30 Translation "112:127=96:111"}
-ACTOR Terrorist3 : Terrorist1 {health 25 Translation "112:127=64:79"}
-ACTOR Terrorist4 : Terrorist1 {health 35 Translation "112:127=32:47"}
-ACTOR Terrorist5 : Terrorist1 {health 40 Translation "192:207=104:111","240:246=5:8"}
-ACTOR Terrorist6 : Terrorist1 {health 30 Translation "192:207=104:111","240:246=5:8","112:127=96:111"}
-ACTOR Terrorist7 : Terrorist1 {health 25 Translation "192:207=104:111","240:246=5:8","112:127=64:79"}
-ACTOR Terrorist8 : Terrorist1 {health 35 Translation "192:207=104:111","240:246=5:8","112:127=32:47"}
+ACTOR Terrorist2 : Terrorist1 {Health 30 Translation "112:127=96:111"}
+ACTOR Terrorist3 : Terrorist1 {Health 25 Translation "112:127=64:79"}
+ACTOR Terrorist4 : Terrorist1 {Health 35 Translation "112:127=32:47"}
+ACTOR Terrorist5 : Terrorist1 {Health 40 Translation "192:207=104:111","240:246=5:8"}
+ACTOR Terrorist6 : Terrorist1 {Health 30 Translation "192:207=104:111","240:246=5:8","112:127=96:111"}
+ACTOR Terrorist7 : Terrorist1 {Health 25 Translation "192:207=104:111","240:246=5:8","112:127=64:79"}
+ACTOR Terrorist8 : Terrorist1 {Health 35 Translation "192:207=104:111","240:246=5:8","112:127=32:47"}
 
 ACTOR TerroristKey : Terrorist1
 {
-Translation "112:127=192:207"
-states
-	{
-	Death:
-	POSS H 5
-	POSS I 5 A_Scream
-	POSS J 5 A_NoBlocking
-	POSS J 0 A_SpawnItemEx("BlueKey",0,0,0,0,0,0,0,0,0)
-	POSS K 5
-	POSS L -1
-	loop
-	Burn: //new
-	POSS H 1 Bright
-	POSS I 0 A_Fall
-    POSS I 0 A_SpawnItem("BurnBurnBurn1",1)
-	TNT1 A -1 A_SpawnItemEx("BlueKey",0,0,0,0,0,0,0,0,0)
-	Stop
-	Crush:
-	CRS1 A -1 A_SpawnItemEx("BlueKey",0,0,0,0,0,0,0,0,0)
-	Stop
-	}
+	Translation "112:127=192:207"
+	States
+		{
+		Death:
+			POSS H 5
+			POSS I 5 A_Scream
+			POSS J 5 A_NoBlocking
+			POSS J 0 A_SpawnItemEx("BlueKey",0,0,0,0,0,0,0,0,0)
+			POSS K 5
+			POSS L -1
+			Loop
+		Burn: //new
+			POSS H 1 BRIGHT
+			POSS I 0 A_Fall
+			POSS I 0 A_SpawnItem("BurnBurnBurn1",1)
+			TNT1 A -1 A_SpawnItemEx("BlueKey",0,0,0,0,0,0,0,0,0)
+			Stop
+		Crush:
+			CRS1 A -1 A_SpawnItemEx("BlueKey",0,0,0,0,0,0,0,0,0)
+			Stop
+		}
 }
 
-ACTOR ShotgunThiefSpawn : RandomSpawner replaces Fatso //9
+ACTOR ShotgunThiefSpawn : RandomSpawner replaces Fatso
 {
-//$Category Reborn Foes
-Tag "Shotgun Thieves Spawner"
-SpawnID 16
-DropItem ShotgunThief1
-DropItem ShotgunThief2
-DropItem ShotgunThief3
-DropItem ShotgunThief4
+	//$Category Reborn Foes
+	Tag "Shotgun Thieves Spawner"
+	SpawnID 16
+	DropItem ShotgunThief1
+	DropItem ShotgunThief2
+	DropItem ShotgunThief3
+	DropItem ShotgunThief4
 }
 
 ACTOR ShotgunThief1 : BatDoomEnemy
 {
-SpawnID 16
-obituary "%o was shot by a shotgunner."
-health 30
-radius 24
-height 63
-mass 100
-speed 8
-painchance 170
-seesound "imp/active"
-painsound "vile/pain"
-deathsound "chainguy/death2"
-scale 0.78
-states
-	{
-	Spawn:
-	SPOS A 10 A_Look
-	loop
-	See:
-	SPOS AABBCCDD 2 A_Chase
-	loop
-	Missile:
-	SPOS E 10 A_FaceTarget
-	SPOS F 10 bright Light(BDFOES2) A_SPosAttack
-	SPOS E 10
-	goto See
-	Pain:
-	SPOS G 3
-	SPOS G 3 A_Pain
-	goto See
-	Death:
-	SPOS H 5
-	SPOS I 5 A_Scream
-	SPOS J 5 A_NoBlocking
-	SPOS K 5
-	SPOS L -1
-	stop
-	Burn: //new
-	PLAY H 1 Bright
-	PLAY I 0 A_Fall
-    PLAY I 0 A_SpawnItem("BurnBurnBurn1",1)
-	TNT1 A -1
-	Stop
-	Crush:
-	CRS1 A -1
-	Stop
-	}
+	Health 30
+	Height 63
+	Mass 100
+	PainChance 170
+	Radius 24
+	Speed 8
+	Scale 0.78
+	SpawnID 16
+	DeathSound "chainguy/death2"
+	PainSound "vile/pain"
+	SeeSound "imp/active"
+	Obituary "$SHOTHIEF"
+	States
+		{
+		Spawn:
+			SPOS A 10 A_Look
+			Loop
+		See:
+			SPOS AABBCCDD 2 A_Chase
+			Loop
+		Missile:
+			SPOS E 10 A_FaceTarget
+			SPOS F 10 BRIGHT Light(BDFOES2) A_SPosAttack
+			SPOS E 10
+			Goto See
+		Pain:
+			SPOS G 3
+			SPOS G 3 A_Pain
+			Goto See
+		Death:
+			SPOS H 5
+			SPOS I 5 A_Scream
+			SPOS J 5 A_NoBlocking
+			SPOS K 5
+			SPOS L -1
+			Stop
+		Burn: //new
+			PLAY H 1 BRIGHT
+			PLAY I 0 A_Fall
+			PLAY I 0 A_SpawnItem("BurnBurnBurn1",1)
+			TNT1 A -1
+			Stop
+		Crush:
+			CRS1 A -1
+			Stop
+		}
 }
 
-ACTOR ShotgunThief2 : ShotgunThief1 {health 30 Translation "112:127=96:111"}
-ACTOR ShotgunThief3 : ShotgunThief1 {health 35 Translation "112:127=64:79"}
-ACTOR ShotgunThief4 : ShotgunThief1 {health 25 Translation "112:127=32:47"}
+ACTOR ShotgunThief2 : ShotgunThief1 {Health 30 Translation "112:127=96:111"}
+ACTOR ShotgunThief3 : ShotgunThief1 {Health 35 Translation "112:127=64:79"}
+ACTOR ShotgunThief4 : ShotgunThief1 {Health 25 Translation "112:127=32:47"}
 
-ACTOR GangWarShotgunThiefSpawn : RandomSpawner replaces RocketBox 2046
+ACTOR GangWarShotgunThiefSpawn : RandomSpawner replaces RocketBox
 {
-//$Category Reborn Foes
-Tag "Gang-War Shotgun Thieves Spawner"
-SpawnID 17
-DropItem GangWarShotgunThief1
-DropItem GangWarShotgunThief2
-DropItem GangWarShotgunThief3
-DropItem GangWarShotgunThief4
+	//$Category Reborn Foes
+	Tag "Gang-War Shotgun Thieves Spawner"
+	SpawnID 17
+	DropItem GangWarShotgunThief1
+	DropItem GangWarShotgunThief2
+	DropItem GangWarShotgunThief3
+	DropItem GangWarShotgunThief4
 }
 
 ACTOR GangWarShotgunThief1 : ShotgunThief1
 {
-health 100
-painchance 130
-Species "GangWarShotgunThief"
-Translation "192:207=104:111","240:246=5:8"
-states
-	{
-	See:
-	SPOS E 10
-	goto missile
-	}
+	Health 100
+	PainChance 130
+	Species "GangWarShotgunThief"
+	Translation "192:207=104:111","240:246=5:8"
+	Obituary "$SHOTGANG"
+	States
+		{
+		See:
+			SPOS E 10
+			Goto Missile
+		}
 }
 
 ACTOR GangWarShotgunThief2 : GangWarShotgunThief1
-{health 110 Translation "192:207=104:111","240:246=5:8","112:127=96:111"}
+{Health 110 Translation "192:207=104:111","240:246=5:8","112:127=96:111"}
 
 ACTOR GangWarShotgunThief3 : GangWarShotgunThief1
-{health 90 Translation "192:207=104:111","240:246=5:8","112:127=64:79"}
+{Health 90 Translation "192:207=104:111","240:246=5:8","112:127=64:79"}
 
 ACTOR GangWarShotgunThief4 : GangWarShotgunThief1
-{health 100 Translation "192:207=104:111","240:246=5:8","112:127=32:47"}
+{Health 100 Translation "192:207=104:111","240:246=5:8","112:127=32:47"}
 
-ACTOR CheungShuriken replaces DoomImpBall
+ACTOR CheungShuriken replaces DoomImpBall //shaders & rotsprite?
 {
-SpawnID 61
-Game Doom
-Radius 6
-Height 8
-Speed 10
-FastSpeed 20
-Damage 3
-Projectile
-+BLOODLESSIMPACT
-+RANDOMIZE
-SeeSound "skull/melee"
-DeathSound "imp/shotx"
-States
-	{
-	Spawn:
-	BAL1 AB 4 bright
-	loop
-	Death:
-	BAL1 CDE 6 bright
-	stop
-	}
+	Game Doom
+	Damage 3
+	FastSpeed 20
+	Height 8
+	Radius 6
+	Speed 10
+	Projectile
+	+BLOODLESSIMPACT
+	+BRIGHT
+	+RANDOMIZE
+	SpawnID 61
+	DeathSound "imp/shotx"
+	SeeSound "skull/melee"
+	States
+		{
+		Spawn:
+			BAL1 AB 4
+			Loop
+		Death:
+			BAL1 CDE 6
+			Stop
+		}
 }
 
-ACTOR CheungSpawn : RandomSpawner replaces DoomImp 3001
+ACTOR CheungSpawn : RandomSpawner replaces DoomImp
 {
-//$Category Reborn Foes
-Tag "Chinese Cheungs Spawner"
-SpawnID 18
-DropItem Cheung1
-DropItem Cheung2
+	//$Category Reborn Foes
+	Tag "Chinese Cheungs Spawner"
+	SpawnID 18
+	DropItem Cheung1
+	DropItem Cheung2
 }
 
 ACTOR Cheung1 : BatDoomEnemy
 {
-SpawnID 18
-obituary "%o was killed by Cheung."
-health 60
-radius 24
-height 63
-mass 100
-speed 10
-painchance 200
-seesound "imp/sight"
-painsound "imp/pain"
-deathsound "baby/death"
-Monster
--COUNTKILL
-+FLOORCLIP
-Species "Cheung"
-scale 0.78
-states
-	{
-	Spawn:
-	CPOS A 10 A_Look
-	loop
-	See:
-	CPOS AABBCCDD 3 A_Chase
-	loop
-	Melee:
-	Missile:
-	BOSS EF 8 A_FaceTarget
-	BOSS G 6 A_CustomMissile("CheungShuriken", 44)
-	goto See
-	Pain:
-	CPOS G 6
-	CPOS G 6 A_Pain
-	goto See
-	Death:
-	TROO N 4
-	TROO O 4 A_Scream
-	TROO P 4
-	TROO Q 4 A_NoBlocking
-	TROO RST 4
-	TROO U -1
-	loop
-	Burn: //new
-	PLAY H 1 Bright
-	PLAY I 0 A_Fall
-    PLAY I 0 A_SpawnItem("BurnBurnBurn1",1)
-	TNT1 A -1
-	Stop
-	Crush:
-	CRS1 A -1
-	Stop
-	}
+	Health 60
+	Height 63
+	Mass 100
+	PainChance 200
+	Radius 24
+	Speed 10
+	Scale 0.78
+	Monster
+	-COUNTKILL
+	+FLOORCLIP
+	SpawnID 18
+	Species "Cheung"
+	DeathSound "baby/death"
+	PainSound "imp/pain"
+	SeeSound "imp/sight"
+	Obituary "$CHEUNG1"
+	States
+		{
+		Spawn:
+			CPOS A 10 A_Look
+			Loop
+		See:
+			CPOS AABBCCDD 3 A_Chase
+			Loop
+		Melee:
+		Missile:
+			BOSS EF 8 A_FaceTarget
+			BOSS G 6 A_CustomMissile("CheungShuriken", 44)
+			Goto See
+		Pain:
+			CPOS G 6
+			CPOS G 6 A_Pain
+			Goto See
+		Death:
+			TROO N 4
+			TROO O 4 A_Scream
+			TROO P 4
+			TROO Q 4 A_NoBlocking
+			TROO RST 4
+			TROO U -1
+			Loop
+		Burn: //new
+			PLAY H 1 BRIGHT
+			PLAY I 0 A_Fall
+			PLAY I 0 A_SpawnItem("BurnBurnBurn1",1)
+			TNT1 A -1
+			Stop
+		Crush:
+			CRS1 A -1
+			Stop
+		}
 }
 
 ACTOR Cheung2 : Cheung1
 {
-speed 8
-painchance 128
-Translation "192:207=104:111","240:246=5:8"
+	Speed 8
+	PainChance 128
+	Translation "192:207=104:111","240:246=5:8"
 }
 
-ACTOR GangWarCheungSpawn : RandomSpawner replaces RocketAmmo 2010
+ACTOR GangWarCheungSpawn : RandomSpawner replaces RocketAmmo
 {
-//$Category Reborn Foes
-Tag "Gang-War Chinese Cheungs Spawner"
-SpawnID 19
-DropItem GangWarCheung1
-DropItem GangWarCheung2
+	//$Category Reborn Foes
+	Tag "Gang-War Chinese Cheungs Spawner"
+	SpawnID 19
+	DropItem GangWarCheung1
+	DropItem GangWarCheung2
 }
 
 ACTOR GangWarCheung1 : Cheung1
 {
-health 120
-painchance 150
-Translation "104:111=192:204","5:8=240:246"
-states
-	{
-	See:
-	BOSS E 1
-	goto missile
-	}
+	Health 120
+	PainChance 150
+	Translation "104:111=192:204","5:8=240:246"
+	Obituary "$CHEUNG2"
+	States
+		{
+		See:
+			BOSS E 1
+			Goto Missile
+		}
 }
 
 ACTOR GangWarCheung2 : GangWarCheung1
 {
-health 110
-painchance 100
-Translation "192:207=104:111","240:246=5:8","104:111=192:204","5:8=240:246"
+	Health 110
+	PainChance 100
+	Translation "192:207=104:111","240:246=5:8","104:111=192:204","5:8=240:246"
 }
 
-ACTOR StrakeSpawn : RandomSpawner replaces Demon 3002
+ACTOR StrakeSpawn : RandomSpawner replaces Demon
 {
-//$Category Reborn Foes
-Tag "Strakes Spawner"
-SpawnID 20
-DropItem Strake1
-DropItem Strake2
-DropItem Strake3
-DropItem Strake4
-DropItem Strake5
-DropItem Strake6
-DropItem Strake7
-DropItem Strake8
+	//$Category Reborn Foes
+	Tag "Strakes Spawner"
+	SpawnID 20
+	DropItem Strake1
+	DropItem Strake2
+	DropItem Strake3
+	DropItem Strake4
+	DropItem Strake5
+	DropItem Strake6
+	DropItem Strake7
+	DropItem Strake8
 }
 
-ACTOR StrakeSpawn2 : StrakeSpawn replaces TechLamp 85
+ACTOR StrakeSpawn2 : StrakeSpawn replaces TechLamp
 {
-//$Category Reborn Foes
-Tag "Strakes Spawner (dummy)"
-SpawnID 21
+	//$Category Reborn Foes
+	Tag "Strakes Spawner (dummy)"
+	SpawnID 21
 }
 
 ACTOR Strake1 : BatDoomEnemy
 {
-SpawnID 20
-Game Doom
-obituary "%o was stabbed by Strake."
-SpawnID 8
-Health 150
-PainChance 180
-Speed 10
-Radius 24
-Height 56
-Mass 400
-+FASTER
-+FASTMELEE
-SeeSound "demon/sight"
-AttackSound "demon/melee"
-painsound "caco/death"
-DeathSound "demon/death"
-Species "Strake"
-scale 0.78
-States
-	{
-	Spawn:
-	SARG A 10 A_Look
-	Loop
-	See:
-	SARG AABBCCDD 2 A_Chase
-	Loop
-	Melee:
-	SARG E 5 A_FaceTarget
-	SARG F 5 A_SargAttack
-	SARG G 5 A_FaceTarget
-	Goto See
-	Pain:
-	SARG H 2
-	SARG H 2 A_Pain
-	Goto See
-	Death:
-	SARG I 8
-	SARG J 8 A_Scream
-	SARG K 4
-	SARG L 4 A_NoBlocking
-	SARG M 4
-	SARG N -1
-	Stop
-	Burn: //new
-	PLAY H 1 Bright
-	PLAY I 0 A_Fall
-    PLAY I 0 A_SpawnItem("BurnBurnBurn2",1)
-	TNT1 A -1
-	Stop
-	Crush:
-	CRS2 A -1
-	Stop
-	}
+	Game Doom
+	Health 150
+	Height 56
+	Mass 400
+	PainChance 180
+	Radius 24
+	Speed 10
+	Scale 0.78
+	+FASTER
+	+FASTMELEE
+	SpawnID 8
+	SpawnID 20
+	Species "Strake"
+	AttackSound "demon/melee"
+	DeathSound "demon/death"
+	PainSound "caco/death"
+	SeeSound "demon/sight"
+	Obituary "$STRAKE"
+	States
+		{
+		Spawn:
+			SARG A 10 A_Look
+			Loop
+		See:
+			SARG AABBCCDD 2 A_Chase
+			Loop
+		Melee:
+			SARG E 5 A_FaceTarget
+			SARG F 5 A_SargAttack
+			SARG G 5 A_FaceTarget
+			Goto See
+		Pain:
+			SARG H 2
+			SARG H 2 A_Pain
+			Goto See
+		Death:
+			SARG I 8
+			SARG J 8 A_Scream
+			SARG K 4
+			SARG L 4 A_NoBlocking
+			SARG M 4
+			SARG N -1
+			Stop
+		Burn: //new
+			PLAY H 1 BRIGHT
+			PLAY I 0 A_Fall
+			PLAY I 0 A_SpawnItem("BurnBurnBurn2",1)
+			TNT1 A -1
+			Stop
+		Crush:
+			CRS2 A -1
+			Stop
+		}
 }
 
 ACTOR Strake2 : Strake1 {Health 130 Translation "112:127=96:111"}
@@ -513,656 +516,657 @@ ACTOR Strake6 : Strake1 {Health 150 Translation "112:127=56:71"}
 ACTOR Strake7 : Strake1 {Health 130 Translation "112:127=176:191"}
 ACTOR Strake8 : Strake1 {Health 150 Translation "112:127=240:247"}
 
-ACTOR PenguinRobot : BatDoomEnemy replaces Column 2028
+ACTOR PenguinRobot : BatDoomEnemy replaces Column
 {
-//$Category Reborn Foes
-Tag "Penguin Robot"
-SpawnID 22
-Game Doom
-Health 30
-Speed 11
-Radius 16
-Height 45
-Mass 200
-+NOBLOOD
-+OLDRADIUSDMG
-DeathSound "weapons/rocklx"
-States
-	{
-	Spawn:
-	HEAD A 10 A_Look
-	Loop
-	See:
-	BOSS H 5 A_Chase
-	HEAD A 5 A_Chase
-	Loop
-	Melee:
-	Death:
-	BEXP A 2 Bright A_Pain
-	BEXP B 5 Bright
-	BEXP C 4 Bright A_Scream
-	BEXP D 4 Bright A_Explode(128)
-	BEXP E 4 Bright
-	SPOS TU 4 Bright
-	Stop
-	}
+	//$Category Reborn Foes
+	Tag "Penguin Robot"
+	Game Doom
+	Health 30
+	Height 45
+	Mass 200
+	Radius 16
+	Speed 11
+	+NOBLOOD
+	+OLDRADIUSDMG
+	SpawnID 22
+	DeathSound "weapons/rocklx"
+	Obituary "$PENGROBO"
+	States
+		{
+		Spawn:
+			HEAD A 10 A_Look
+			Loop
+		See:
+			BOSS H 5 A_Chase
+			HEAD A 5 A_Chase
+			Loop
+		Melee:
+		Death:
+			BEXP A 2 BRIGHT A_Pain
+			BEXP B 5 BRIGHT
+			BEXP C 4 BRIGHT A_Scream
+			BEXP D 4 BRIGHT A_Explode(128)
+			BEXP E 4 BRIGHT
+			SPOS TU 4 BRIGHT
+			Stop
+		}
 }
 
-ACTOR NinjaSpawn : RandomSpawner replaces Arachnotron 68
+ACTOR NinjaSpawn : RandomSpawner replaces Arachnotron
 {
-//$Category Reborn Foes
-Tag "Ninjakus Spawner"
-SpawnID 23
-DropItem Ninja1
-DropItem Ninja2
-DropItem Ninja3
-DropItem Ninja4
+	//$Category Reborn Foes
+	Tag "Ninjakus Spawner"
+	SpawnID 23
+	DropItem Ninja1
+	DropItem Ninja2
+	DropItem Ninja3
+	DropItem Ninja4
 }
 
-ACTOR Ninja1 : BatDoomEnemy //that's so Maulerdemon inspired... :-)
+ACTOR Ninja1 : BatDoomEnemy
 {
-SpawnID 23
-obituary "%o was sliced by a ninja."
-health 150
-radius 24
-height 63
-mass 1000
-damage 2 //jump forward to your head!
-speed 28
-painchance 128
-+FASTMELEE
-+QUICKTORETALIATE
-seesound "baby/sight"
-painsound "grunt/pain"
-deathsound "baby/death"
-Species "Ninja"
-scale 0.78
-states
-	{
-	Spawn:
-	BSPI C 10 A_Look
-	loop
-	See:
-	BSPI AABBCCDD 4 A_Chase
-	Loop
-	Melee:
-	BSPI E 3 A_FaceTarget
-	BSPI FE 3 A_SargAttack
-	Goto See
-	Missile:
-	BSPI E 0 A_JumpIfCloser(224, 2)
-	Goto See
-	BSPI E 3 A_FaceTarget
-	BSPI FE 4 A_SkullAttack
-	BSPI F 3 A_Gravity
-	Goto See
-	Pain:
-	BSPI I 3
-	BSPI I 3 A_Pain
-	goto See
-	Death:
-	BSPI J 20 A_Scream
-	BSPI K 7 A_NoBlocking
-	BSPI LMN 7
-	BSPI O -1
-	stop
-	Burn: //new
-	PLAY H 1 Bright
-	PLAY I 0 A_Fall
-    PLAY I 0 A_SpawnItem("BurnBurnBurn1",1)
-	TNT1 A -1
-	Stop
-	Crush:
-	CRS1 A -1
-	Stop
-	}
+	Health 150
+	Height 63
+	Mass 1000
+	PainChance 128
+	Radius 24
+	Speed 28
+	Damage 2 //jump forward to your head!
+	Scale 0.78
+	+FASTMELEE
+	+QUICKTORETALIATE
+	SpawnID 23
+	Species "Ninja"
+	DeathSound "baby/death"
+	PainSound "grunt/pain"
+	SeeSound "baby/sight"
+	Obituary "$NINJA"
+	States
+		{
+		Spawn:
+			BSPI C 10 A_Look
+			Loop
+		See:
+			BSPI AABBCCDD 4 A_Chase
+			Loop
+		Melee:
+			BSPI E 3 A_FaceTarget
+			BSPI FE 3 A_SargAttack
+			Goto See
+		Missile:
+			BSPI E 0 A_JumpIfCloser(224, 2)
+			Goto See
+			BSPI E 3 A_FaceTarget
+			BSPI FE 4 A_SkullAttack
+			BSPI F 3 A_Gravity
+			Goto See
+		Pain:
+			BSPI I 3
+			BSPI I 3 A_Pain
+			Goto See
+		Death:
+			BSPI J 20 A_Scream
+			BSPI K 7 A_NoBlocking
+			BSPI LMN 7
+			BSPI O -1
+			Stop
+		Burn: //new
+			PLAY H 1 BRIGHT
+			PLAY I 0 A_Fall
+			PLAY I 0 A_SpawnItem("BurnBurnBurn1",1)
+			TNT1 A -1
+			Stop
+		Crush:
+			CRS1 A -1
+			Stop
+		}
 }
 
 ACTOR Ninja2 : Ninja1
 {
-speed 24
-health 170
-painchance 200
-Translation "56:79=48:71"
+	Speed 24
+	Health 170
+	PainChance 200
+	Translation "56:79=48:71"
 }
 
 ACTOR Ninja3 : Ninja1
 {
-speed 30
-health 130
-painchance 64
-Translation "104:111=192:204","5:8=240:246"
+	Speed 30
+	Health 130
+	PainChance 64
+	Translation "104:111=192:204","5:8=240:246"
 }
 
 ACTOR Ninja4 : Ninja1
 {
-speed 26
-painchance 160
-Translation "104:111=192:204","5:8=240:246","56:79=48:71"
+	Speed 26
+	PainChance 160
+	Translation "104:111=192:204","5:8=240:246","56:79=48:71"
 }
 
 ACTOR NinjaEnd : Ninja1 //with normal ninjakus endseq will crash
 {
-States
-	{
-	Missile:
-	BSPI E 3 A_FaceTarget
-	BSPI FE 4 A_SkullAttack
-	BSPI F 3 A_Gravity
-	Goto See
-	}
+	States
+		{
+		Missile:
+			BSPI E 3 A_FaceTarget
+			BSPI FE 4 A_SkullAttack
+			BSPI F 3 A_Gravity
+			Goto See
+		}
 }
 
 ACTOR Flame replaces ArachnotronPlasma
 {
-SpawnID 62
-Game Doom
-Radius 13
-Height 8
-Speed 25
-Damage 2
-SeeSound "wolfss/sight"
-Projectile
-RenderStyle Add
-Alpha 0.8
-Projectile
-+BLOODLESSIMPACT
-states
-	{
-	Spawn:
-	TLP2 ABCD 4
-	stop
-	Death:
-	FIRE FGH 5 BRIGHT
-	stop
-	}
+	Game Doom
+	Damage 2
+	Height 8
+	Radius 13
+	Speed 25
+	RenderStyle Add
+	Alpha 0.8
+	Projectile
+	+BLOODLESSIMPACT
+	SpawnID 62
+	SeeSound "wolfss/sight"
+	States
+		{
+		Spawn:
+			TLP2 ABCD 4
+			Stop
+		Death:
+			FIRE FGH 5 BRIGHT
+			Stop
+		}
 }
 
-ACTOR FlameManSpawn : RandomSpawner replaces Archvile //69
+ACTOR FlameManSpawn : RandomSpawner replaces Archvile
 {
-//$Category Reborn Foes
-Tag "FlameMen Spawner"
-SpawnID 24
-DropItem FlameMan1
-DropItem FlameMan2
-DropItem FlameMan3
-DropItem FlameMan4
-DropItem FlameMan5
-DropItem FlameMan6
-DropItem FlameMan7
-DropItem FlameMan8
+	//$Category Reborn Foes
+	Tag "FlameMen Spawner"
+	SpawnID 24
+	DropItem FlameMan1
+	DropItem FlameMan2
+	DropItem FlameMan3
+	DropItem FlameMan4
+	DropItem FlameMan5
+	DropItem FlameMan6
+	DropItem FlameMan7
+	DropItem FlameMan8
 }
 
 ACTOR FlameMan1 : BatDoomEnemy
 {
-SpawnID 24
-obituary "%o was burned."
-health 350
-radius 24
-height 63
-mass 1000
-speed 10
-painchance 20
-seesound "baby/active"
-attacksound "baby/pain"
-painsound "baby/pain"
-deathsound "grunt/death"
-Species "FlameMan"
-scale 0.78
-states
-	{
-	Spawn:
-	BOS2 A 10 A_Look
-	loop
-	See:
-	BOS2 ABCD 4 A_Chase
-	goto See
-	Pain:
-	BOS2 H 2
-	BOS2 H 2 A_Pain
-	goto See
-	Missile:
-	BSPI G 9 Light(BDFMAN3) A_FaceTarget
-	BSPI H 9 Light(BDFMAN4)
-	BSPI G 9 Light(BDFMAN3)
-	BOS2 A 3 Bright Light(BDFMAN1) A_Chase
-	BOS2 A 3 Bright Light(BDFMAN2) A_CustomMissile("Flame", 40)
-	BOS2 B 3 Bright Light(BDFMAN1) A_Chase
-	BOS2 B 3 Bright Light(BDFMAN2) A_CustomMissile("Flame", 40)
-	BOS2 C 3 Bright Light(BDFMAN1) A_Chase
-	BOS2 C 3 Bright Light(BDFMAN2) A_CustomMissile("Flame", 40)
-	BOS2 D 3 Bright Light(BDFMAN1) A_Chase
-	BOS2 D 3 Bright Light(BDFMAN2) A_CustomMissile("Flame", 40)
-	BSPI G 4 Bright Light(BDFMAN1) A_SpidRefire
-	goto Missile+3
-	Death:
-	BOS2 I 6
-	BOS2 J 6 A_Scream
-	BOS2 K 6
-	BOS2 L 6 A_NoBlocking
-	BOS2 MN 6
-	BOS2 O -1
-	stop
-	Burn: //new
-	PLAY H 1 Bright
-	PLAY I 0 A_Fall
-    PLAY I 0 A_SpawnItem("BurnBurnBurn1",1)
-	TNT1 A -1
-	Stop
-	Crush:
-	CRS2 A -1
-	Stop
-	}
+	Health 350
+	Height 63
+	Mass 1000
+	PainChance 20
+	Radius 24
+	Speed 10
+	Scale 0.78
+	SpawnID 24
+	Species "FlameMan"
+	AttackSound "baby/pain"
+	DeathSound "grunt/death"
+	PainSound "baby/pain"
+	SeeSound "baby/active"
+	Obituary "$FLAMEMAN"
+	States
+		{
+		Spawn:
+			BOS2 A 10 A_Look
+			Loop
+		See:
+			BOS2 ABCD 4 A_Chase
+			Goto See
+		Pain:
+			BOS2 H 2
+			BOS2 H 2 A_Pain
+			Goto See
+		Missile:
+			BSPI G 9 Light(BDFMAN3) A_FaceTarget
+			BSPI H 9 Light(BDFMAN4)
+			BSPI G 9 Light(BDFMAN3)
+			BOS2 A 3 BRIGHT Light(BDFMAN1) A_Chase
+			BOS2 A 3 BRIGHT Light(BDFMAN2) A_CustomMissile("Flame", 40)
+			BOS2 B 3 BRIGHT Light(BDFMAN1) A_Chase
+			BOS2 B 3 BRIGHT Light(BDFMAN2) A_CustomMissile("Flame", 40)
+			BOS2 C 3 BRIGHT Light(BDFMAN1) A_Chase
+			BOS2 C 3 BRIGHT Light(BDFMAN2) A_CustomMissile("Flame", 40)
+			BOS2 D 3 BRIGHT Light(BDFMAN1) A_Chase
+			BOS2 D 3 BRIGHT Light(BDFMAN2) A_CustomMissile("Flame", 40)
+			BSPI G 4 BRIGHT Light(BDFMAN1) A_SpidRefire
+			Goto Missile+3
+		Death:
+			BOS2 I 6
+			BOS2 J 6 A_Scream
+			BOS2 K 6
+			BOS2 L 6 A_NoBlocking
+			BOS2 MN 6
+			BOS2 O -1
+			Stop
+		Burn: //new
+			PLAY H 1 BRIGHT
+			PLAY I 0 A_Fall
+			PLAY I 0 A_SpawnItem("BurnBurnBurn1",1)
+			TNT1 A -1
+			Stop
+		Crush:
+			CRS2 A -1
+			Stop
+		}
 }
 
 ACTOR FlameMan2 : FlameMan1
 {
-speed 12
-health 300
-Translation "112:127=96:111"
+	Speed 12
+	Health 300
+	Translation "112:127=96:111"
 }
 
 ACTOR FlameMan3 : FlameMan1 {Translation "112:127=64:79"}
 
 ACTOR FlameMan4 : FlameMan1
 {
-speed 12
-health 300
-Translation "112:127=32:47"
+	Speed 12
+	Health 300
+	Translation "112:127=32:47"
 }
 
 ACTOR FlameMan5 : FlameMan1 {Translation "192:207=104:111","240:246=5:8"}
 
 ACTOR FlameMan6 : FlameMan1
 {
-speed 12
-health 300
-Translation "192:207=104:111","240:246=5:8","112:127=96:111"
+	Speed 12
+	Health 300
+	Translation "192:207=104:111","240:246=5:8","112:127=96:111"
 }
 
 ACTOR FlameMan7 : FlameMan1 {Translation "192:207=104:111","240:246=5:8","112:127=64:79"}
 
 ACTOR FlameMan8 : FlameMan1
 {
-speed 12
-health 300
-Translation "192:207=104:111","240:246=5:8","112:127=32:47"
+	Speed 12
+	Health 300
+	Translation "192:207=104:111","240:246=5:8","112:127=32:47"
 }
 
 ACTOR ExplosiveShell replaces ArchvileFire
 {
-obituary "%o shot by a sniper."
-+NOGRAVITY
-states
-	{
-	Spawn:
-	TNT1 A 10 A_Look
-	loop
-	See:
-	TGRN A 0 BRIGHT A_PlaySound("cyber/hoof")
-	TGRN A 3 BRIGHT A_SargAttack
-	BON2 BC 3 BRIGHT
-	FSKU ABC 3 BRIGHT
-	TGRN B 3 BRIGHT
-	stop
-	}
+	Obituary "%o shot by a Sniper."
+	+NOGRAVITY
+	States
+		{
+		Spawn:
+			TNT1 A 10 A_Look
+			Loop
+		See:
+			TGRN A 0 BRIGHT A_PlaySound("cyber/hoof")
+			TGRN A 3 BRIGHT A_SargAttack
+			BON2 BC 3 BRIGHT
+			FSKU ABC 3 BRIGHT
+			TGRN B 3 BRIGHT
+			Stop
+		}
 }
 
-ACTOR Sniper : BatDoomEnemy replaces Spectre 58
+ACTOR Sniper : BatDoomEnemy replaces Spectre
 {
-//$Category Reborn Foes
-Tag "Sniper"
-SpawnID 25
-Game Doom
-obituary "%o shot by a sniper."
-Health 60
-PainChance 100
-Speed 0
-Radius 24
-Height 63
-Mass 10000
-Monster
-+FLOORCLIP
-AttackSound "demon/melee"
-painsound "knight/pain"
-DeathSound "grunt/death2"
-Species "Sniper"
-scale 0.78
-States
-	{
-	Spawn:
-	BOSF D 10 A_Look
-	Loop
-	See:
-	BOSF D 2 A_Chase
-	Loop
-	Missile:
-	BOSF D 8 A_VileTarget
-	CPOS P 2 Bright Light(BDFOES2) A_SargAttack
-	CPOS P 2 Bright Light(BDFOES2)
-	SSWV EFG 4
-	CPOS Q 4
-	SSWV E 4
-	Goto See
-	Pain:
-	CPOS O 10 A_Pain
-	SSWV E 4
-	Goto See
-	Death:
-	RSKU A 4 A_Scream
-	RSKU B 4
-	APLS A 4
-	BOSF C 4
-	SKUL K -1 A_NoBlocking
-	Stop
-	Burn: //new
-	PLAY H 1 Bright
-	PLAY I 0 A_Fall
-    PLAY I 0 A_SpawnItem("BurnBurnBurn1",1)
-	TNT1 A -1
-	Stop
-	Crush:
-	CRS1 A -1
-	Stop
-	}
+	//$Category Reborn Foes
+	Tag "Sniper"
+	Game Doom
+	Health 60
+	Height 63
+	Mass 10000
+	PainChance 100
+	Radius 24
+	Speed 0
+	Monster
+	+FLOORCLIP
+	Species "Sniper"
+	SpawnID 25
+	AttackSound "demon/melee"
+	DeathSound "grunt/death2"
+	PainSound "knight/pain"
+	Obituary "$SNIPER"
+	Scale 0.78
+	States
+		{
+		Spawn:
+			BOSF D 10 A_Look
+			Loop
+		See:
+			BOSF D 2 A_Chase
+			Loop
+		Missile:
+			BOSF D 8 A_VileTarget
+			CPOS P 2 BRIGHT Light(BDFOES2) A_SargAttack
+			CPOS P 2 BRIGHT Light(BDFOES2)
+			SSWV EFG 4
+			CPOS Q 4
+			SSWV E 4
+			Goto See
+		Pain:
+			CPOS O 10 A_Pain
+			SSWV E 4
+			Goto See
+		Death:
+			RSKU A 4 A_Scream
+			RSKU B 4
+			APLS A 4
+			BOSF C 4
+			SKUL K -1 A_NoBlocking
+			Stop
+		Burn: //new
+			PLAY H 1 BRIGHT
+			PLAY I 0 A_Fall
+			PLAY I 0 A_SpawnItem("BurnBurnBurn1",1)
+			TNT1 A -1
+			Stop
+		Crush:
+			CRS1 A -1
+			Stop
+		}
 }
 
 ACTOR TrickDart1 replaces FatShot
 {
-SpawnID 67
-Game Doom
-Radius 6
-Height 8
-Speed 20
-FastSpeed 20
-Damage 3
-SeeSound "weapons/rocklf"
-DeathSound "weapons/plasmax"
-Projectile
-states
-	{
-	Spawn:
-	MANF A -1
-	loop
-	Death:
-	PLAY UVW 8 BRIGHT
-	stop
-	}
+	Game Doom
+	Damage 3
+	Height 8
+	Radius 6
+	Speed 20
+	FastSpeed 20
+	Projectile
+	SpawnID 67
+	DeathSound "weapons/plasmax"
+	SeeSound "weapons/rocklf"
+	States
+		{
+		Spawn:
+			MANF A -1
+			Loop
+		Death:
+			PLAY UVW 8 BRIGHT
+			Stop
+		}
 }
 
-ACTOR ClownSpawn : RandomSpawner replaces ShortRedTorch 57
+ACTOR ClownSpawn : RandomSpawner replaces ShortRedTorch
 {
-//$Category Reborn Foes
-Tag "Clowns Spawner"
-SpawnID 26
-DropItem Clown1
-DropItem Clown2
-DropItem Clown3
-DropItem Clown4
+	//$Category Reborn Foes
+	Tag "Clowns Spawner"
+	SpawnID 26
+	DropItem Clown1
+	DropItem Clown2
+	DropItem Clown3
+	DropItem Clown4
 }
 
 ACTOR Clown1 : BatDoomEnemy
 {
-SpawnID 26
-obituary "%o was tricked by a clown."
-health 300
-radius 24
-height 63
-mass 200
-speed 10
-painchance 150
-seesound "skeleton/active"
-painsound "vile/pain"
-deathsound "keen/pain"
-Monster
-+FLOORCLIP
-Species "Clown"
-scale 0.78
-states
-	{
-	Spawn:
-	SSWV D 3 A_Look
-	loop
-	See:
-	FATT EF 4 A_Chase
-	SSWV D 4 A_Chase
-	CPOS E 4 A_Chase
-	loop
-	Pain:
-	VILE M 5 A_Pain
-	goto See
-	Missile:
-	SKUL B 8 A_FaceTarget
-	VILE O 8 A_FaceTarget
-	VILE P 0 A_CustomMissile(TrickDart1, 44, 0, 0)
-	VILE P 8 A_CustomMissile(TrickDart1, 44, 0, 10)
-	goto See
-	Death:
-	PLAY O 7
-	PLAY P 7 A_Scream
-	PLAY Q 7 A_NoBlocking
-	PLAY RS 7
-	PLAY T -1
-	stop
-	Burn: //new
-	PLAY H 1 Bright
-	PLAY I 0 A_Fall
-    PLAY I 0 A_SpawnItem("BurnBurnBurn1",1)
-	TNT1 A -1
-	Stop
-	Crush:
-	CRS1 A -1
-	Stop
-	}
+	Health 300
+	Height 63
+	Mass 200
+	PainChance 150
+	Radius 24
+	Speed 10
+	Scale 0.78
+	Monster
+	+FLOORCLIP
+	SpawnID 26
+	Species "Clown"
+	DeathSound "keen/pain"
+	PainSound "vile/pain"
+	SeeSound "skeleton/active"
+	Obituary "$CLOWNS"
+	States
+		{
+		Spawn:
+			SSWV D 3 A_Look
+			Loop
+		See:
+			FATT EF 4 A_Chase
+			SSWV D 4 A_Chase
+			CPOS E 4 A_Chase
+			Loop
+		Pain:
+			VILE M 5 A_Pain
+			Goto See
+		Missile:
+			SKUL B 8 A_FaceTarget
+			VILE O 8 A_FaceTarget
+			VILE P 0 A_CustomMissile(TrickDart1, 44, 0, 0)
+			VILE P 8 A_CustomMissile(TrickDart1, 44, 0, 10)
+			Goto See
+		Death:
+			PLAY O 7
+			PLAY P 7 A_Scream
+			PLAY Q 7 A_NoBlocking
+			PLAY RS 7
+			PLAY T -1
+			Stop
+		Burn: //new
+			PLAY H 1 BRIGHT
+			PLAY I 0 A_Fall
+			PLAY I 0 A_SpawnItem("BurnBurnBurn1",1)
+			TNT1 A -1
+			Stop
+		Crush:
+			CRS1 A -1
+			Stop
+		}
 }
 
 ACTOR Clown2 : Clown1
 {
-Translation "250:254=192:207"
-states
-	{
-	Missile:
-	SKUL B 8 A_FaceTarget
-	VILE O 8 A_FaceTarget
-	VILE P 0 A_CustomMissile(TrickDart1, 44, 0, 0)
-	VILE P 8 A_CustomMissile(TrickDart1, 44, 0, -10)
-	goto See
-	}
+	Translation "250:254=192:207"
+	States
+		{
+		Missile:
+			SKUL B 8 A_FaceTarget
+			VILE O 8 A_FaceTarget
+			VILE P 0 A_CustomMissile(TrickDart1, 44, 0, 0)
+			VILE P 8 A_CustomMissile(TrickDart1, 44, 0, -10)
+			Goto See
+		}
 }
 
 ACTOR TrickDart2 : TrickDart1 {Translation "176:191=112:127","40:47=9:12"}
 
 ACTOR Clown3 : Clown1
 {
-painchance 100
-Translation "176:191=112:127","40:47=9:12"
-states
-	{
-	Missile:
-	SKUL B 8 A_FaceTarget
-	VILE O 8 A_FaceTarget
-	VILE P 0 A_CustomMissile(TrickDart2, 44, 0, 0)
-	VILE P 8 A_CustomMissile(TrickDart2, 44, 0, 10)
-	goto See
-	}
+	PainChance 100
+	Translation "176:191=112:127","40:47=9:12"
+	States
+		{
+		Missile:
+			SKUL B 8 A_FaceTarget
+			VILE O 8 A_FaceTarget
+			VILE P 0 A_CustomMissile(TrickDart2, 44, 0, 0)
+			VILE P 8 A_CustomMissile(TrickDart2, 44, 0, 10)
+			Goto See
+		}
 }
 
 ACTOR Clown4 : Clown1
 {
-painchance 50
-Translation "176:191=112:127","40:47=9:12",	"250:254=192:207"
-states
-	{
-	Missile:
-	SKUL B 8 A_FaceTarget
-	VILE O 8 A_FaceTarget
-	VILE P 8 A_CustomMissile(TrickDart2, 44)
-	goto See
-	}
+	PainChance 50
+	Translation "176:191=112:127","40:47=9:12",	"250:254=192:207"
+	States
+		{
+		Missile:
+			SKUL B 8 A_FaceTarget
+			VILE O 8 A_FaceTarget
+			VILE P 8 A_CustomMissile(TrickDart2, 44)
+			Goto See
+		}
 }
 
 ACTOR TrickDart3 : TrickDart1 {Translation "176:191=192:207","40:47=204:207"}
 
-ACTOR SuperClown : Clown1 replaces Meat3 51
+ACTOR SuperClown : Clown1 replaces Meat3
 {
-//$Category Reborn Foes
-Tag "Super Clown"
-SpawnID 27
-Health 400
-Speed 11
-PainChance 120
-Mass 250
-Translation "184:191=196:207","40:47=204:207","176:184=112:120","250:254=124:127"
-States
-	{
-	Missile:
-	SKUL B 0 A_Jump(86, "Missile3")
-	SKUL B 0 A_Jump(128, "Missile2")
-	Missile1:
-	SKUL B 8 A_FaceTarget
-	VILE O 8 A_FaceTarget
-	VILE P 0 A_CustomMissile(TrickDart3, 44, 0, 0)
-	VILE P 8 A_CustomMissile(TrickDart3, 44, 0, 10)
-	SKUL B 8 A_FaceTarget
-	VILE O 8 A_FaceTarget
-	VILE P 0 A_CustomMissile(TrickDart3, 44, 0, -10)
-	VILE P 8 A_CustomMissile(TrickDart3, 44, 0, 10)
-	goto see
-	Missile2:
-	SKUL B 8 A_FaceTarget
-	VILE O 8 A_FaceTarget
-	VILE P 0 A_CustomMissile(TrickDart3, 44, 0, -10)
-	VILE P 8 A_CustomMissile(TrickDart3, 44, 0, 10)
-	SKUL B 8 A_FaceTarget
-	VILE O 8 A_FaceTarget
-	VILE P 0 A_CustomMissile(TrickDart3, 44, 0, 0)
-	VILE P 8 A_CustomMissile(TrickDart3, 44, 0, 10)
-	goto see
-	Missile3:
-	SKUL B 8 A_FaceTarget
-	VILE O 8 A_FaceTarget
-	VILE P 0 A_CustomMissile(TrickDart3, 44, 0, 0)
-	VILE P 8 A_CustomMissile(TrickDart3, 44, 0, 10)
-	SKUL B 8 A_FaceTarget
-	VILE O 8 A_FaceTarget
-	VILE P 0 A_CustomMissile(TrickDart3, 44, 0, 0)
-	VILE P 8 A_CustomMissile(TrickDart3, 44, 0, -10)
-	goto see
-	Death:
-	PLAY O 7 A_KeenDie
-	PLAY P 7 A_Scream
-	PLAY Q 7 A_NoBlocking
-	PLAY RS 7
-	PLAY T -1
-	stop
-	Burn: //new
-	PLAY H 1 Bright
-	PLAY I 0 A_Fall
-    PLAY I 0 A_SpawnItem("BurnBurnBurn2",1)
-	TNT1 A -1
-	Stop
-	Crush:
-	CRS2 A -1
-	Stop
-	}
+	//$Category Reborn Foes
+	Tag "Super Clown"
+	Health 400
+	Mass 250
+	PainChance 120
+	Speed 11
+	SpawnID 27
+	Translation "184:191=196:207","40:47=204:207","176:184=112:120","250:254=124:127"
+	States
+		{
+		Missile:
+			SKUL B 0 A_Jump(86, "Missile3")
+			SKUL B 0 A_Jump(128, "Missile2")
+		Missile1:
+			SKUL B 8 A_FaceTarget
+			VILE O 8 A_FaceTarget
+			VILE P 0 A_CustomMissile(TrickDart3, 44, 0, 0)
+			VILE P 8 A_CustomMissile(TrickDart3, 44, 0, 10)
+			SKUL B 8 A_FaceTarget
+			VILE O 8 A_FaceTarget
+			VILE P 0 A_CustomMissile(TrickDart3, 44, 0, -10)
+			VILE P 8 A_CustomMissile(TrickDart3, 44, 0, 10)
+			Goto See
+		Missile2:
+			SKUL B 8 A_FaceTarget
+			VILE O 8 A_FaceTarget
+			VILE P 0 A_CustomMissile(TrickDart3, 44, 0, -10)
+			VILE P 8 A_CustomMissile(TrickDart3, 44, 0, 10)
+			SKUL B 8 A_FaceTarget
+			VILE O 8 A_FaceTarget
+			VILE P 0 A_CustomMissile(TrickDart3, 44, 0, 0)
+			VILE P 8 A_CustomMissile(TrickDart3, 44, 0, 10)
+			Goto See
+		Missile3:
+			SKUL B 8 A_FaceTarget
+			VILE O 8 A_FaceTarget
+			VILE P 0 A_CustomMissile(TrickDart3, 44, 0, 0)
+			VILE P 8 A_CustomMissile(TrickDart3, 44, 0, 10)
+			SKUL B 8 A_FaceTarget
+			VILE O 8 A_FaceTarget
+			VILE P 0 A_CustomMissile(TrickDart3, 44, 0, 0)
+			VILE P 8 A_CustomMissile(TrickDart3, 44, 0, -10)
+			Goto See
+		Death:
+			PLAY O 7 A_KeenDie
+			PLAY P 7 A_Scream
+			PLAY Q 7 A_NoBlocking
+			PLAY RS 7
+			PLAY T -1
+			Stop
+		Burn: //new
+			PLAY H 1 BRIGHT
+			PLAY I 0 A_Fall
+			PLAY I 0 A_SpawnItem("BurnBurnBurn2",1)
+			TNT1 A -1
+			Stop
+		Crush:
+			CRS2 A -1
+			Stop
+		}
 }
 
-ACTOR ZekeMolotov replaces LostSoul 3006
+ACTOR ZekeMolotov replaces LostSoul
 {
-SpawnID 63
-Radius 22
-Height 1
-Speed 35
-FastSpeed 35
-Damage 8
-SeeSound "skull/melee"
-AttackSound "skull/melee"
-DeathSound "knight/death"
-Projectile
-+BLOODLESSIMPACT
--NOGRAVITY
-DamageType "Fire"
-States
-	{
-	Spawn:
-	COL3 AA 2 BRIGHT light(BDFMAN1)
-	COL1 A 6 BRIGHT light(BDFMAN1)
-	BAL2 ABABA 6 BRIGHT light(BDFMAN2)
-	BROK A 6 BRIGHT light(BDFMAN2)
-	stop
-	Death:
-	COL3 AA 2 BRIGHT light(BDFMAN3)
-	COL1 A 6 BRIGHT light(BDFMAN3) A_Explode(8,32)
-	BAL2 ABABA 6 BRIGHT light(BDFMAN4) A_Explode(8,32)
-	BROK A 6 BRIGHT light(BDFMAN4) A_Explode(8,32)
-	stop
-	}
+	Damage 8
+	DamageType "Fire"
+	FastSpeed 35
+	Height 1
+	Radius 22
+	Speed 35
+	Projectile
+	-NOGRAVITY
+	+BLOODLESSIMPACT
+	+BRIGHT
+	SpawnID 63
+	AttackSound "skull/melee"
+	DeathSound "knight/death"
+	SeeSound "skull/melee"
+	States
+		{
+		Spawn:
+			COL3 AA 2 Light(BDFMAN1)
+			COL1 A 6 Light(BDFMAN1)
+			BAL2 ABABA 6 Light(BDFMAN2)
+			BROK A 6 Light(BDFMAN2)
+			Stop
+		Death:
+			COL3 AA 2 Light(BDFMAN3)
+			COL1 A 6 Light(BDFMAN3) A_Explode(8,32)
+			BAL2 ABABA 6 Light(BDFMAN4) A_Explode(8,32)
+			BROK A 6 Light(BDFMAN4) A_Explode(8,32)
+			Stop
+		}
 }
 
-ACTOR ZekeSpawn : RandomSpawner replaces HeartColumn //67
+ACTOR ZekeSpawn : RandomSpawner replaces HeartColumn
 {
-//$Category Reborn Foes
-Tag "Zekes Spawner"
-SpawnID 28
-DropItem Zeke1
-DropItem Zeke2
-DropItem Zeke3
-DropItem Zeke4
-DropItem Zeke5
-DropItem Zeke6
-DropItem Zeke7
-DropItem Zeke8
+	//$Category Reborn Foes
+	Tag "Zekes Spawner"
+	SpawnID 28
+	DropItem Zeke1
+	DropItem Zeke2
+	DropItem Zeke3
+	DropItem Zeke4
+	DropItem Zeke5
+	DropItem Zeke6
+	DropItem Zeke7
+	DropItem Zeke8
 }
 
 ACTOR Zeke1 : BatDoomEnemy
 {
-SpawnID 28
-obituary "%o was flamed by Zeke."
-health 350
-radius 30
-height 63
-mass 1000
-speed 9
-painchance 30
-seesound "fatso/death"
-painsound "caco/death"
-Species "Zeke"
-DamageFACTOR "Fire", 0.0
-scale 0.78
-states
-	{
-	Spawn:
-	FATT A 10 A_Look
-	loop
-	See:
-	FATT AABBCCDD 3 A_Chase
-	loop
-	Pain:
-	FATT J 3
-	FATT J 3 A_Pain
-	goto See
-	Missile:
-	PAIN E 15 bright A_FaceTarget
-	PAIN F 4 bright A_SargAttack
-	PAIN D 4 bright A_CustomMissile("ZekeMolotov", 44)
-	goto See
-	Death:
-	FATT K 6
-	FATT L 6 A_Scream
-	FATT M 6 A_NoBlocking
-	FATT NOPQRS 6
-	FATT T -1 A_BossDeath
-	stop
-	Burn: //new
-	PLAY H 1 Bright
-	PLAY I 0 A_Fall
-    PLAY I 0 A_SpawnItem("BurnBurnBurn1",1)
-	TNT1 A -1
-	Stop
-	Crush:
-	CRS2 A -1
-	Stop
-	}
+	Health 350
+	Height 63
+	Mass 1000
+	PainChance 30
+	Radius 30
+	Speed 9
+	Scale 0.78
+	SpawnID 28
+	Species "Zeke"
+	SeeSound "fatso/death"
+	PainSound "caco/death"
+	Obituary "$ZEKES"
+	DamageFactor "Fire", 0.0
+	States
+		{
+		Spawn:
+			FATT A 10 A_Look
+			Loop
+		See:
+			FATT AABBCCDD 3 A_Chase
+			Loop
+		Pain:
+			FATT J 3
+			FATT J 3 A_Pain
+			Goto See
+		Missile:
+			PAIN E 15 BRIGHT A_FaceTarget
+			PAIN F 4 BRIGHT A_SargAttack
+			PAIN D 4 BRIGHT A_CustomMissile("ZekeMolotov", 44)
+			Goto See
+		Death:
+			FATT K 6
+			FATT L 6 A_Scream
+			FATT M 6 A_NoBlocking
+			FATT NOPQRS 6
+			FATT T -1 A_BossDeath
+			Stop
+		Burn: //new
+			PLAY H 1 BRIGHT
+			PLAY I 0 A_Fall
+			PLAY I 0 A_SpawnItem("BurnBurnBurn1",1)
+			TNT1 A -1
+			Stop
+		Crush:
+			CRS2 A -1
+			Stop
+		}
 }
 
 ACTOR Zeke2 : Zeke1 {Translation "200:207=104:111","240:246=5:8"}
@@ -1173,151 +1177,151 @@ ACTOR Zeke6 : Zeke1 {Translation "200:207=104:111","240:246=5:8","168:191=128:15
 ACTOR Zeke7 : Zeke1 {Translation "80:111=112:127", "168:191=128:151"}
 ACTOR Zeke8 : Zeke1 {Translation "200:207=104:111","240:246=5:8","80:111=112:127", "168:191=128:151"}
 
-ACTOR RocketMan : BatDoomEnemy replaces BossTarget 87
+ACTOR RocketMan : BatDoomEnemy replaces BossTarget
 {
-//$Category Reborn Foes
-Tag "RocketMan"
-SpawnID 29
-obituary "%o was shot by a RocketMan."
-health 300
-radius 24
-height 63
-mass 1000
-speed 10
-painchance 25
-painsound "knight/pain"
-deathsound "grunt/death"
-+NOGRAVITY
-+FLOAT
-Species "RocketMan"
-scale 0.78
-states
-	{
-	Spawn:
-	SKUL E 3 A_Look
-	MISL A 3 A_Look
-	loop
-	See:
-	SKUL E 3 A_Chase
-	MISL A 3 A_Hoof
-	loop
-	Pain:
-	VILE N 4 A_Pain
-	goto See
-	Missile:
-	BOS2 E 4 bright Light(BDFOES2) A_CPosAttack
-	FATT I 4 bright Light(BDFOES2) A_CPosRefire
-	goto Missile
-	Death:
-	HDB3 A 7
-	BOSF A 7 A_Scream
-	BOSF B 7 A_NoBlocking
-	KEEN G 7
-	KEEN M -1
-	stop
-	}
+	//$Category Reborn Foes
+	Tag "RocketMan"
+	Health 300
+	Height 63
+	Mass 1000
+	PainChance 25
+	Radius 24
+	Speed 10
+	Scale 0.78
+	+FLOAT
+	+NOGRAVITY
+	SpawnID 29
+	Species "RocketMan"
+	PainSound "knight/pain"
+	DeathSound "grunt/death"
+	Obituary "$ROCKMAN"
+	States
+		{
+		Spawn:
+			SKUL E 3 A_Look
+			MISL A 3 A_Look
+			Loop
+		See:
+			SKUL E 3 A_Chase
+			MISL A 3 A_Hoof
+			Loop
+		Pain:
+			VILE N 4 A_Pain
+			Goto See
+		Missile:
+			BOS2 E 4 BRIGHT Light(BDFOES2) A_CPosAttack
+			FATT I 4 BRIGHT Light(BDFOES2) A_CPosRefire
+			Goto Missile
+		Death:
+			HDB3 A 7
+			BOSF A 7 A_Scream
+			BOSF B 7 A_NoBlocking
+			KEEN G 7
+			KEEN M -1
+			Stop
+		}
 }
 
-ACTOR EyeBallSpawner replaces Meat4 52
+ACTOR EyeBallSpawner replaces Meat4
 {
-//$Category Reborn Foes
-Tag "Eye-Ball Spawner"
-SpawnID 30
-states
-	{
-	Spawn:
-	TNT1 A 0
-	TNT1 A 0 A_SpawnItemEx("EyeBall", 0,0,0,0,0,0,0,0,0)
-	TNT1 A 0 A_SpawnItemEx("EyeBall", 0,0,0,0,0,0,0,0,0)
-	TNT1 A 1
-	stop
-	}
+	//$Category Reborn Foes
+	Tag "Eye-Ball Spawner"
+	SpawnID 30
+	States
+		{
+		Spawn:
+			TNT1 A 0
+			TNT1 A 0 A_SpawnItemEx("EyeBall", 0,0,0,0,0,0,0,0,0)
+			TNT1 A 0 A_SpawnItemEx("EyeBall", 0,0,0,0,0,0,0,0,0)
+			TNT1 A 1
+			Stop
+		}
 }
 
 ACTOR EyeBatarang
 {
-Game Doom
-Radius 11
-Height 8
-Speed 22
-Damage 4
-Projectile
-+RANDOMIZE
-SeeSound "vile/raise"
-DeathSound "baby/attack"
-Obituary "%o was bataranged"
-States
-	{
-	Spawn:
-	PLSS A 4
-	POL3 B 4
-	PLSS B 4
-	POL3 A 4
-	loop
-	Death:
-	BAL2 C 8 bright
-	BAL2 D 6 bright
-	BAL2 E 4 bright
-	stop
-	}
+	Game Doom
+	Damage 4
+	Height 8
+	Radius 11
+	Speed 22
+	Projectile
+	+RANDOMIZE
+	DeathSound "baby/attack"
+	SeeSound "vile/raise"
+	Obituary "$EYERANG"
+	States
+		{
+		Spawn:
+			PLSS A 4
+			POL3 B 4
+			PLSS B 4
+			POL3 A 4
+			Loop
+		Death:
+			BAL2 C 8 BRIGHT
+			BAL2 D 6 BRIGHT
+			BAL2 E 4 BRIGHT
+			Stop
+		}
 }
 
 ACTOR EyeBall : BatDoomEnemy
 {
-obituary "%o died ... somehow."
-health 400
-radius 13
-height 56
-mass 100
-speed 10
-FloatSpeed 0
-painchance 100
-DeathSound "vile/active"
--SOLID
-+NOGRAVITY
-+FLOAT
-+AMBUSH
-Species "EyeBall"
-states
-	{
-	Spawn:
-	BFS1 B 10 A_Look
-	loop
-	See:
-	BFS1 B 5
-	KEEN IJ 5
-	KEEN K 45
-	KEEN JI 4
-	BFS1 B 4
-	KEEN IJ 4 Bright
-	KEEN K 4 Bright A_Chase
-	Goto See+9
-	Pain:
-	KEEN JI 4 Bright
-	BFS1 B 4 Bright
-	KEEN IJ 4 Bright
-	Goto See+9
-	Missile:
-	KEEN L 5 Bright A_Jump(32, "Teleport")
-	EYEB A 5 Bright A_CustomMissile("EyeBatarang")
-	KEEN L 5 Bright
-	KEEN K 5 Bright A_Chase
-	KEEN K 0 Bright A_Jump(128, "Missile")
-	Goto See+9
-	Teleport:
-	KEEN JI 5 Bright
-	BFS1 B 5 Bright A_Fadeout(0.05)
-	TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Wander
-	TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Wander
-	TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Wander
-	TNT1 AAAAAAAAAAAAAAAAAAAA 1 A_Wander
-	BFS1 B 5 Bright A_Fadein(0.05)
-	KEEN IJ 5 Bright
-	Goto See+9
-	Death:
-	BFE2 A 4 Bright A_Scream
-	PLSE DE 6 Bright
-	BFE2 B 6 Bright A_KeenDie
-	stop
-	}
+	FloatSpeed 0
+	Health 400
+	Height 56
+	Mass 100
+	PainChance 100
+	Radius 13
+	Speed 10
+	-SOLID
+	+AMBUSH
+	+FLOAT
+	+NOGRAVITY
+	Species "EyeBall"
+	DeathSound "vile/active"
+	Obituary "$EYEBALL"
+	States
+		{
+		Spawn:
+			BFS1 B 10 A_Look
+			Loop
+		See:
+			BFS1 B 5
+			KEEN IJ 5
+			KEEN K 45
+			KEEN JI 4
+			BFS1 B 4
+			KEEN IJ 4 BRIGHT
+			KEEN K 4 BRIGHT A_Chase
+			Goto See+9
+		Pain:
+			KEEN JI 4 BRIGHT
+			BFS1 B 4 BRIGHT
+			KEEN IJ 4 BRIGHT
+			Goto See+9
+		Missile:
+			KEEN L 5 BRIGHT A_Jump(32, "Teleport")
+			EYEB A 5 BRIGHT A_CustomMissile("EyeBatarang")
+			KEEN L 5 BRIGHT
+			KEEN K 5 BRIGHT A_Chase
+			KEEN K 0 BRIGHT A_Jump(128, "Missile")
+			Goto See+9
+		Teleport:
+			KEEN JI 5 BRIGHT
+			BFS1 B 5 BRIGHT A_Fadeout(0.05)
+			TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Wander
+			TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Wander
+			TNT1 AAAAAAAAAAAAAAAAAAAA 0 A_Wander
+			TNT1 AAAAAAAAAAAAAAAAAAAA 1 A_Wander
+			BFS1 B 5 BRIGHT A_Fadein(0.05)
+			KEEN IJ 5 BRIGHT
+			Goto See+9
+		Death:
+			BFE2 A 4 BRIGHT A_Scream
+			PLSE DE 6 BRIGHT
+			BFE2 B 6 BRIGHT A_KeenDie
+			Stop
+		}
 }

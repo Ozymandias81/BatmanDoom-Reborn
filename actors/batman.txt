@@ -1,76 +1,76 @@
 //////////
 //PLAYER//
 //////////
-actor SpeakToken : Inventory
+ACTOR SpeakToken : Inventory
 {
-+UNDROPPABLE
-+IGNORESKILL
-Inventory.Amount 1
-Inventory.MaxAmount 1
+	+IGNORESKILL
+	+UNDROPPABLE
+	Inventory.Amount 1
+	Inventory.MaxAmount 1
 }
 
 ACTOR BatmanPlayer : PlayerPawn
 {
-Speed 1
-Health 100
-Radius 16
-Height 56
-Mass 100
-PainChance 255
-Player.DisplayName "Batman"
-Player.CrouchSprite "PLAY"
-Player.StartItem "BatmanBatarang"
-Player.StartItem "BatmanFist"
-Player.StartItem "Clip", 50
-Player.StartItem "SpeakToken", 1//through acs it could be removed if needed in some situation
-Player.ViewHeight 56
-Player.WeaponSlot 1, BatmanFist, BatmanTazer
-Player.WeaponSlot 2, BatmanBatarang
-Player.WeaponSlot 3, BatmanBlastgun, BatmanAzraelGlove
-Player.WeaponSlot 4, BatmanChaingun
-Player.WeaponSlot 5, BatmanSmokeBomb
-Player.WeaponSlot 6, BatmanFlamer
-Player.WeaponSlot 7, BatmanFinalGlove
-Player.ColorRange 112, 127
-Player.DamageScreenColor "dd 11 00", 0.8, "Normal"
-Player.DamageScreenColor "00 de 00", 0.8, "Poison"
-Player.DamageScreenColor "ff 88 11", 0.8, "Fire"
-Scale 0.78
--CANPASS
-States
-	{
-	Spawn:
-	PLAY A -1
-	Loop
-	See:
-	PLAY ABCD 4
-	Loop
-	Missile:
-	PLAY E 12
-	Goto Spawn
-	Melee:
-	PLAY F 6 BRIGHT
-	Goto Missile
-	Pain:
-	PLAY G 4
-	PLAY G 4 A_Pain
-	Goto Spawn
-	Death:
-	PLAY H 10
-	PLAY I 10 A_PlayerScream
-	PLAY J 10 A_NoBlocking
-	PLAY KLM 10
-	PLAY N -1
-	Stop
-	//XDeath: - in the nearly future
-	Burn: //new
-	PLAY H 1 Bright
-	PLAY I 0 A_Fall
-    PLAY I 0 A_SpawnItem("BurnBurnBurn1",1)
-	TNT1 A -1
-	Stop
-	Crush:
-	CRS2 A -1
-	Stop
-	}
+	Speed 1
+	Health 100
+	Radius 16
+	Height 56
+	Mass 100
+	PainChance 255
+	Player.DisplayName "Batman"
+	Player.CrouchSprite "PLAY"
+	Player.StartItem "BatmanBatarang"
+	Player.StartItem "BatmanFist"
+	Player.StartItem "Clip", 50
+	Player.StartItem "SpeakToken", 1//through acs it could be removed if needed in some situation
+	Player.ViewHeight 56
+	Player.WeaponSlot 1, BatmanFist, BatmanTazer
+	Player.WeaponSlot 2, BatmanBatarang
+	Player.WeaponSlot 3, BatmanBlastgun, BatmanAzraelGlove
+	Player.WeaponSlot 4, BatmanChaingun
+	Player.WeaponSlot 5, BatmanSmokeBomb
+	Player.WeaponSlot 6, BatmanFlamer
+	Player.WeaponSlot 7, BatmanFinalGlove
+	Player.ColorRange 112, 127
+	Player.DamageScreenColor "dd 11 00", 0.8, "Normal"
+	Player.DamageScreenColor "00 de 00", 0.8, "Poison"
+	Player.DamageScreenColor "ff 88 11", 0.8, "Fire"
+	Scale 0.78
+	-CANPASS //probably I'll need to get rid of this flag
+	States
+		{
+		Spawn:
+			PLAY A -1
+			Loop
+		See:
+			"####" ABCD 4
+			Loop
+		Missile:
+			"####" E 12
+			Goto Spawn
+		Melee:
+			"####" F 6 BRIGHT
+			Goto Missile
+		Pain:
+			"####" G 4
+			"####" G 4 A_Pain
+			Goto Spawn
+		Death:
+			"####" H 10
+			"####" I 10 A_PlayerScream
+			"####" J 10 A_NoBlocking
+			"####" KLM 10
+			"####" N -1
+		Stop
+		//XDeath: - in the nearly future
+		Burn: //new
+			"####" H 1 Bright
+			"####" I 0 A_Fall
+			"####" I 0 A_SpawnItem("BurnBurnBurn1",1)
+			TNT1 A -1
+			Stop
+		Crush:
+			CRS2 A -1
+			Stop
+		}
 }

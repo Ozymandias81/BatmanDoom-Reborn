@@ -1,147 +1,149 @@
-//////////
-//DODADS//
-//////////
+/////////
+//PROPS//
+/////////
 
 ACTOR NoFog : TeleportFog replaces TeleportFog
 {
-States
-	{
-	Spawn:
-	TNT1 A 1
-	stop
-	}
+	States
+		{
+		Spawn:
+			TNT1 A 1
+			Stop
+		}
 }
 
-ACTOR Money replaces BlueSkull 40
+ACTOR Money replaces BlueSkull
 {
-//$Category Reborn Decorations
-Tag "Money"
-SpawnID 102
-States
-	{
-	Spawn:
-	FCAN C -1
-	Loop
-	}
+	//$Category Reborn Decorations
+	Tag "Money"
+	SpawnID 102
+	States
+		{
+		Spawn:
+			FCAN C -1
+			Loop
+		}
 }
 
-ACTOR Paper replaces DeadDemon 21
+ACTOR Paper replaces DeadDemon
 {
-//$Category Reborn Decorations
-Tag "Paper"
-SpawnID 120
-States
-	{
-	Spawn:
-	FCAN B -1
-	loop
-	}
+	//$Category Reborn Decorations
+	Tag "Paper"
+	SpawnID 120
+	States
+		{
+		Spawn:
+			FCAN B -1
+			Loop
+		}
 }
 
-ACTOR Gotham replaces DeadLostSoul 23
+ACTOR Gotham replaces DeadLostSoul
 {
-//$Category Reborn Decorations
-Tag "Gotham City"
-SpawnID 121
-+FORCEXYBILLBOARD
-+FORCEYBILLBOARD
-States
-	{
-	Spawn:
-	PINS C -1 Bright
-	loop
-	}
+	//$Category Reborn Decorations
+	Tag "Gotham City"
+	+BRIGHT
+	+FORCEXYBILLBOARD
+	+FORCEYBILLBOARD
+	SpawnID 121
+	States
+		{
+		Spawn:
+			PINS C -1
+			Loop
+		}
 }
 
-ACTOR CeilingLamp replaces NonsolidMeat3 61
+ACTOR CeilingLamp replaces NonsolidMeat3
 {
-//$Category Reborn Lights
-Tag "Ceiling Lamp"
-SpawnID 132
-+NOGRAVITY
-+SPAWNCEILING
-+FORCEXYBILLBOARD
-States
-	{
-	Spawn:
-	GOR3 A -1
-	Loop
-	}
+	//$Category Reborn Lights
+	Tag "Ceiling Lamp"
+	+FORCEXYBILLBOARD
+	+NOGRAVITY
+	+SPAWNCEILING
+	SpawnID 132
+	States
+		{
+		Spawn:
+			GOR3 A -1
+			Loop
+		}
 }
 
-ACTOR BatDoomChandelier replaces NonsolidMeat2 59
+ACTOR BatDoomChandelier replaces NonsolidMeat2
 {
-//$Category Reborn Lights
-Tag "Chandelier"
-SpawnID 134
-+NOGRAVITY
-+SPAWNCEILING
-+FORCEXYBILLBOARD
-States
-	{
-	Spawn:
-	GOR2 A -1
-	Loop
-	}
+	//$Category Reborn Lights
+	Tag "Chandelier"
+	+FORCEXYBILLBOARD
+	+NOGRAVITY
+	+SPAWNCEILING
+	SpawnID 134
+	States
+		{
+		Spawn:
+			GOR2 A -1
+			Loop
+		}
 }
 
-ACTOR DeadCop replaces BurningBarrel 70
+ACTOR DeadCop replaces BurningBarrel
 {
-//$Category Reborn Decorations
-Tag "Dead Cop"
-SpawnID 125
-Radius 16
-Height 56
-+NOINTERACTION
-States
-	{
-	Spawn:
-	FCAN A -1
-	loop
-	}
+	//$Category Reborn Decorations
+	Tag "Dead Cop"
+	Radius 16
+	Height 56
+	+NOINTERACTION
+	SpawnID 125
+	States
+		{
+		Spawn:
+			FCAN A -1
+			Loop
+		}
 }
 
-ACTOR WallLamp replaces DeadDoomImp 20
+ACTOR WallLamp replaces DeadDoomImp
 {
-//$Category Reborn Lights
-Tag "Wall Lamp"
-SpawnID 122
-+FORCEXYBILLBOARD
-States
-	{
-	Spawn:
-	CAND A -1 Bright
-	loop
-	}
+	//$Category Reborn Lights
+	Tag "Wall Lamp"
+	+BRIGHT
+	+FORCEXYBILLBOARD
+	SpawnID 122
+	States
+		{
+		Spawn:
+			CAND A -1
+			Loop
+		}
 }
 
-ACTOR Stalactite replaces NonsolidMeat4 60
+ACTOR Stalactite replaces NonsolidMeat4
 {
-//$Category Reborn Decorations
-Tag "Stalactite"
-SpawnID 115
-+FORCEXYBILLBOARD
-+FORCEYBILLBOARD
-+SPAWNCEILING
-+NOGRAVITY
-States
-	{
-	Spawn:
-	GOR4 A -1
-	loop
-	}
+	//$Category Reborn Decorations
+	Tag "Stalactite"
+	+FORCEXYBILLBOARD
+	+FORCEYBILLBOARD
+	+NOGRAVITY
+	+SPAWNCEILING
+	SpawnID 115
+	States
+		{
+		Spawn:
+			GOR4 A -1
+			Loop
+		}
 }
 
-ACTOR TiedHostage replaces BloodyTwitch 49
+ACTOR TiedHostage replaces BloodyTwitch
 {
-//$Category Reborn Decorations
-Tag "Tied Hostage"
-SpawnID 113
-+FLOORCLIP
-states
-	{
-	Spawn:
-	BFE2 CD 10
-	loop
-	}
+	//$Category Reborn Decorations
+	Tag "Tied Hostage"
+	+FLOORCLIP
+	SpawnID 113
+	States
+		{
+		Spawn:
+		BFE2 CD 10
+		Loop
+		}
 }

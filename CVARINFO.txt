@@ -1,6 +1,6 @@
 //new cvars
 server bool Biffs = false;
+server bool Weather = false;
 //server bool Bleeds = false;
 //server bool Cinders = false;
-server bool Weather = false;
 //server bool Falls = false;

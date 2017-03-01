@@ -1,266 +1,249 @@
 /////////
 //ITEMS//
 /////////
-actor BatmanGreenArmor : GreenArmor replaces GreenArmor 2018
+actor BatmanGreenArmor : GreenArmor replaces GreenArmor
 {
-//$Category Reborn PickUps
-Tag "Batman Armor"
-SpawnID 141
-+COUNTITEM
-Inventory.PickupSound "DSBELT"
-States
-	{
-	Spawn:
-	ARM1 A -1
-	stop
-	}
+	//$Category Reborn PickUps
+	Tag "Batman Armor"
+	+COUNTITEM
+	SpawnID 141
+	Inventory.PickupSound "DSBELT"
+	Inventory.Pickupmessage "$BARMOR"
+	States
+		{
+		Spawn:
+			ARM1 A -1
+			Stop
+		}
 }
 
-actor BatmanBlueArmor : BlueArmor replaces BlueArmor 2019
+actor BatmanBlueArmor : BlueArmor replaces BlueArmor
 {
-//$Category Reborn PickUps
-Tag "Batman Azreal's Armor"
-SpawnID 142
-+COUNTITEM
-Inventory.PickupSound "DSBELT"
-Inventory.Pickupmessage "Picked up Azrael's armor!"
-Translation "195:207=0:2", "240:245=5:8"
-States
-	{
-	Spawn:
-	ARM2 A -1
-	stop
-	}
+	//$Category Reborn PickUps
+	Tag "Batman Azreal's Armor"
+	+COUNTITEM
+	SpawnID 142
+	Inventory.PickupSound "DSBELT"
+	Inventory.Pickupmessage "$AZRLARMR"
+	Translation "195:207=0:2", "240:245=5:8"
+	States
+		{
+		Spawn:
+			ARM2 A -1
+			Stop
+		}
 }
 
-actor RandomBonus : DehackedPickup replaces YellowSkull 39
+actor RandomBonus : DehackedPickup replaces YellowSkull
 {
-//$Category Reborn PickUps
-Tag "Random Bonus"
-SpawnID 143
-+COUNTITEM
-+RANDOMIZE
-Translation "195:207=0:2", "240:245=5:8"
-states
-	{
-	Spawn:
-	ARM2 B 2 bright
-	BON1 B 2 bright
-	SOUL D 2 bright
-	PVIS B 2 bright
-	PMAP D 2 bright
-	PINS D 2 bright
-	PINV D 2 bright
-	BON2 D 2 bright
-	ARM1 B 2 bright
-	loop
-	}
+	//$Category Reborn PickUps
+	Tag "Random Bonus"
+	+COUNTITEM
+	+RANDOMIZE
+	SpawnID 143
+	Translation "195:207=0:2", "240:245=5:8"
+	states
+		{
+		Spawn:
+			ARM2 B 2 bright
+			BON1 B 2 bright
+			SOUL D 2 bright
+			PVIS B 2 bright
+			PMAP D 2 bright
+			PINS D 2 bright
+			PINV D 2 bright
+			BON2 D 2 bright
+			ARM1 B 2 bright
+			Loop
+		}
 }
 
-actor BatmanRadSuit : RadSuit replaces RadSuit 2025
+actor BatmanRadSuit : RadSuit replaces RadSuit
 {
-//$Category Reborn PickUps
-Tag "Prototype Nomex Suit"
-SpawnID 144
-Radius 16
-Inventory.PickupMessage "Prototype Nomex Suit!"
-Translation "195:207=0:2", "240:245=5:8"
+	//$Category Reborn PickUps
+	Tag "Prototype Nomex Suit"
+	Radius 16
+	SpawnID 144
+	Inventory.PickupMessage "$PROTSUIT"
+	Translation "195:207=0:2", "240:245=5:8"
 }
 
-actor BlueKey : BlueCard replaces Shotgun 2001
+actor BlueKey : BlueCard replaces Shotgun
 {
-//$Category Reborn Keys
-Tag "Blue Key"
-SpawnID 145
-Inventory.PickupSound "DSKEYUP"
-inventory.pickupmessage "Picked up a blue key."
-inventory.icon "STKEYS0"
-//+FLOATBOB
-states
-	{
-	Spawn:
-	BKEY A 0 bright
-	BKEY A 0 bright A_ChangeFlag("DROPPED", 0)//fixme for multiplayer to keep blue key when blue key guy dies
-	BKEY A -1 bright
-	loop
-	}
+	//$Category Reborn Keys
+	Tag "Blue Key"
+	SpawnID 145
+	Inventory.PickupSound "DSKEYUP"
+	Inventory.PickupMessage "$BLUEK"
+	Inventory.Icon "STKEYS0"
+	+BRIGHT
+	States
+		{
+		Spawn:
+			BKEY A 0
+			BKEY A 0 A_ChangeFlag("DROPPED", 0)//fixme for multiplayer to keep blue key when blue key guy dies
+			BKEY A -1
+			Loop
+		}
 }
 
-actor RedKey : RedCard replaces RedCard 13
+actor RedKey : RedCard replaces RedCard
 {
-//$Category Reborn Keys
-Tag "Red Key"
-SpawnID 146
-Inventory.PickupSound "DSKEYUP"
-inventory.pickupmessage "Picked up a red key."
-inventory.icon "STKEYS2"
-//+FLOATBOB
-states
-	{
-	Spawn:
-	RKEY A -1 bright
-	loop
-	}
+	//$Category Reborn Keys
+	Tag "Red Key"
+	SpawnID 146
+	Inventory.PickupSound "DSKEYUP"
+	Inventory.PickupMessage "$REDK"
+	Inventory.Icon "STKEYS2"
+	+BRIGHT
+	States
+		{
+		Spawn:
+			RKEY A -1
+			Loop
+		}
 }
 
-actor YellowKey : YellowCard replaces YellowCard 6
+actor YellowKey : YellowCard replaces YellowCard
 {
-//$Category Reborn Keys
-Tag "Yellow Key"
-SpawnID 147
-Inventory.PickupSound "DSKEYUP"
-inventory.pickupmessage "Picked up a yellow key."
-inventory.icon "STKEYS1"
-//+FLOATBOB
-states
-	{
-	Spawn:
-	YKEY A -1 bright
-	loop
-	}
+	//$Category Reborn Keys
+	Tag "Yellow Key"
+	SpawnID 147
+	Inventory.PickupSound "DSKEYUP"
+	Inventory.PickupMessage "$YELK"
+	Inventory.Icon "STKEYS1"
+	+BRIGHT
+	States
+		{
+		Spawn:
+			YKEY A -1
+			Loop
+		}
 }
 
-ACTOR BatmanHealthBonus : HealthBonus replaces HealthBonus 2014
+ACTOR BatmanHealthBonus : HealthBonus replaces HealthBonus
 {
-//$Category Reborn PickUps
-Tag "Health Bonus"
-SpawnID 148
-Inventory.PickupMessage "Picked up some tasty food"
-States
-	{
-	Spawn:
-	TNT1 A 0
-	TNT1 A 0 A_Jump (128, "CanFood", "Pizza")
-	CanFood:
-	TNT1 A -1 A_SpawnItem("CanFood")
-	Stop
-	Pizza:
-	TNT1 A -1 A_SpawnItem("Pizza")
-	Stop
-	}
+	//$Category Reborn PickUps
+	Tag "Health Bonus"
+	SpawnID 148
+	Inventory.PickupMessage "$FOOD"
+	States
+		{
+		Spawn:
+			TNT1 A 0
+			TNT1 A 0 A_Jump (128, "CanFood", "Pizza")
+		CanFood:
+			TNT1 A -1 A_SpawnItem("CanFood")
+			Stop
+		Pizza:
+			TNT1 A -1 A_SpawnItem("Pizza")
+			Stop
+		}
 }
 
 ACTOR CanFood : Health
 {
-Game Doom
-+DROPPED
-+COUNTITEM
-+INVENTORY.ALWAYSPICKUP
-Inventory.Amount 1
-Inventory.MaxAmount 200
-Scale 0.7
-States
-	{
-	Spawn:
-	NORM A 1
-	Loop
-	}
+	Game Doom
+	+COUNTITEM
+	+DROPPED
+	+INVENTORY.ALWAYSPICKUP
+	Inventory.Amount 1
+	Inventory.MaxAmount 200
+	Scale 0.7
+	States
+		{
+		Spawn:
+			NORM A 1
+			Loop
+		}
 }
 
-ACTOR Pizza : Health
+ACTOR Pizza : CanFood
 {
-Game Doom
-+DROPPED
-+COUNTITEM
-+INVENTORY.ALWAYSPICKUP
-Inventory.Amount 1
-Inventory.MaxAmount 200
-States
-	{
-	Spawn:
-	NORM B 1
-	Loop
-	}
+	Scale 1.0
+	States
+		{
+		Spawn:
+			NORM B 1
+			Loop
+		}
 }
 
-/*ACTOR BatmanHealthBonus : HealthBonus replaces HealthBonus 2014
+ACTOR BatmanArmorBonus : ArmorBonus replaces ArmorBonus
 {
-//$Category Reborn PickUps
-Tag "Health Bonus"
-SpawnID 148
-States
-	{
-	Spawn:
-	BON1 A -1
-	Loop
-	}
-}*/
-
-ACTOR BatmanArmorBonus : ArmorBonus replaces ArmorBonus 2015
-{
-//$Category Reborn PickUps
-Tag "Armor Bonus"
-SpawnID 149
-//+FLOATBOB
-Translation "195:207=0:2", "240:245=5:8"
-States
-	{
-	Spawn:
-	BON2 A -1
-	Loop
-	}
+	//$Category Reborn PickUps
+	Tag "Armor Bonus"
+	SpawnID 149
+	Translation "195:207=0:2", "240:245=5:8"
+	States
+		{
+		Spawn:
+			BON2 A -1
+			Loop
+		}
 }
 
-ACTOR BatmanSoulsphere : Soulsphere replaces Soulsphere 2013
+ACTOR BatmanSoulsphere : Soulsphere replaces Soulsphere
 {
-//$Category Reborn PowerUps
-Tag "Batman Sphere"
-SpawnID 150
-//+FLOATBOB
-States
-	{
-	Spawn:
-	SOUL ABCB 6 Bright
-	Loop
-	}
+	//$Category Reborn PowerUps
+	Tag "Batman Sphere"
+	SpawnID 150
+	Inventory.Pickupmessage "$BSPHERE"
+	States
+		{
+		Spawn:
+			SOUL ABCB 6 Bright
+			Loop
+		}
 }
 
-ACTOR BatmanMap : Allmap replaces Allmap 2026
+ACTOR BatmanMap : Allmap replaces Allmap
 {
-//$Category Reborn PowerUps
-Tag "All Map"
-SpawnID 151
-States
-	{
-	Spawn:
-	PMAP ABC 6 Bright
-	Loop
-	}
+	//$Category Reborn PowerUps
+	Tag "All Map"
+	SpawnID 151
+	+BRIGHT
+	States
+		{
+		Spawn:
+			PMAP ABC 6
+			Loop
+		}
 }
 
-ACTOR BatmanInfrared : Infrared replaces Infrared 2045
+ACTOR BatmanInfrared : Infrared replaces Infrared
 {
-//$Category Reborn PowerUps
-Tag "Infrared Vision"
-SpawnID 152
-//+FLOATBOB
-States
-	{
-	Spawn:
-	PVIS A -1 Bright
-	Loop
-	}
+	//$Category Reborn PowerUps
+	Tag "Infrared Vision"
+	SpawnID 152
+	+BRIGHT
+	States
+		{
+		Spawn:
+		PVIS A -1
+		Loop
+		}
 }
 //new
-ACTOR BatmanBerserk : CustomInventory 10000 //replaces old Berserk 2023
+ACTOR BatmanBerserk : CustomInventory
 {
-//$Category Reborn PowerUps
-Tag "Batman Berserk"
-Game Doom
-SpawnId 134 //same as doomberserk
-+COUNTITEM
-+INVENTORY.ALWAYSPICKUP
-Inventory.PickupMessage "You feel the power of bats growing inside your fists!"
-Inventory.PickupSound "misc/p_pkup"
-States
-	{
-	Spawn:
-	PSTR A -1
-	Stop
-	Pickup:
-	TNT1 A 0 A_GiveInventory("PowerStrength")
-	TNT1 A 0 HealThing(100, 0)
-	TNT1 A 0 A_SelectWeapon("BatmanFist")
-	Stop
-	}
+	//$Category Reborn PowerUps
+	Tag "Batman Berserk"
+	Game Doom
+	+COUNTITEM
+	+INVENTORY.ALWAYSPICKUP
+	SpawnId 134 //same as doomberserk
+	Inventory.PickupMessage "$BATBSERK"
+	Inventory.PickupSound "misc/p_pkup"
+	States
+		{
+		Spawn:
+			PSTR A -1
+			Stop
+		Pickup:
+			TNT1 A 0 A_GiveInventory("PowerStrength")
+			TNT1 A 0 HealThing(100, 0)
+			TNT1 A 0 A_SelectWeapon("BatmanFist")
+			Stop
+		}
 }

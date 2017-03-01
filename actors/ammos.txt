@@ -1,62 +1,57 @@
 ////////
 //AMMO//
 ////////
-ACTOR BatmanClipBox : ClipBox replaces ClipBox 2048
+ACTOR BatmanClipBox : ClipBox replaces ClipBox
 {
-//$Category Reborn Ammo
-Tag "Batman Batarangs"
-SpawnID 153
-Inventory.PickupMessage "Picked a box of Batarangs."
-Inventory.Amount 60
+	//$Category Reborn Ammo
+	Tag "Batman Batarangs"
+	SpawnID 153
+	Inventory.PickupMessage "$BATABOX"
+	Inventory.Amount 60
 }
 
 
-ACTOR BatmanBlast : Shell replaces Shell 2008
+ACTOR BatmanBlast : Shell replaces Shell
 {
-//$Category Reborn Ammo
-Tag "Batman Blastgun Shell"
-SpawnID 154
-Inventory.PickupMessage "Picked up blastgun shells."
-Inventory.Amount 6
-//+FLOATBOB
+	//$Category Reborn Ammo
+	Tag "Batman Blastgun Shell"
+	SpawnID 154
+	Inventory.PickupMessage "$BLSTSHEL"
+	Inventory.Amount 6
 }
 
-ACTOR BatmanBlastBox : ShellBox replaces ShellBox 2049
+ACTOR BatmanBlastBox : ShellBox replaces ShellBox
 {
-//$Category Reborn Ammo
-Tag "Batman Blastgun ShellBox"
-SpawnID 155
-Inventory.PickupMessage "Picked up a box of blastgun shells."
-Inventory.Amount 30
-//+FLOATBOB
+	//$Category Reborn Ammo
+	Tag "Batman Blastgun ShellBox"
+	SpawnID 155
+	Inventory.PickupMessage "$BLSTBOX"
+	Inventory.Amount 30
 }
 
-ACTOR BatmanGasCan : Cell replaces Cell 2047
+ACTOR BatmanGasCan : Cell replaces Cell
 {
-//$Category Reborn Ammo
-Tag "Batman Gas Canister"
-SpawnID 156
-Inventory.PickupMessage "Picked up a gas canister."
-Inventory.Amount 20
-//+FLOATBOB
+	//$Category Reborn Ammo
+	Tag "Batman Gas Canister"
+	SpawnID 156
+	Inventory.PickupMessage "$GASCAN"
+	Inventory.Amount 20
 }
 
-ACTOR BatmanGasPack : CellPack replaces CellPack 17
+ACTOR BatmanGasPack : CellPack replaces CellPack
 {
-//$Category Reborn Ammo
-Tag "Batman Gas Canister Pack"
-SpawnID 157
-Inventory.PickupMessage "Picked up a gas canister pack."
-Inventory.Amount 100
-//+FLOATBOB
+	//$Category Reborn Ammo
+	Tag "Batman Gas Canister Pack"
+	SpawnID 157
+	Inventory.PickupMessage "$GASPACK"
+	Inventory.Amount 100
 }
 
-ACTOR BatmanBackpack : Backpack replaces Backpack 8
+ACTOR BatmanBackpack : Backpack replaces Backpack
 {
-//$Category Reborn PowerUps
-Tag "Batman Belt"
-SpawnID 158
-Inventory.PickupSound "DSBELT"
-Inventory.PickupMessage "Picked up a bat belt full of ammo!"
-//+FLOATBOB
+	//$Category Reborn PowerUps
+	Tag "Batman Belt"
+	SpawnID 158
+	Inventory.PickupSound "DSBELT"
+	Inventory.PickupMessage "$BATBELT"
 }

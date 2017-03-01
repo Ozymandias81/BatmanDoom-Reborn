@@ -1,104 +1,98 @@
-Actor RainSpawner32 10008
+ACTOR RainSpawner32
 {
-//$Category Reborn Effects
-//$Sprite RNDRA0
-Tag "Rain Spawner 32x32"
-Game Doom
-Radius 1
-Height 1
-+NOCLIP
-+NOGRAVITY
-+SPAWNCEILING
-+CLIENTSIDEONLY
-States
-	{
-	Spawn:
-	TNT1 A 0 NoDelay A_JumpIf(CallACS("Weather")==0,"NoRain")
-	TNT1 A 0 A_PlaySoundEx("Ambient/Rain", "SoundSlot7", 1)
-	//while BD uses maps in old DOOM format, these ARGS couldn't be defined: so I've added myself.
-	TNT1 A 2 A_SpawnItemEx("RainDrop", Random(-32, 32), 0, -2, 0, 0, momz, Random(0, 360), 128, Random(128, 192))
-	Loop
-	NoRain:
-	NULL A 1 A_StopSoundEx("SoundSlot7")
-	Goto Spawn
-	}
+	//$Category Reborn Effects
+	//$Sprite RNDRA0
+	Tag "Rain Spawner 32x32"
+	Game Doom
+	Radius 1
+	Height 1
+	+CLIENTSIDEONLY
+	+NOCLIP
+	+NOGRAVITY
+	+SPAWNCEILING
+	States
+		{
+		Spawn:
+			TNT1 A 0 NoDelay A_JumpIf(CallACS("Weather")==0,"NoRain")
+			TNT1 A 0 A_PlaySoundEx("Ambient/Rain", "SoundSlot7", 1)
+			//while BD uses maps in old DOOM format, these ARGS couldn't be defined: so I've added myself.
+			TNT1 A 2 A_SpawnItemEx("RainDrop", Random(-32, 32), 0, -2, 0, 0, momz, Random(0, 360), 128, Random(128, 192))
+			Loop
+		NoRain:
+			NULL A 1 A_StopSoundEx("SoundSlot7")
+			Goto Spawn
+		}
 }
 
-Actor RainSpawner64 : RainSpawner32 10009
+ACTOR RainSpawner64 : RainSpawner32
 {
-//$Category Reborn Effects
-//$Sprite RNDRA0
-Tag "Rain Spawner 64x64"
-States
-	{
-	Spawn:
-	TNT1 A 0 NoDelay A_JumpIf(CallACS("Weather")==0,"NoRain")
-	TNT1 A 0 A_PlaySoundEx("Ambient/Rain", "SoundSlot7", 1)
-	//while BD uses maps in old DOOM format, these ARGS couldn't be defined: so I've added myself.
-	TNT1 A 2 A_SpawnItemEx("RainDrop", Random(-64, 64), 0, -2, 0, 0, momz, Random(0, 360), 128, Random(128, 192))
-	Loop
-	NoRain:
-	NULL A 1 A_StopSoundEx("SoundSlot7")
-	Goto Spawn
-	}
+	Tag "Rain Spawner 64x64"
+	States
+		{
+		Spawn:
+			TNT1 A 0 NoDelay A_JumpIf(CallACS("Weather")==0,"NoRain")
+			TNT1 A 0 A_PlaySoundEx("Ambient/Rain", "SoundSlot7", 1)
+			//while BD uses maps in old DOOM format, these ARGS couldn't be defined: so I've added myself.
+			TNT1 A 2 A_SpawnItemEx("RainDrop", Random(-64, 64), 0, -2, 0, 0, momz, Random(0, 360), 128, Random(128, 192))
+			Loop
+		NoRain:
+			NULL A 1 A_StopSoundEx("SoundSlot7")
+			Goto Spawn
+		}
 }
 
-Actor RainSpawner96 : RainSpawner32 10010
+ACTOR RainSpawner96 : RainSpawner32
 {
-//$Category Reborn Effects
-//$Sprite RNDRA0
-Tag "Rain Spawner 96x96"
-States
-	{
-	Spawn:
-	TNT1 A 0 NoDelay A_JumpIf(CallACS("Weather")==0,"NoRain")
-	TNT1 A 0 A_PlaySoundEx("Ambient/Rain", "SoundSlot7", 1)
-	//while BD uses maps in old DOOM format, these ARGS couldn't be defined: so I've added myself.
-	TNT1 A 2 A_SpawnItemEx("RainDrop", Random(-96, 96), 0, -2, 0, 0, momz, Random(0, 360), 128, Random(128, 192))
-	Loop
-	NoRain:
-	NULL A 1 A_StopSoundEx("SoundSlot7")
-	Goto Spawn
-	}
+	Tag "Rain Spawner 96x96"
+	States
+		{
+		Spawn:
+			TNT1 A 0 NoDelay A_JumpIf(CallACS("Weather")==0,"NoRain")
+			TNT1 A 0 A_PlaySoundEx("Ambient/Rain", "SoundSlot7", 1)
+			//while BD uses maps in old DOOM format, these ARGS couldn't be defined: so I've added myself.
+			TNT1 A 2 A_SpawnItemEx("RainDrop", Random(-96, 96), 0, -2, 0, 0, momz, Random(0, 360), 128, Random(128, 192))
+			Loop
+		NoRain:
+			NULL A 1 A_StopSoundEx("SoundSlot7")
+			Goto Spawn
+		}
 }
 
-Actor RainSpawner128 : RainSpawner32 10011
+ACTOR RainSpawner128 : RainSpawner32
 {
-//$Category Reborn Effects
-//$Sprite RNDRA0
-Tag "Rain Spawner 128x128"
-States
-	{
-	Spawn:
-	TNT1 A 0 NoDelay A_JumpIf(CallACS("Weather")==0,"NoRain")
-	TNT1 A 0 A_PlaySoundEx("Ambient/Rain", "SoundSlot7", 1)
-	//while BD uses maps in old DOOM format, these ARGS couldn't be defined: so I've added myself.
-	TNT1 A 2 A_SpawnItemEx("RainDrop", Random(-128, 128), 0, -2, 0, 0, momz, Random(0, 360), 128, Random(128, 192))
-	Loop
-	NoRain:
-	NULL A 1 A_StopSoundEx("SoundSlot7")
-	Goto Spawn
-	}
+	Tag "Rain Spawner 128x128"
+	States
+		{
+		Spawn:
+			TNT1 A 0 NoDelay A_JumpIf(CallACS("Weather")==0,"NoRain")
+			TNT1 A 0 A_PlaySoundEx("Ambient/Rain", "SoundSlot7", 1)
+			//while BD uses maps in old DOOM format, these ARGS couldn't be defined: so I've added myself.
+			TNT1 A 2 A_SpawnItemEx("RainDrop", Random(-128, 128), 0, -2, 0, 0, momz, Random(0, 360), 128, Random(128, 192))
+			Loop
+		NoRain:
+			NULL A 1 A_StopSoundEx("SoundSlot7")
+			Goto Spawn
+		}
 }
 
-Actor RainDrop
+ACTOR RainDrop
 {
-+MISSILE
--NOGRAVITY
-+NOBLOCKMAP
-+DONTSPLASH
-Height 2
-Radius 2
-Renderstyle Translucent
-Alpha 0.6
-Scale 2.1
-States
-	{
-	Spawn:
-	RNDR A 1 A_JumpIf(WaterLevel > 0, "Death")
-	Loop
-	Death:
-	RNDR BCDEFGH 3 A_FadeOut(0.15)
-	Stop
-	}
+	Height 2
+	Radius 2
+	-NOGRAVITY
+	+DONTSPLASH
+	+MISSILE
+	+NOBLOCKMAP
+	Renderstyle Translucent
+	Alpha 0.6
+	Scale 2.1
+	States
+		{
+		Spawn:
+			RNDR A 1 A_JumpIf(WaterLevel > 0, "Death")
+			Loop
+		Death:
+			RNDR BCDEFGH 3 A_FadeOut(0.15)
+			Stop
+		}
 }
