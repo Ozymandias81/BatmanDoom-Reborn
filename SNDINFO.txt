@@ -51,3 +51,6 @@ underwt4	underwt4
 $random underwtr { underwt1 underwt2 underwt3 underwt4 }
 
 $ambient 29 underwtr point 1.0 random 20.0 60.0 1.0
+
+//music
+$muscivolume D_RUNNIN 0.5
