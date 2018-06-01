@@ -121,22 +121,20 @@ ACTOR BatmanBatarang : DoomWeapon replaces Pistol
 	States
 		{
 		Ready:
-			PISG A 1 A_WeaponReady
+			PISG D 1 A_WeaponReady
 			Loop
 		Deselect:
-			PISG A 1 A_Lower
+			PISG D 1 A_Lower
 			Loop
 		Select:
-			PISG A 1 A_Raise
+			PISG D 1 A_Raise
 			Loop
 		Fire:
-			PISG A 3
-			PISG B 3 A_Light0
+			PISG E 3
+			PISG D 3
 			PISG C 3
-			PISG D 3 A_FireCustomMissile("Batarang", 0, 1, 0, 12)
-			PISG E 10 A_Light0
-			BON1 D 3
-			BON1 C 10 A_ReFire
+			PISG B 3 A_FireCustomMissile("Batarang", 0, 1, 0, 12)
+			PISG A 10 A_ReFire
 			Goto Ready
 		Spawn:
 			PIST A -1

@@ -675,12 +675,12 @@ DoomEdNums
 	10011=RainSpawner128
 	31006=NFuckedUpCar
 
-	//9=ShotgunThiefSpawn
-	//36=TerroristSpawnKey
-	//64=Joker
-	//67=ZekeSpawn
-	//69=FlameManSpawn
-	//84=PenguinCopter
-	//3004=TerroristSpawn1
-	//31005=ParkedCar
+	9=ShotgunThiefSpawn
+	36=TerroristSpawnKey
+	64=Joker
+	67=ZekeSpawn
+	69=FlameManSpawn
+	84=PenguinCopter
+	3004=TerroristSpawn1
+	31005=ParkedCar
 }
