@@ -1,12 +1,9 @@
-//////////
 //SOUNDS//
-//////////
 ACTOR WaterJumpSplash replaces InvulnerabilitySphere
-	{
+{
 	//$Category Reborn Sounds
 	Tag "Water Jump Splash"
 	+AMBUSH
-	SpawnID 81
 	SeeSound "fatso/sight"
 	States
 		{
@@ -31,7 +28,6 @@ ACTOR SubwaySound replaces BlueTorch
 	+NOBLOOD
 	+SOLID
 	+SHOOTABLE
-	SpawnID 82
 	DeathSound "spider/death"
 	States
 		{
@@ -53,7 +49,6 @@ ACTOR PoliceSiren replaces Meat2
 	Tag "Police Siren"
 	Game Doom
 	+INVISIBLE
-	SpawnID 83
 	SeeSound "baron/death"
 	States
 		{
@@ -72,7 +67,6 @@ ACTOR FallSound replaces NonsolidMeat5
 	Tag "Fall Sound"
 	Game Doom
 	+INVISIBLE
-	SpawnID 84
 	SeeSound "player/male/xdeath1"
 	States
 		{
@@ -91,7 +85,6 @@ ACTOR TwoFaceSound replaces GibbedMarine
 	Tag "Two-Face Sound"
 	Game Doom
 	+INVISIBLE
-	SpawnID 85
 	SeeSound "grunt/active"
 	States
 		{
@@ -109,7 +102,6 @@ ACTOR WeedWaterSound replaces HangTLookingDown
 	//$Category Reborn Sounds
 	Tag "Weed Water Sound"
 	Game Doom
-	SpawnID 86
 	ActiveSound "fatso/pain"
 	SeeSound "fatso/pain"
 	States
@@ -129,7 +121,6 @@ ACTOR CrowdSound replaces HangTSkull
 	Tag "Crowd Sound"
 	Game Doom
 	+INVISIBLE
-	SpawnID 87
 	States
 		{
 		Spawn:

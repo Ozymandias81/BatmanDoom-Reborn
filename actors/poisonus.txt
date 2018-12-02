@@ -42,7 +42,7 @@ ACTOR PoisonSoulPoison
 	+STRIFEDAMAGE
 	RenderStyle Translucent
 	Alpha 0.67
-		States
+	States
 		{
 		Spawn:
 			TRPS ABCDEFGDEFGDEFGDEFGDEFGDCBA 4

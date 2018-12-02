@@ -1,21 +1,16 @@
-////////
 //AMMO//
-////////
 ACTOR BatmanClipBox : ClipBox replaces ClipBox
 {
 	//$Category Reborn Ammo
 	Tag "Batman Batarangs"
-	SpawnID 153
 	Inventory.PickupMessage "$BATABOX"
 	Inventory.Amount 60
 }
-
 
 ACTOR BatmanBlast : Shell replaces Shell
 {
 	//$Category Reborn Ammo
 	Tag "Batman Blastgun Shell"
-	SpawnID 154
 	Inventory.PickupMessage "$BLSTSHEL"
 	Inventory.Amount 6
 }
@@ -24,7 +19,6 @@ ACTOR BatmanBlastBox : ShellBox replaces ShellBox
 {
 	//$Category Reborn Ammo
 	Tag "Batman Blastgun ShellBox"
-	SpawnID 155
 	Inventory.PickupMessage "$BLSTBOX"
 	Inventory.Amount 30
 }
@@ -33,7 +27,6 @@ ACTOR BatmanGasCan : Cell replaces Cell
 {
 	//$Category Reborn Ammo
 	Tag "Batman Gas Canister"
-	SpawnID 156
 	Inventory.PickupMessage "$GASCAN"
 	Inventory.Amount 20
 }
@@ -42,7 +35,6 @@ ACTOR BatmanGasPack : CellPack replaces CellPack
 {
 	//$Category Reborn Ammo
 	Tag "Batman Gas Canister Pack"
-	SpawnID 157
 	Inventory.PickupMessage "$GASPACK"
 	Inventory.Amount 100
 }
@@ -51,7 +43,6 @@ ACTOR BatmanBackpack : Backpack replaces Backpack
 {
 	//$Category Reborn PowerUps
 	Tag "Batman Belt"
-	SpawnID 158
 	Inventory.PickupSound "DSBELT"
 	Inventory.PickupMessage "$BATBELT"
 }

@@ -186,7 +186,7 @@ ACTOR NFuckedUpCar
 
 ACTOR NGreenCar
 {
-	Health 300
+	Health 100
 	Height 48
 	Radius 48
 	Gravity 0.7
@@ -216,32 +216,8 @@ ACTOR NGreenCar
 		}
 }
 
-ACTOR NBlueCar: NGreenCar
-{
-	Health	300
-	Translation "112:127=194:207"
-}
-
-ACTOR NRedCar: NGreenCar
-{
-	Health	300
-	Translation "112:127=168:191"
-}
-
-ACTOR NYellowCar: NGreenCar
-{
-	Health	300
-	Translation "112:127=160:167"
-}
-
-ACTOR NGrayCar: NGreenCar
-{
-	Health	300
-	Translation "112:127=96:111"
-}
-
-ACTOR NBrownCar: NGreenCar
-{
-	Health	300
-	Translation "112:127=64:79"
-}
+ACTOR NBlueCar: NGreenCar {Translation "112:127=194:207"}
+ACTOR NBrownCar: NGreenCar {Translation "112:127=64:79"}
+ACTOR NGrayCar: NGreenCar {Translation "112:127=96:111"}
+ACTOR NRedCar: NGreenCar {Translation "112:127=168:191"}
+ACTOR NYellowCar: NGreenCar {Translation "112:127=160:167"}

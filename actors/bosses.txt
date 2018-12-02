@@ -10,7 +10,6 @@ ACTOR NinjaBoss : Ninja1 replaces FloatingSkull
 	Damage 6 //more damage when jumping!
 	Scale 0.88
 	+BOSS
-	SpawnID 41
 	Obituary "$NINJAB"
 	Translation "104:111=152:159","5:8=9:12"
 	States
@@ -63,8 +62,6 @@ ACTOR CrocRock replaces CacodemonBall
 	-NOGRAVITY
 	+BOUNCEONACTORS
 	+DOOMBOUNCE
-	SpawnID 64
-	SpawnID 126
 	DeathSound "skeleton/melee"
 	States
 		{
@@ -95,8 +92,6 @@ ACTOR KillerCroc replaces PainElemental
 	+AMBUSH //inactive till player LOS
 	+BOSS
 	+FLOORCLIP
-	SpawnID 42
-	SpawnID 115
 	DeathSound "pain/death"
 	PainSound "pain/pain"
 	SeeSound "knight/sight"
@@ -172,7 +167,6 @@ ACTOR TallyMan replaces SpiderMastermind
 	+FLOORCLIP
 	+MISSILEMORE
 	+NORADIUSDMG
-	SpawnID 43
 	AttackSound "spider/attack"
 	DeathSound "vile/death"
 	PainSound "knight/pain"
@@ -228,10 +222,10 @@ ACTOR TallyMan replaces SpiderMastermind
 	States
 		{
 		Spawn:
-		COPT A 8
-		"####" B 6
-		"####" C 4 A_FadeOut (0.05)
-		Stop
+			COPT A 8
+			"####" B 6
+			"####" C 4 A_FadeOut (0.05)
+			Stop
 		}
 }*/
 
@@ -253,7 +247,6 @@ ACTOR PenguinCopter replaces TechPillar
 	+FLOORCLIP
 	+NOBLOOD
 	+NOGRAVITY
-	SpawnID 44
 	DeathSound "weapons/rocklx"
 	Obituary "$PENGCOPT"
 	States
@@ -315,7 +308,6 @@ ACTOR PenguinBoss2 replaces HangTLookingUp
 	+AMBUSH //inactive till player LOS
 	+BOSS
 	+FLOORCLIP
-	SpawnID 45
 	PainSound "fatso/shotx"
 	DeathSound "brain/spit"
 	Obituary "$PENGUIN"
@@ -449,7 +441,6 @@ ACTOR Scarecrow replaces Revenant
 	+FLOORCLIP
 	+LONGMELEERANGE
 	+MISSILEMORE
-	SpawnID 46
 	SeeSound "skeleton/sight"
 	PainSound "knight/pain"
 	DeathSound "skeleton/death"
@@ -518,7 +509,6 @@ ACTOR TwoFaceRocket replaces BaronBall
 	+BLOODLESSIMPACT
 	+BRIGHT
 	+RANDOMIZE
-	SpawnID 66
 	SeeSound "baron/attack"
 	DeathSound "weapons/rocklx"
 	States
@@ -552,7 +542,6 @@ ACTOR TwoFace replaces Cyberdemon
 	+FLOORCLIP
 	+MISSILEMORE
 	+NORADIUSDMG
-	SpawnID 47
 	DeathSound "keen/death"
 	PainSound "cyber/pain"
 	SeeSound "cyber/sight"
@@ -606,7 +595,6 @@ ACTOR JokerTrickDart1 replaces FatShot //shaders & rotsprites?
 	FastSpeed 20
 	Damage 3
 	Projectile
-	SpawnID 67
 	SeeSound "weapons/rocklf"
 	DeathSound "weapons/plasmax"
 	States
@@ -638,7 +626,6 @@ ACTOR Joker replaces ZombieMan
 	+AMBUSH //inactive till player LOS
 	+BOSS
 	+FLOORCLIP
-	SpawnID 48
 	AttackSound "weapons/pistol"
 	DeathSound "vile/death"
 	PainSound "vile/pain"
@@ -773,7 +760,6 @@ ACTOR Joker2 replaces Clip
 	+AMBUSH //inactive till player LOS
 	+BOSS
 	+FLOORCLIP
-	SpawnID 49
 	DeathSound "vile/death"
 	PainSound "vile/pain"
 	SeeSound "pain/active"
@@ -851,7 +837,6 @@ ACTOR Bane replaces BaronOfHell
 	+AMBUSH //inactive till player LOS
 	+BOSS
 	+FLOORCLIP
-	SpawnID 50
 	AttackSound "skull/melee"
 	DeathSound "brain/cube"
 	PainSound "knight/pain"

@@ -1,12 +1,9 @@
-/////////
 //ITEMS//
-/////////
-actor BatmanGreenArmor : GreenArmor replaces GreenArmor
+ACTOR BatmanGreenArmor : GreenArmor replaces GreenArmor
 {
 	//$Category Reborn PickUps
 	Tag "Batman Armor"
 	+COUNTITEM
-	SpawnID 141
 	Inventory.PickupSound "DSBELT"
 	Inventory.Pickupmessage "$BARMOR"
 	States
@@ -17,12 +14,11 @@ actor BatmanGreenArmor : GreenArmor replaces GreenArmor
 		}
 }
 
-actor BatmanBlueArmor : BlueArmor replaces BlueArmor
+ACTOR BatmanBlueArmor : BlueArmor replaces BlueArmor
 {
 	//$Category Reborn PickUps
 	Tag "Batman Azreal's Armor"
 	+COUNTITEM
-	SpawnID 142
 	Inventory.PickupSound "DSBELT"
 	Inventory.Pickupmessage "$AZRLARMR"
 	Translation "195:207=0:2", "240:245=5:8"
@@ -34,15 +30,14 @@ actor BatmanBlueArmor : BlueArmor replaces BlueArmor
 		}
 }
 
-actor RandomBonus : DehackedPickup replaces YellowSkull
+ACTOR RandomBonus : DehackedPickup replaces YellowSkull
 {
 	//$Category Reborn PickUps
 	Tag "Random Bonus"
 	+COUNTITEM
 	+RANDOMIZE
-	SpawnID 143
 	Translation "195:207=0:2", "240:245=5:8"
-	states
+	States
 		{
 		Spawn:
 			ARM2 B 2 bright
@@ -58,21 +53,19 @@ actor RandomBonus : DehackedPickup replaces YellowSkull
 		}
 }
 
-actor BatmanRadSuit : RadSuit replaces RadSuit
+ACTOR BatmanRadSuit : RadSuit replaces RadSuit
 {
 	//$Category Reborn PickUps
 	Tag "Prototype Nomex Suit"
 	Radius 16
-	SpawnID 144
 	Inventory.PickupMessage "$PROTSUIT"
 	Translation "195:207=0:2", "240:245=5:8"
 }
 
-actor BlueKey : BlueCard replaces Shotgun
+ACTOR BlueKey : BlueCard replaces Shotgun
 {
 	//$Category Reborn Keys
 	Tag "Blue Key"
-	SpawnID 145
 	Inventory.PickupSound "DSKEYUP"
 	Inventory.PickupMessage "$BLUEK"
 	Inventory.Icon "STKEYS0"
@@ -87,11 +80,10 @@ actor BlueKey : BlueCard replaces Shotgun
 		}
 }
 
-actor RedKey : RedCard replaces RedCard
+ACTOR RedKey : RedCard replaces RedCard
 {
 	//$Category Reborn Keys
 	Tag "Red Key"
-	SpawnID 146
 	Inventory.PickupSound "DSKEYUP"
 	Inventory.PickupMessage "$REDK"
 	Inventory.Icon "STKEYS2"
@@ -104,11 +96,10 @@ actor RedKey : RedCard replaces RedCard
 		}
 }
 
-actor YellowKey : YellowCard replaces YellowCard
+ACTOR YellowKey : YellowCard replaces YellowCard
 {
 	//$Category Reborn Keys
 	Tag "Yellow Key"
-	SpawnID 147
 	Inventory.PickupSound "DSKEYUP"
 	Inventory.PickupMessage "$YELK"
 	Inventory.Icon "STKEYS1"
@@ -125,7 +116,6 @@ ACTOR BatmanHealthBonus : HealthBonus replaces HealthBonus
 {
 	//$Category Reborn PickUps
 	Tag "Health Bonus"
-	SpawnID 148
 	Inventory.PickupMessage "$FOOD"
 	States
 		{
@@ -173,7 +163,6 @@ ACTOR BatmanArmorBonus : ArmorBonus replaces ArmorBonus
 {
 	//$Category Reborn PickUps
 	Tag "Armor Bonus"
-	SpawnID 149
 	Translation "195:207=0:2", "240:245=5:8"
 	States
 		{
@@ -187,7 +176,6 @@ ACTOR BatmanSoulsphere : Soulsphere replaces Soulsphere
 {
 	//$Category Reborn PowerUps
 	Tag "Batman Sphere"
-	SpawnID 150
 	Inventory.Pickupmessage "$BSPHERE"
 	States
 		{
@@ -201,7 +189,6 @@ ACTOR BatmanMap : Allmap replaces Allmap
 {
 	//$Category Reborn PowerUps
 	Tag "All Map"
-	SpawnID 151
 	+BRIGHT
 	States
 		{
@@ -215,13 +202,12 @@ ACTOR BatmanInfrared : Infrared replaces Infrared
 {
 	//$Category Reborn PowerUps
 	Tag "Infrared Vision"
-	SpawnID 152
 	+BRIGHT
 	States
 		{
 		Spawn:
-		PVIS A -1
-		Loop
+			PVIS A -1
+			Loop
 		}
 }
 //new
@@ -232,7 +218,6 @@ ACTOR BatmanBerserk : CustomInventory
 	Game Doom
 	+COUNTITEM
 	+INVENTORY.ALWAYSPICKUP
-	SpawnId 134 //same as doomberserk
 	Inventory.PickupMessage "$BATBSERK"
 	Inventory.PickupSound "misc/p_pkup"
 	States

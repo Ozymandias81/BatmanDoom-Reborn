@@ -1,11 +1,8 @@
-/////////
 //TRAPS//
-/////////
 ACTOR ExplosionWallBlast
 {
 	+BRIGHT
 	+NOGRAVITY
-	SpawnID 91
 	States
 		{
 		Spawn:
@@ -31,7 +28,6 @@ ACTOR ExplosionWall replaces BossEye //only used on level 22 (uses special funct
 	+NOCLIP
 	+NOGRAVITY
 	+SHOOTABLE
-	SpawnID 92
 	Obituary "$EXPWALL"
 	States
 		{
@@ -96,7 +92,6 @@ ACTOR OneShotCauseHateTarget replaces HangBNoBrain
 	Height 2
 	Speed 0
 	+SHOOTABLE
-	SpawnID 93
 	States
 		{
 		Spawn:
@@ -115,7 +110,6 @@ ACTOR FloorFireTrap replaces Megasphere
 	//$Category Reborn Traps
 	Tag "Floor Fire Trap"
 	Game Doom
-	SpawnID 94
 	SeeSound "wolfss/sight"
 	States
 		{
@@ -147,7 +141,6 @@ ACTOR FireShootTrap replaces GreenTorch
 	+NOBLOOD
 	+SHOOTABLE
 	+SOLID
-	SpawnID 95
 	States
 		{
 		Spawn:
@@ -182,7 +175,6 @@ ACTOR LandMine replaces RedTorch
 	+NOBLOOD
 	+OLDRADIUSDMG
 	+SHOOTABLE
-	SpawnID 96
 	DeathSound "weapons/rocklx"
 	States
 		{
@@ -210,7 +202,6 @@ ACTOR Explosion replaces Cacodemon //used to kill stuff immediatly on seeing pla
 	Height 16
 	+INVISIBLE
 	+OLDRADIUSDMG
-	SpawnID 97
 	States
 		{
 		Spawn:
@@ -229,7 +220,6 @@ ACTOR ScareCrowPopup replaces Gibs
 	Game Doom
 	Height 63
 	Radius 20
-	SpawnID 98
 	SeeSound "skeleton/sight"
 	States
 		{
@@ -261,7 +251,6 @@ ACTOR FloorFire replaces TallRedColumn
 	//$Category Reborn Traps
 	Tag "Floor Fire"
 	Game Doom
-	SpawnID 99
 	SeeSound "brain/pain"
 	DeathSound "brain/pain"
 	States

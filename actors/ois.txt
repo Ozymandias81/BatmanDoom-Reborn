@@ -36,7 +36,6 @@ ACTOR 1966Puff : BulletPuff replaces BulletPuff //punch puffs
 	+NOBLOCKMAP
 	+NOGRAVITY
 	+RANDOMIZE
-	SpawnID 131
 	States
 		{
 		Spawn:

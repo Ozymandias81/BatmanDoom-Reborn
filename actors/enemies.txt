@@ -1,6 +1,4 @@
-///////////
 //ENEMIES//
-///////////
 ACTOR BatDoomEnemy
 {
 	Monster
@@ -12,7 +10,6 @@ ACTOR BadBirdSpawn : RandomSpawner replaces Candlestick
 {
 	//$Category Reborn Foes
 	Tag "Bad Bird Spawner"
-	SpawnID 11
 	DropItem BadBird1
 	DropItem BadBird2
 	DropItem BadBird3
@@ -69,7 +66,6 @@ ACTOR TerroristSpawn1 : RandomSpawner replaces HellKnight
 {
 	//$Category Reborn Foes
 	Tag "Terrorists Spawner A"
-	SpawnID 12
 	DropItem Terrorist1
 	DropItem Terrorist2
 	DropItem Terrorist3
@@ -84,7 +80,6 @@ ACTOR TerroristSpawn2 : RandomSpawner replaces TechLamp2
 {
 	//$Category Reborn Foes
 	Tag "Terrorists Spawner B"
-	SpawnID 14
 	DropItem Terrorist1
 	DropItem Terrorist2
 	DropItem Terrorist3
@@ -99,7 +94,6 @@ ACTOR TerroristSpawnKey : RandomSpawner replaces ShotgunGuy
 {
 	//$Category Reborn Foes
 	Tag "Terrorists Spawner (with keys)"
-	SpawnID 13
 	DropItem TerroristKey
 }
 
@@ -107,7 +101,6 @@ ACTOR TerroristSpawn3 : RandomSpawner replaces TallGreenColumn
 {
 	//$Category Reborn Foes
 	Tag "Terrorists Spawner C"
-	SpawnID 15
 	DropItem Terrorist1
 	DropItem Terrorist2
 	DropItem Terrorist3
@@ -118,7 +111,6 @@ ACTOR TerroristSpawn3 : RandomSpawner replaces TallGreenColumn
 	DropItem Terrorist8
 }
 
-
 ACTOR Terrorist1 : BatDoomEnemy
 {
 	Health 40
@@ -128,7 +120,6 @@ ACTOR Terrorist1 : BatDoomEnemy
 	Radius 24
 	Speed 8
 	Scale 0.78
-	SpawnID 12
 	AttackSound "weapons/pistol"
 	DeathSound "grunt/death"
 	PainSound "knight/pain"
@@ -206,7 +197,6 @@ ACTOR ShotgunThiefSpawn : RandomSpawner replaces Fatso
 {
 	//$Category Reborn Foes
 	Tag "Shotgun Thieves Spawner"
-	SpawnID 16
 	DropItem ShotgunThief1
 	DropItem ShotgunThief2
 	DropItem ShotgunThief3
@@ -222,7 +212,6 @@ ACTOR ShotgunThief1 : BatDoomEnemy
 	Radius 24
 	Speed 8
 	Scale 0.78
-	SpawnID 16
 	DeathSound "chainguy/death2"
 	PainSound "vile/pain"
 	SeeSound "imp/active"
@@ -271,7 +260,6 @@ ACTOR GangWarShotgunThiefSpawn : RandomSpawner replaces RocketBox
 {
 	//$Category Reborn Foes
 	Tag "Gang-War Shotgun Thieves Spawner"
-	SpawnID 17
 	DropItem GangWarShotgunThief1
 	DropItem GangWarShotgunThief2
 	DropItem GangWarShotgunThief3
@@ -314,7 +302,6 @@ ACTOR CheungShuriken replaces DoomImpBall //shaders & rotsprite?
 	+BLOODLESSIMPACT
 	+BRIGHT
 	+RANDOMIZE
-	SpawnID 61
 	DeathSound "imp/shotx"
 	SeeSound "skull/melee"
 	States
@@ -332,7 +319,6 @@ ACTOR CheungSpawn : RandomSpawner replaces DoomImp
 {
 	//$Category Reborn Foes
 	Tag "Chinese Cheungs Spawner"
-	SpawnID 18
 	DropItem Cheung1
 	DropItem Cheung2
 }
@@ -349,7 +335,6 @@ ACTOR Cheung1 : BatDoomEnemy
 	Monster
 	-COUNTKILL
 	+FLOORCLIP
-	SpawnID 18
 	Species "Cheung"
 	DeathSound "baby/death"
 	PainSound "imp/pain"
@@ -403,7 +388,6 @@ ACTOR GangWarCheungSpawn : RandomSpawner replaces RocketAmmo
 {
 	//$Category Reborn Foes
 	Tag "Gang-War Chinese Cheungs Spawner"
-	SpawnID 19
 	DropItem GangWarCheung1
 	DropItem GangWarCheung2
 }
@@ -433,7 +417,6 @@ ACTOR StrakeSpawn : RandomSpawner replaces Demon
 {
 	//$Category Reborn Foes
 	Tag "Strakes Spawner"
-	SpawnID 20
 	DropItem Strake1
 	DropItem Strake2
 	DropItem Strake3
@@ -448,7 +431,6 @@ ACTOR StrakeSpawn2 : StrakeSpawn replaces TechLamp
 {
 	//$Category Reborn Foes
 	Tag "Strakes Spawner (dummy)"
-	SpawnID 21
 }
 
 ACTOR Strake1 : BatDoomEnemy
@@ -463,8 +445,6 @@ ACTOR Strake1 : BatDoomEnemy
 	Scale 0.78
 	+FASTER
 	+FASTMELEE
-	SpawnID 8
-	SpawnID 20
 	Species "Strake"
 	AttackSound "demon/melee"
 	DeathSound "demon/death"
@@ -528,7 +508,6 @@ ACTOR PenguinRobot : BatDoomEnemy replaces Column
 	Speed 11
 	+NOBLOOD
 	+OLDRADIUSDMG
-	SpawnID 22
 	DeathSound "weapons/rocklx"
 	Obituary "$PENGROBO"
 	States
@@ -556,7 +535,6 @@ ACTOR NinjaSpawn : RandomSpawner replaces Arachnotron
 {
 	//$Category Reborn Foes
 	Tag "Ninjakus Spawner"
-	SpawnID 23
 	DropItem Ninja1
 	DropItem Ninja2
 	DropItem Ninja3
@@ -575,7 +553,6 @@ ACTOR Ninja1 : BatDoomEnemy
 	Scale 0.78
 	+FASTMELEE
 	+QUICKTORETALIATE
-	SpawnID 23
 	Species "Ninja"
 	DeathSound "baby/death"
 	PainSound "grunt/pain"
@@ -668,7 +645,6 @@ ACTOR Flame replaces ArachnotronPlasma
 	Alpha 0.8
 	Projectile
 	+BLOODLESSIMPACT
-	SpawnID 62
 	SeeSound "wolfss/sight"
 	States
 		{
@@ -685,7 +661,6 @@ ACTOR FlameManSpawn : RandomSpawner replaces Archvile
 {
 	//$Category Reborn Foes
 	Tag "FlameMen Spawner"
-	SpawnID 24
 	DropItem FlameMan1
 	DropItem FlameMan2
 	DropItem FlameMan3
@@ -705,7 +680,6 @@ ACTOR FlameMan1 : BatDoomEnemy
 	Radius 24
 	Speed 10
 	Scale 0.78
-	SpawnID 24
 	Species "FlameMan"
 	AttackSound "baby/pain"
 	DeathSound "grunt/death"
@@ -825,7 +799,6 @@ ACTOR Sniper : BatDoomEnemy replaces Spectre
 	Monster
 	+FLOORCLIP
 	Species "Sniper"
-	SpawnID 25
 	AttackSound "demon/melee"
 	DeathSound "grunt/death2"
 	PainSound "knight/pain"
@@ -879,7 +852,6 @@ ACTOR TrickDart1 replaces FatShot
 	Speed 20
 	FastSpeed 20
 	Projectile
-	SpawnID 67
 	DeathSound "weapons/plasmax"
 	SeeSound "weapons/rocklf"
 	States
@@ -897,7 +869,6 @@ ACTOR ClownSpawn : RandomSpawner replaces ShortRedTorch
 {
 	//$Category Reborn Foes
 	Tag "Clowns Spawner"
-	SpawnID 26
 	DropItem Clown1
 	DropItem Clown2
 	DropItem Clown3
@@ -915,7 +886,6 @@ ACTOR Clown1 : BatDoomEnemy
 	Scale 0.78
 	Monster
 	+FLOORCLIP
-	SpawnID 26
 	Species "Clown"
 	DeathSound "keen/pain"
 	PainSound "vile/pain"
@@ -1014,7 +984,6 @@ ACTOR SuperClown : Clown1 replaces Meat3
 	Mass 250
 	PainChance 120
 	Speed 11
-	SpawnID 27
 	Translation "184:191=196:207","40:47=204:207","176:184=112:120","250:254=124:127"
 	States
 		{
@@ -1082,7 +1051,6 @@ ACTOR ZekeMolotov replaces LostSoul
 	-NOGRAVITY
 	+BLOODLESSIMPACT
 	+BRIGHT
-	SpawnID 63
 	AttackSound "skull/melee"
 	DeathSound "knight/death"
 	SeeSound "skull/melee"
@@ -1107,7 +1075,6 @@ ACTOR ZekeSpawn : RandomSpawner replaces HeartColumn
 {
 	//$Category Reborn Foes
 	Tag "Zekes Spawner"
-	SpawnID 28
 	DropItem Zeke1
 	DropItem Zeke2
 	DropItem Zeke3
@@ -1127,7 +1094,6 @@ ACTOR Zeke1 : BatDoomEnemy
 	Radius 30
 	Speed 9
 	Scale 0.78
-	SpawnID 28
 	Species "Zeke"
 	SeeSound "fatso/death"
 	PainSound "caco/death"
@@ -1190,7 +1156,6 @@ ACTOR RocketMan : BatDoomEnemy replaces BossTarget
 	Scale 0.78
 	+FLOAT
 	+NOGRAVITY
-	SpawnID 29
 	Species "RocketMan"
 	PainSound "knight/pain"
 	DeathSound "grunt/death"
@@ -1226,7 +1191,6 @@ ACTOR EyeBallSpawner replaces Meat4
 {
 	//$Category Reborn Foes
 	Tag "Eye-Ball Spawner"
-	SpawnID 30
 	States
 		{
 		Spawn:

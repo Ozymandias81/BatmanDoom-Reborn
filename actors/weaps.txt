@@ -47,7 +47,6 @@ ACTOR BatmanTazer : DoomWeapon replaces Chainsaw
 	+BLOODLESSIMPACT
 	+NOALERT
 	+WEAPON.MELEEWEAPON
-	SpawnID 161
 	Inventory.PickupMessage "$TAZER"
 	Obituary "$TAZEROB"
 	States
@@ -84,7 +83,6 @@ ACTOR Batarang replaces Rocket //probably shaders & rotsprite would be better
 	Damage 8
 	Projectile
 	+RANDOMIZE
-	SpawnID 68
 	SeeSound "vile/raise"
 	DeathSound "baby/attack"
 	Obituary "$BRANGOB1"
@@ -115,7 +113,6 @@ ACTOR BatmanBatarang : DoomWeapon replaces Pistol
 	Weapon.AmmoGive 20
 	Weapon.AmmoType "Clip"
 	+WEAPON.WIMPY_WEAPON
-	SpawnID 162
 	Inventory.Pickupmessage "$BRANGS"
 	Obituary "$BRANGOB2"
 	States
@@ -151,7 +148,6 @@ ACTOR BatmanBlastgun : DoomWeapon replaces BlueCard
 	Weapon.AmmoUse 2
 	Weapon.AmmoGive 6
 	Weapon.AmmoType "Shell"
-	SpawnID 163
 	Inventory.PickupMessage "$BLASTGUN"
 	Obituary "$BLASTOB"
 	States
@@ -194,7 +190,6 @@ ACTOR BatmanAzraelGlove : DoomWeapon replaces SuperShotgun
 	Weapon.AmmoUse 1
 	Weapon.AmmoGive 6
 	Weapon.AmmoType "Shell"
-	SpawnID 164
 	Inventory.PickupMessage "$GLOVES"
 	Obituary "$GLOVESOB"
 	States
@@ -241,7 +236,6 @@ ACTOR BatmanChaingun : DoomWeapon replaces Chaingun
 	Weapon.AmmoUse 1
 	Weapon.AmmoGive 20
 	Weapon.AmmoType "Clip"
-	SpawnID 165
 	Inventory.PickupMessage "$SHURIKEN" //fixme what
 	Obituary "$SHURIOB"
 	States
@@ -286,7 +280,6 @@ ACTOR SmokeBomb replaces BFGBall
 	+BLOODLESSIMPACT
 	+OLDRADIUSDMG
 	+RANDOMIZE
-	SpawnID 69
 	Obituary "$SMOKEOB"
 	DeathSound "weapons/bfgx"
 	States
@@ -315,7 +308,6 @@ ACTOR BatmanSmokeBomb : DoomWeapon replaces RocketLauncher
 	+WEAPON.EXPLOSIVE
 	+WEAPON.NOAUTOAIM
 	+WEAPON.NOAUTOFIRE
-	SpawnID 166
 	Inventory.PickupMessage "$SMOKEBMB"
 	States
 		{
@@ -345,7 +337,6 @@ ACTOR BatmanSmokeBomb : DoomWeapon replaces RocketLauncher
 ACTOR BatFlame : Flame replaces PlasmaBall
 {
 	DamageType "Fire"
-	SpawnID 70
 	States
 		{
 		Spawn:
@@ -368,7 +359,6 @@ ACTOR BatmanFlamer : DoomWeapon replaces PlasmaRifle
 	Weapon.AmmoUse 1
 	Weapon.AmmoGive 20
 	Weapon.AmmoType "Cell"
-	SpawnID 167
 	Inventory.PickupMessage "$BFLAMER"
 	States
 		{
@@ -434,8 +424,6 @@ ACTOR BatmanFinalGloveItem : CustomInventory replaces BFG9000
 	Tag "Final Glove"
 	Game Doom
 	Height 20
-	SpawnID 31
-	SpawnID 168
 	Inventory.PickupSound ""
 	Inventory.PickupMessage ""
 	States

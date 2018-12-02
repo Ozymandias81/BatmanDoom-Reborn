@@ -1,6 +1,4 @@
-/////////////
 //OBSTACLES//
-/////////////
 ACTOR Bell replaces RedSkull
 {
 	//$Category Reborn Obstacles
@@ -8,7 +6,6 @@ ACTOR Bell replaces RedSkull
 	+NOGRAVITY
 	+SOLID
 	+SPAWNCEILING
-	SpawnID 101
 	States
 		{
 		Spawn:
@@ -21,7 +18,6 @@ ACTOR ScarecrowOnPole replaces BlurSphere
 {
 	//$Category Reborn Obstacles
 	Tag "Scarecrow On A Pole"
-	SpawnID 103
 	Health 1
 	Mass 1000000
 	+SHOOTABLE
@@ -40,9 +36,7 @@ ACTOR ChemicalBarrel replaces ExplosiveBarrel
 {
 	//$Category Reborn Obstacles
 	Tag "Chemical Barrel"
-	SpawnID 104
 	Game Doom
-	SpawnID 125
 	Health 20
 	Radius 10
 	Height 34
@@ -75,7 +69,6 @@ ACTOR AxisBarrel : ChemicalBarrel replaces ShortBlueTorch
 {
 	//$Category Reborn Obstacles
 	Tag "Axis Barrel"
-	SpawnID 105
 	States
 		{
 		Spawn:
@@ -88,7 +81,6 @@ ACTOR DoorSmash replaces EvilEye
 {
 	//$Category Reborn Specials
 	Tag "Smashable Door (dummy)"
-	SpawnID 106
 	Game Doom
 	SeeSound "vile/sight"
 	States
@@ -106,7 +98,6 @@ ACTOR OfficePlant replaces ChaingunGuy
 {
 	//$Category Reborn Obstacles
 	Tag "Office Plant"
-	SpawnID 107
 	Radius 9
 	Height 56
 	+SOLID
@@ -129,7 +120,6 @@ ACTOR StoneFloor replaces Stalagtite //stones for killer croc to throw (must be 
 	Speed 0
 	+NOBLOOD
 	+SHOOTABLE
-	SpawnID 108
 	States
 		{
 		Spawn:
@@ -157,11 +147,10 @@ ACTOR Tree replaces WolfensteinSS
 {
 	//$Category Reborn Obstacles
 	Tag "Tree"
-	SpawnID 109
 	Radius 20
 	Height 56
 	+SOLID
-	states
+	States
 		{
 		Spawn:
 			ELEC A -1
@@ -173,7 +162,6 @@ ACTOR Toilet replaces CommanderKeen
 {
 	//$Category Reborn Obstacles
 	Tag "Toilet"
-	SpawnID 110
 	Radius 16
 	Height 56
 	+SOLID
@@ -189,7 +177,6 @@ ACTOR GargoyleStatue replaces BossBrain
 {
 	//$Category Reborn Obstacles
 	Tag "Gargoyle Statue"
-	SpawnID 111
 	Radius 30
 	Height 56
 	+SOLID
@@ -205,7 +192,6 @@ ACTOR BlockingCone replaces ShortGreenTorch
 {
 	//$Category Reborn Specials
 	Tag "Blocking Cone (living)"
-	SpawnID 112
 	Game Doom
 	Radius 16
 	Height 25
@@ -227,7 +213,6 @@ ACTOR LionStatue replaces Meat5
 {
 	//$Category Reborn Obstacles
 	Tag "Lion Statue"
-	SpawnID 114
 	Radius 30
 	Height 56
 	+SOLID
@@ -243,7 +228,6 @@ ACTOR GreenCar replaces DeadMarine
 {
 	//$Category Reborn Obstacles
 	Tag "Green Car"
-	SpawnID 116
 	Radius 48
 	Height 64
 	+SOLID
@@ -259,7 +243,6 @@ ACTOR GrayCar : GreenCar replaces DeadCacodemon
 {
 	//$Category Reborn Obstacles
 	Tag "Gray Car"
-	SpawnID 117
 	Translation 0
 }
 
@@ -267,7 +250,6 @@ ACTOR RedCar : GreenCar replaces HeadCandles
 {
 	//$Category Reborn Obstacles
 	Tag "Red Car"
-	SpawnID 118
 	Translation 2
 }
 
@@ -283,7 +265,6 @@ ACTOR Chair replaces DeadZombieMan
 	+NOBLOOD
 	+SHOOTABLE
 	+SOLID
-	SpawnID 119
 	States
 		{
 		Spawn:
@@ -305,7 +286,6 @@ ACTOR Table replaces DeadShotgunGuy
 	Radius 30
 	Height 56
 	+SOLID
-	SpawnID 123
 	States
 		{
 		Spawn:
@@ -321,7 +301,6 @@ ACTOR TrashCan replaces LiveStick
 	Radius 16
 	Height 56
 	+SOLID
-	SpawnID 124
 	States
 		{
 		Spawn:
@@ -337,7 +316,6 @@ ACTOR ManStatue replaces HangNoGuts
 	Radius 16
 	Height 88
 	+SOLID
-	SpawnID 126
 	States
 		{
 		Spawn:
@@ -353,7 +331,6 @@ ACTOR TrafficLight replaces HangTNoBrain
 	Radius 15
 	Height 100
 	+SOLID
-	SpawnID 127
 	States
 		{
 		Spawn:
@@ -372,7 +349,6 @@ ACTOR RobinSuit replaces ColonGibs
 	+NOBLOOD
 	+SHOOTABLE
 	+SOLID
-	SpawnID 128
 	States
 		{
 		Spawn:
@@ -395,7 +371,6 @@ ACTOR BookOnPillar replaces SmallBloodPool
 	+NOBLOOD
 	+SHOOTABLE
 	+SOLID
-	SpawnID 129
 	States
 		{
 		Spawn:
@@ -414,7 +389,6 @@ ACTOR PenguinDoll replaces BrainStem
 	Radius 20
 	Height 16
 	+SOLID
-	SpawnID 130
 	States
 		{
 		Spawn:
@@ -430,7 +404,6 @@ ACTOR WeirdClockTree replaces BloodyTwitch
 	Radius 30
 	Height 56
 	+SOLID
-	SpawnID 131
 	States
 		{
 		Spawn:
@@ -444,7 +417,6 @@ ACTOR MacComputer replaces HeadOnAStick
 	//$Category Reborn Obstacles
 	Tag "Mac Computer"
 	+SOLID
-	SpawnID 133
 	States
 		{
 		Spawn:
